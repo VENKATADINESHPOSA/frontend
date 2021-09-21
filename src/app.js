@@ -10,6 +10,7 @@ import Login from '~/views/Login'
 import Signup from '~/views/Signup'
 import ForgotPassword from '~/views/ForgotPassword'
 import Home from '~/views/Home'
+import UpdatedHome from './views/UpdatedHome/UpdatedHome.component';
 import Home1 from '~/views/Home1'
 import ProductCategory from '~/views/ProductCategory'
 import RFQ from '~/views/RFQ'
@@ -188,7 +189,7 @@ class App extends Component{
 					<Switch>
 						<Route exact path='/' component={Home} />
 						<Route exact path='/login-type' component={LoginType} />
-						/*<Route exact path='/home' component={Home} />*/
+						/*<Route exact path='/home' component={UpdatedHome} />*/
 						<Route exact path='/login' component={Login} />
 						<Route exact path='/signup' component={Signup} />
 						<Route exact path='/forget-password' component={ForgotPassword} />

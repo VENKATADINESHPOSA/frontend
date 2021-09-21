@@ -1,0 +1,774 @@
+[
+    {
+        "heading": "New",
+        "bearingsData": [
+            {
+                "name": "Standard Products",
+                "id": 1,
+                "description": "ZWZ manufactures a huge range of standard bearing products in planned production. However our manufacturing capabilities allow us to manufacture several sizes on request which are standard but not part of planned production schedule. If you feel you have a requirement for a standard product that is currently not a part of our planned production please refer to the enclosed catalogue and contact our sales team with a specific inquiry through email listed below."
+            },
+            {
+                "name": "Multirow Bearings",
+                "id": 2,
+                "description": "Our Multirow bearing products are customized solutions which are made to order for heavy industrial sectors like Steel / Cement / Aluminium and others. Kindly refer to the enclosed catalog of Multi- Row products  and contact our sales team with a specific inquiry through email listed below."
+            },
+            {
+                "name": "Slewing rim Bearings",
+                "id": 3,
+                "description": "We are leaders in Slewing Rim bearings for Wind Power and infrastructure equipment in the world. These are specialized products. Please refer to our Slewing Bearing Catalog and contact our sales team with a specific inquiry through email listed below."
+            }
+        ]
+    },
+    {
+        "heading": "Best Sellers",
+        "bearingsData": [
+            {
+                "name": "Ball Bearings",
+                "id": 1,
+                "offerText": "",
+                "productIds": [
+                    {
+                        "data": [
+                            "2313",
+                            "6226",
+                            "6321",
+                            "51422(51422M)"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "6017",
+                            "6230",
+                            "6322",
+                            "7213ACM"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "6018",
+                            "6308",
+                            "6324",
+                            "7312ACM"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "6022",
+                            "6310",
+                            "51314",
+                            "7313ACM"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "6026",
+                            "6311",
+                            "1215K",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "6211",
+                            "6313",
+                            "51234M",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "6212",
+                            "6314",
+                            "51318M",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "6217",
+                            "6315",
+                            "51326M",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "6220",
+                            "6316",
+                            "51328M",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "6221",
+                            "6318",
+                            "51420M",
+                            ""
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Tapered Roller Bearings",
+                "id": 2,
+                "offerText": "",
+                "productIds": [
+                    {
+                        "data": [
+                            "30220",
+                            "32019",
+                            "32226",
+                            "32316"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "30222",
+                            "32211",
+                            "32228",
+                            "32317"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "30310",
+                            "32212",
+                            "32230",
+                            "32318"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "30313",
+                            "32215",
+                            "32232",
+                            "32319"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "30314",
+                            "32217",
+                            "32238",
+                            "32320"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "30315",
+                            "32218",
+                            "32310",
+                            "32322"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "30318",
+                            "32219",
+                            "32311",
+                            "32326"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "30320",
+                            "32220",
+                            "32312",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "32015",
+                            "32222",
+                            "32313",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "32017",
+                            "32224",
+                            "32315",
+                            ""
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Spherical / Cylindrical Roller Bearings",
+                "id": 3,
+                "offerText": "",
+                "productIds": [
+                    {
+                        "data": [
+                            "22220CAKW33",
+                            "22340CAC3W33",
+                            "NJ224M",
+                            "NJ324M"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22222CAKW33",
+                            "29418M",
+                            "NJ228M(NJ228E)",
+                            "NU222M"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22318CAC3W33",
+                            "N224M",
+                            "NJ230M",
+                            "NU2316M"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22334CAC3W33",
+                            "N226M",
+                            "NJ315M",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22334CAW33",
+                            "N313M",
+                            "NJ318M",
+                            ""
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "heading": "Special Offer",
+        "bearingsData": [
+            {
+                "name": "Ball Bearings",
+                "id": 1,
+                "offerText": "One Time Offer valid until stocks last. This list is not a live list and some products may no longer be available.",
+                "productIds": [
+                    {
+                        "data": [
+                            "1206",
+                            "51306",
+                            "16052M",
+                            "6013ZZ",
+                            "62092RS",
+                            "6308ZN"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "1207",
+                            "52208",
+                            "2206K",
+                            "6014ZZC3",
+                            "6209ZN",
+                            "6308ZNR"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "1208",
+                            "52213",
+                            "2214K",
+                            "6015ZZ",
+                            "6209ZNRC3",
+                            "6310ZNR"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "1216",
+                            "52232",
+                            "2219K",
+                            "60192RS",
+                            "62102RS",
+                            "6320ZZ"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "1217",
+                            "52322",
+                            "2314K",
+                            "6019ZZ",
+                            "62102RSC3",
+                            "6407N"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "1307",
+                            "52330",
+                            "2319K",
+                            "6020ZZ",
+                            "6210ZNR",
+                            "6410N"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "1319",
+                            "1206K",
+                            "51122M",
+                            "60212RSC3",
+                            "6210ZZC3",
+                            "7236ACM"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "2220",
+                            "1207K",
+                            "51124M",
+                            "61856M",
+                            "62112RS",
+                            "7330ACM"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "6007",
+                            "1208K",
+                            "51136M",
+                            "61918M",
+                            "6211NRC3",
+                            "7418ACM"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "6008",
+                            "1210KTN1",
+                            "51164M",
+                            "61920M",
+                            "6211ZNR",
+                            "QJ320"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "6009",
+                            "1214K",
+                            "51260M",
+                            "61928M",
+                            "6211ZZ",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "6010",
+                            "1216K/C3",
+                            "51348(51348M)",
+                            "61940M",
+                            "6212N",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "6012",
+                            "1221(1221M)",
+                            "51417M",
+                            "6205C3",
+                            "6214Z",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "6013",
+                            "1307K",
+                            "60052RS",
+                            "62062RS",
+                            "6216N",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "6205",
+                            "1308K/C3",
+                            "60062RS",
+                            "6206ZZ",
+                            "62172RS",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "16022",
+                            "1314K",
+                            "6006ZZ",
+                            "62072RS",
+                            "6305ZZ",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "51105",
+                            "1318(1318M)",
+                            "6007ZZ/C3",
+                            "6207C3",
+                            "63062RS",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "51116",
+                            "1319K",
+                            "6009ZZ",
+                            "62082RS",
+                            "6306C3",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "51117",
+                            "1320K(1320KJ)",
+                            "6010ZZ",
+                            "62082RSC3",
+                            "6306ZZC3",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "51136",
+                            "16032M",
+                            "6012ZZ",
+                            "6208ZNR",
+                            "6307ZZC3",
+                            ""
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Tapered Roller Bearings",
+                "id": 2,
+                "offerText": "One Time Offer valid until stocks last. This list is not a live list and some products may no longer be available.",
+                "productIds": [
+                    {
+                        "data": [
+                            "30204",
+                            "32010",
+                            "31305(31305A)",
+                            "3806/215.9-XRS/HCC9/W281",
+                            "799/792",
+                            "K498/K492A"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "30205",
+                            "32016",
+                            "31306(31306X2A)",
+                            "380652-XRS/HCC9YB2/W281",
+                            "93775/93125",
+                            "K575/K572"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "30207",
+                            "32020",
+                            "31594SH/31520SH",
+                            "45284/45220",
+                            "HM903249/10",
+                            "K67790/K67720"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "30209",
+                            "32204",
+                            "32308B",
+                            "482/472",
+                            "K15106/15250X",
+                            "K749/K742"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "31307",
+                            "32205",
+                            "32936(32936X2A)",
+                            "495A/493",
+                            "K2788/2720",
+                            "K90381/K90744"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "32005",
+                            "32304",
+                            "32956(32956X2A)",
+                            "580/572",
+                            "K33281/K33462",
+                            "K93825/K93125"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "32006",
+                            "32305",
+                            "33287/33462",
+                            "598/593X",
+                            "K3490/K3420",
+                            "K99600/K99100"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "32007",
+                            "33012",
+                            "352052X2",
+                            "67790/67720",
+                            "K39581/20",
+                            "KHM88542/KHM88510"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "32008",
+                            "33206",
+                            "352215X2",
+                            "67885/67820",
+                            "K3984/K3920",
+                            "LM48548/LM48510"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "32009",
+                            "352130",
+                            "3806/215.9",
+                            "687/672",
+                            "K497/K493",
+                            "LM67048/10"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Spherical / Cylindrical Roller Bearings",
+                "id": 3,
+                "offerText": "One Time Offer valid until stocks last. This list is not a live list and some products may no longer be available.",
+                "productIds": [
+                    {
+                        "data": [
+                            "22209CAC3W33",
+                            "22309CAKC3W33",
+                            "22352CAW33",
+                            "24148CAC3W33",
+                            "N413M",
+                            "NU2208M(NU2208EM)"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22209CAKW33",
+                            "22310CAKW33",
+                            "23024CAKC3W33",
+                            "29244M",
+                            "N414M",
+                            "NU2210MC3(NU2210EMC3)"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22209CAW33",
+                            "22311CAKC3W33",
+                            "23028CAKW33",
+                            "29332M",
+                            "N415M",
+                            "NU2330M"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22210CAKW33",
+                            "22311CAKW33",
+                            "23028CAKW33C3",
+                            "N207M(N207EM)",
+                            "N416M",
+                            "NU2336M"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22210CAKW33C3",
+                            "22312CAKC3W33",
+                            "23038CAW33C3",
+                            "N210M",
+                            "N417M",
+                            "NU305M"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22211CAC3W33",
+                            "22313CAKW33",
+                            "23052CAC3W33",
+                            "N214M",
+                            "N418M",
+                            "NU336M"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22211CAW33",
+                            "22318CAKC3W33",
+                            "23056CAKW33",
+                            "N2316M",
+                            "N419M",
+                            "NU340M"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22211CC3W33",
+                            "22319CAKW33",
+                            "23080CAKC3W33",
+                            "N2317M",
+                            "N421M",
+                            "NU348M"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22213CAW33",
+                            "22319KMBW33",
+                            "23124CAKC3W33",
+                            "N2322E",
+                            "NJ1034M",
+                            "NU420M"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22213MBW33",
+                            "22320CAKW33",
+                            "23130CAKC3W33",
+                            "N232M",
+                            "NJ209M",
+                            "NU421M"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22214CAKC3W33",
+                            "22320CKC3W33",
+                            "23134CAC3W33",
+                            "N236M",
+                            "NJ219MC4(NJ219EMC4)",
+                            "NU424M"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22214CAKW33",
+                            "22322CAKC3W33",
+                            "23136CAW33",
+                            "N238M",
+                            "NJ2240M(NJ2240EM)",
+                            "NUP308M(NUP308EM)"
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22215CAW33C3",
+                            "22322KMBW33",
+                            "23226CAW33",
+                            "N240M",
+                            "NJ2332M",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22226MBW33",
+                            "22334KMBW33",
+                            "23238CAC3W33",
+                            "N330M",
+                            "NJ2340M",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22252CAKW33",
+                            "22334KMBW33C3",
+                            "23238CAW33",
+                            "N332M",
+                            "NJ336M",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22252CAKW33C3",
+                            "22336CAC3W33",
+                            "23252CAC3W33",
+                            "N334M",
+                            "NU1018M",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22252CAW33",
+                            "22336CAKC3W33",
+                            "23952CAW33",
+                            "N338M",
+                            "NU1064M",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22252CAW33C3",
+                            "22336MBW33",
+                            "24026CAC3W33",
+                            "N409M",
+                            "NU1068M",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22308CAC3W33",
+                            "22344CAC3W33",
+                            "24048CAW33",
+                            "N411M",
+                            "NU209M",
+                            ""
+                        ]
+                    },
+                    {
+                        "data": [
+                            "22308CAKC3W33",
+                            "22352CAC3W33",
+                            "24128CAW33",
+                            "N412M",
+                            "NU210M",
+                            ""
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

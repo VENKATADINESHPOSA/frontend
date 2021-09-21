@@ -1,0 +1,62 @@
+[
+    {
+        "heading": "New",
+        "products": [
+            {
+                "id": 1,
+                "name": "Standard Products",
+                "imgurl": "StandardBearing.png"
+            },
+            {
+                "id": 2,
+                "name": "Multirow Bearings",
+                "imgurl": "MetallurgyBearing.png"
+            },
+            {
+                "id": 3,
+                "name": "Slewing rim Bearings",
+                "imgurl": "slewing-ring-bearing.png"
+            }
+        ]
+    },
+    {
+        "heading": "Best Sellers",
+        "products": [
+            {
+                "id": 1,
+                "name": "Ball Bearings",
+                "imgurl": "new6.png"
+            },
+            {
+                "id": 2,
+                "name": "Tapered Roller Bearings",
+                "imgurl": "taperedRollerBearing.png"
+            },
+            {
+                "id": 3,
+                "name": "Spherical / Cylindrical Roller Bearing",
+                "imgurl": "new3.jpg"
+            }
+        ]
+    },
+    {
+        "heading": "Special Offer",
+        "products": [
+            {
+                "id": 1,
+                "name": "Ball Bearings",
+                "imgurl": "new6.png"
+            },
+            {
+                "id": 2,
+                "name": "Tapered Roller Bearings",
+                "imgurl": "taperedRollerBearing.png"
+            },
+            {
+                "id": 3,
+                "name": "Spherical / Cylindrical Roller Bearing",
+                "imgurl": "new3.jpg"
+            }
+        ]
+    }
+]
