@@ -1,0 +1,134 @@
+{
+    "new_product":[
+        {
+            "id":1,
+            "name": "MB Type SRB" ,
+            "imgurl" :"new1.jpg"
+        },
+        {
+            "id":2,
+            "name": "CA Srb Bearing" ,
+            "imgurl" :"new2.jpg"
+        },
+        {
+            "id":3,
+            "name": "Cylindrical Roller Bearing" ,
+            "imgurl" :"new3.jpg"
+        },
+        {
+            "id":4,
+            "name": "Self Aligning Bearing" ,
+            "imgurl" :"new4.jpg"
+        },
+        {
+            "id":5,
+            "name": "Trust Bearing" ,
+            "imgurl" :"new5.png"
+        },
+        {
+            "id":6,
+            "name": "ZZ Ball Bearing" ,
+            "imgurl" :"new6.png"
+        }
+    ],
+
+     "best_seller_product":[
+        {
+            "id":1,
+            "name": "CA Srb Bearing" ,
+            "imgurl" :"new2.jpg"
+        },
+        {
+            "id":2,
+            "name": "MB Type SRB" ,
+            "imgurl" :"new1.jpg"
+        },
+        
+        {
+            "id":3,
+            "name": "Cylindrical Roller Bearing" ,
+            "imgurl" :"new3.jpg"
+        },
+        {
+            "id":4,
+            "name": "Self Aligning Bearing" ,
+            "imgurl" :"new4.jpg"
+        },
+        {
+            "id":5,
+            "name": "Trust Bearing" ,
+            "imgurl" :"new5.png"
+        },
+        {
+            "id":6,
+            "name": "ZZ Ball Bearing" ,
+            "imgurl" :"new6.png"
+        }
+    ],
+     "featured_product":[
+        {
+            "id":1,
+            "name": "Cylindrical Roller Bearing" ,
+            "imgurl" :"new3.jpg"
+        },
+        {
+            "id":2,
+            "name": "MB Type SRB" ,
+            "imgurl" :"new1.jpg"
+        },
+        {
+            "id":3,
+            "name": "CA Srb Bearing" ,
+            "imgurl" :"new2.jpg"
+        },
+        
+        {
+            "id":4,
+            "name": "Self Aligning Bearing" ,
+            "imgurl" :"new4.jpg"
+        },
+        {
+            "id":5,
+            "name": "Trust Bearing" ,
+            "imgurl" :"new5.png"
+        },
+        {
+            "id":6,
+            "name": "ZZ Ball Bearing" ,
+            "imgurl" :"new6.png"
+        }
+    ],
+     "special_offer_product":[
+        {
+            "id":1,
+            "name": "MB Type SRB" ,
+            "imgurl" :"new1.jpg"
+        },
+        {
+            "id":2,
+            "name": "CA Srb Bearing" ,
+            "imgurl" :"new2.jpg"
+        },
+        {
+            "id":3,
+            "name": "Cylindrical Roller Bearing" ,
+            "imgurl" :"new3.jpg"
+        },
+        {
+            "id":4,
+            "name": "Self Aligning Bearing" ,
+            "imgurl" :"new4.jpg"
+        },
+        {
+            "id":5,
+            "name": "Trust Bearing" ,
+            "imgurl" :"new5.png"
+        },
+        {
+            "id":6,
+            "name": "ZZ Ball Bearing" ,
+            "imgurl" :"new6.png"
+        }
+    ]
+
+}

@@ -1,0 +1,32 @@
+.wrapper{
+    width: 100%;
+    max-width: 96%;
+}
+
+select,input[type="number"]{
+    border: none;
+    border-bottom: 1px solid #979797;
+    width: 100%;
+    margin-bottom: 15px;
+	padding-bottom: 6px;
+}
+
+textarea{
+    border: none;
+    border-bottom: 1px solid #979797;
+    width: 100%;
+    margin-bottom: 15px;
+}
+input[type="text"]{
+	margin-bottom: 15px;
+}
+
+.is_disabled{
+	height: 35px;
+	color: #fff;
+    width: 100%;
+	background: #979797;
+	border: #979797;
+	cursor: no-drop;
+}
+

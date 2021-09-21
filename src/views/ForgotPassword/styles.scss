@@ -1,0 +1,31 @@
+.main_container_forgot_password{
+	width: 100%;
+	overflow-x: hidden !important;
+
+
+}
+
+.forgot_pass_title_text{
+	font-size: 28px;
+    line-height: 40px;
+    font-weight: 600;
+    margin: 1.6% 0 1.6% 0;
+    margin-bottom: 30px;
+}
+.forgot_content_title{
+	font-size: 16px;
+	font-weight: 500;
+	text-align: left;
+	margin-bottom: 25px;
+}
+::placeholder {
+	color: #979797;
+}
+.password_container{
+	width: 380px;
+	border: solid 1px #979797;
+	height: auto;
+	padding: 14px;
+	padding-bottom: 14px;
+	float: left
+}

@@ -1,0 +1,28 @@
+[
+    {
+        "id":1,
+        "name": "Ball Bearings" ,
+        "imgurl" :"zz-ball-bearing.png"
+    },
+    {
+        "id":2,
+        "name": "Thurst Ball Bearings" ,
+        "imgurl" :"thrust-bearing.png"
+    },
+    {
+        "id":3,
+        "name": "Self Aligning Bearings" ,
+        "imgurl" :"self-aligning-bearing.jpg"
+    },
+    {
+        "id":4,
+        "name": "Spherical Roller Bearings" ,
+        "imgurl" :"ca-srb-bearing.jpg"
+    },
+    {
+        "id":5,
+        "name": "Cylindrical Roller Bearings" ,
+        "imgurl" :"cylindrical-roller-bearing.jpg"
+    }
+
+]

@@ -1,0 +1,76 @@
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 7px solid #ff0066!important;
+  border-bottom: 7px solid #fff;
+  border-left:  7px solid #ff0066!important;
+  border-right: 7px solid #fff;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.sorting{
+  font-weight: bold;
+}
+
+.rfq_table table{
+  width: 100%;
+}
+.sorting_desc{
+  font-weight: bold;
+}
+.loader-contanier{
+    position: fixed;
+    width: 100%;
+    height: 100%7;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(177, 172, 172, 0.6);
+    top: 0px;
+}
+
+.dataTables_filter{
+  text-align: right
+}
+
+.dataTables_filter label{
+  text-align: left
+}
+
+tbody + thead{
+  display: none;
+}
+.dataTables_wrapper .row{
+ flex-direction: row-reverse !important;
+}
+
+.dataTables_length{
+ text-align: right !important;
+ padding-right: 25px !important;
+}
+
+.dataTables_filter{
+ text-align: left !important;
+}
+
+.dataTables_length label{
+ text-align: left !important;
+}
+table thead tr th {
+  font-size: 14px;
+}
+table tbody tr td {
+  font-size: 12px;
+}

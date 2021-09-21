@@ -1,0 +1,20 @@
+.nod_login_header{
+	width: 100%;
+	height: 62px;
+	background-color: #00619f !important;
+}
+
+.nod_logo_img{
+	width: 105px;
+}
+
+.login_btn1{
+	height: 35px;
+  	background-color: #0072bc;
+  	border-color: #0072bc;
+  	color: #fff;
+  	width: 100%;
+  	&.disabled{
+  		opacity: 0.5;
+  	}
+}

@@ -1,0 +1,127 @@
+.footer_container{
+	width: 100%;
+	background-color: #f7f8fb;
+	height: auto;
+    padding: 15px;
+}
+
+.col:first-child {
+    margin-left: 0;
+}
+.span_3_of_12 {
+    width: 23.8%;
+    padding-left: 100px;
+}
+.span_3_of_12_1{
+	width: 23.8%;
+}
+.add-top-bottom {
+    margin: 3.2% 0 3.2% 1.6%;
+}
+.col {
+    display: grid;
+    float: left;
+}
+
+.h3-white {
+    text-transform: capitalize;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 18px;
+    color: #292b2c;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+.footer_logo {
+    margin-bottom: 20px;
+}
+.footer_space{
+    padding-bottom: 16px !important;
+}
+.dark_img{
+    max-width: 100%;
+    vertical-align: middle;
+    border-style: none;
+}
+.footer_p {
+    font-size: 14px;
+    color: #687188;
+    line-height: 28px;
+    margin-bottom: 25px;
+}
+.contact_info > li {
+    margin-bottom: 15px;
+    list-style: none;
+}
+.contact_info{
+    padding: 2px !important;
+}
+
+.widget_links > li {
+    margin-bottom: 15px;
+    list-style: none;
+}
+.widget_links{
+    padding: 2px !important;
+}
+.widget_links a{
+    color: #687188;
+    line-height: 28px;
+    margin-bottom: 25px;
+}
+.icon_style{
+    float: left;
+    font-size: 16px;
+    margin-top: 4px;
+    width: 5%;
+    color: #687188;
+}
+.border_line{
+    border-bottom-width: 1px;
+    color: #f7f8fb;
+    width: 98%;
+    height: 10px;
+    margin: auto;
+    border-top: 1px solid #ddd;
+}
+
+
+
+.contact_info p{
+    color: #687188;
+    line-height: 28px;
+    margin-bottom: 25px;
+}
+
+.footer_space{
+	padding-top: 25px;
+	padding-bottom: 40px;
+}
+.align_col{
+	float: left;
+}
+
+
+
+@media only screen and (min-width:320px) and (max-width:480px){
+
+    body{
+        width: 100% !important;
+    }
+
+    .contact_detail_container{
+        padding-left: 10px !important;
+    }
+
+    .office_detail_container{
+        padding-left: 10px !important;
+    }
+
+    .help_detail_container{
+        padding-left: 10px !important;
+    }
+
+    .connect_detail_container{
+        padding-left: 10px !important;
+    }
+}
