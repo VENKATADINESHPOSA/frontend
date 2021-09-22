@@ -1,0 +1,28 @@
+.about-banner-div {
+  display: flex;
+  height: 250px;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+.about-banner-first-section {
+  width: 50%;
+  display: inline;
+  padding-top: 2%;
+}
+.about-heading {
+  text-align: center;
+  color: #0c629f;
+}
+.about-text {
+  font-size: small;
+  color: #949494;
+}
+.about-banner-second-section {
+  width: 50%;
+  display: inline;
+}
+.about-banner-image {
+  display: block;
+  height: 100%;
+  margin-left: 25%;
+}

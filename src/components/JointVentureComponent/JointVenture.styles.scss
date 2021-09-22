@@ -1,0 +1,50 @@
+.joint-venture-div {
+  padding: 0px 100px 60px 100px;
+}
+.joint-venture-row {
+  padding-top: 50px;
+}
+.venture-icon-pic {
+  width: 25%;
+}
+.venture-heading {
+  padding-top: 15px;
+  color: #206fa7;
+}
+.venture-icon {
+  display: block;
+}
+.venture-company-names {
+  color: white;
+}
+.venture-company-card {
+  background-image: linear-gradient(
+    to right top,
+    #0c629f,
+    #105990,
+    #135082,
+    #144774,
+    #143f66
+  );
+  border-radius: 4px;
+  min-height: 350px;
+}
+.venture-images {
+  width: 100%;
+  border-radius: 4px 4px 0px 0px;
+  background-color: white;
+}
+.venture-name {
+  padding: 20px;
+}
+.venture-text {
+  font-size: small;
+  color: #ecf2f6;
+}
+.know-more-div {
+  padding: 20px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0px;
+}

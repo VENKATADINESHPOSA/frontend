@@ -1,0 +1,61 @@
+.active-slide {
+  height: 15px;
+  width: 15px;
+  background-color: #11578d;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  margin: 3px;
+}
+
+.in-active-slide {
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  margin: 3px;
+}
+.manufacturing-zones-div {
+  padding: 60px 100px 0px 60px;
+}
+.manufacturing-zones-icon {
+  width: 25%;
+}
+.zones-heading-div {
+  padding-top: 15px;
+}
+.zones-heading {
+  color: #206fa7;
+}
+.zones-text {
+  font-size: small;
+  color: #838383;
+}
+.zones-item-col {
+  color: white;
+}
+.zones-background-div {
+  background-image: linear-gradient(
+    to right top,
+    #0c629f,
+    #105990,
+    #135082,
+    #144774,
+    #143f66
+  );
+  border-radius: 4px;
+  height: 100%;
+}
+.zones-items-name {
+  padding: 20px;
+}
+.zones-items-text {
+  font-size: small;
+  color: #ecf2f6;
+}
+.dots-div {
+  margin-left: 25%;
+  text-align: center;
+}

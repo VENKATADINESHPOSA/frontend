@@ -1,0 +1,32 @@
+.zwz-china-div {
+  display: flex;
+  height: 250px;
+}
+.zwz-china-first-section {
+  width: 75%;
+  display: inline;
+}
+.zwz-china-pic {
+  width: 100%;
+  height: 100%;
+}
+.zwz-china-second-section {
+  width: 25%;
+  display: inline;
+  background-image: linear-gradient(
+    to right top,
+    #0c629f,
+    #105990,
+    #135082,
+    #144774,
+    #143f66
+  );
+}
+.zwz-china-heading {
+  margin: 16%;
+  color: #fefefe;
+}
+.zwz-china-text {
+  font-size: small;
+  color: #ecf2f6;
+}

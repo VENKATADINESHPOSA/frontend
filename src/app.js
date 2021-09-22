@@ -11,6 +11,7 @@ import Signup from '~/views/Signup'
 import ForgotPassword from '~/views/ForgotPassword'
 import Home from '~/views/Home'
 import UpdatedHome from './views/UpdatedHome/UpdatedHome.component';
+import UpdatedAboutComponent from './views/UpdatedAbout/UpdatedAbout.component';
 import Home1 from '~/views/Home1'
 import ProductCategory from '~/views/ProductCategory'
 import RFQ from '~/views/RFQ'
@@ -206,7 +207,7 @@ class App extends Component{
 						<Route exact path='/productDetail/ZWZ:itemId' component={ProductCategory2} />
 						<Route exact path='/cart' component={Cart} />
 						<Route exact path='/shipping' component={Shipping} />
-						<Route exact path='/about' component={About} />
+						<Route exact path='/about' component={UpdatedAboutComponent} />
 						<Route exact path='/privacy-policy' component={privacyPolicy} />
 						<Route exact path='/terms-condition' component={termsCondition} />
 						<Route exact path='/forget-password-nod' component={ForgotPasswordNOD} />
