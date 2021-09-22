@@ -1,0 +1,53 @@
+.new-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-modal-content {
+  background-color: #fff;
+  margin-top: 170px;
+  border-radius: 4px;
+}
+
+.new-modal-header,
+.new-modal-footer {
+  padding: 10px;
+  text-align: center;
+}
+
+.new-modal-title {
+  margin: 0;
+}
+
+.new-modal-body {
+  padding: 10px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  height: 65vh;
+  overflow-y: auto;
+  border-radius: 4px;
+}
+
+.react-pdf__Page {
+  margin-top: 10px;
+}
+.react-pdf__Page__textContent {
+  border: 1px solid darkgrey;
+  box-shadow: 5px 5px 5px 1px #ccc;
+  border-radius: 5px;
+}
+
+.react-pdf__Page__annotations.annotationLayer {
+  padding: 20px;
+}
+
+.react-pdf__Page__canvas {
+  margin: 0 auto;
+}

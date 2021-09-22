@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "Ceat",
+        "imgUrl": "Ceat.png"
+    },
+    {
+        "id": 2,
+        "name": "Sew",
+        "imgUrl": "Sew.png"
+    },
+    {
+        "id": 3,
+        "name": "Sms",
+        "imgUrl": "Sms.png"
+    },
+    {
+        "id": 4,
+        "name": "Danieli",
+        "imgUrl": "Danieli.png"
+    },
+    {
+        "id": 5,
+        "name": "Siemens",
+        "imgUrl": "Siemens.png"
+    }
+]
