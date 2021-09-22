@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Diverse",
+        "imgurl": "Diverse.png"
+    },
+    {
+        "id": 2,
+        "name": "Range",
+        "imgurl": "Range.png"
+    },
+    {
+        "id": 3,
+        "name": "Value",
+        "imgurl": "Value.png"
+    },
+    {
+        "id": 4,
+        "name": "Large",
+        "imgurl": "Large.png"
+    }
+]

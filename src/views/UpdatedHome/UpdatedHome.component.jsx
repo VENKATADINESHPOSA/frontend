@@ -6,6 +6,7 @@ import BannerImage from "../../components/ImageComponent/BannerImage.component";
 import AboutUs from "../../components/AboutUsComponent/AboutUs.component";
 import FeaturedItems from "../../components/FeaturedItemsComponent/FeaturedItems.component";
 import BearingDetails from "../../components/BearingDetailsComponent/BearingDetails.component";
+import CompanyValues from "../../components/CompanyValuesComponent/CompanyValues.component";
 
 const UpdatedHome = (props) => {
   const [showKnowmore, setshowKnowmore] = useState(false);
@@ -36,6 +37,7 @@ const UpdatedHome = (props) => {
         setItemId={setItemId}
         setHeading={setHeading}
       />
+      <CompanyValues />
     </div>
   );
 };
