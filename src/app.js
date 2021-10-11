@@ -188,7 +188,7 @@ class App extends Component{
 		return(
 				<React.Fragment>
 					<Switch>
-						<Route exact path='/' component={Home} />
+						<Route exact path='/' component={UpdatedHome} />
 						<Route exact path='/login-type' component={LoginType} />
 						/*<Route exact path='/home' component={UpdatedHome} />*/
 						<Route exact path='/login' component={Login} />

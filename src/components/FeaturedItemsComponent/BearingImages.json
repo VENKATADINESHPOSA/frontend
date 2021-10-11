@@ -4,17 +4,17 @@
         "products": [
             {
                 "id": 1,
-                "name": "Standard Products",
+                "name": "Standard",
                 "imgurl": "StandardBearing.png"
             },
             {
                 "id": 2,
-                "name": "Multirow Bearings",
+                "name": "Multirow",
                 "imgurl": "MetallurgyBearing.png"
             },
             {
                 "id": 3,
-                "name": "Slewing rim Bearings",
+                "name": "Slewing Rim",
                 "imgurl": "slewing-ring-bearing.png"
             }
         ]
@@ -34,7 +34,7 @@
             },
             {
                 "id": 3,
-                "name": "Spherical / Cylindrical Roller Bearing",
+                "name": "Spherical / Cylindrical Roller Bearings",
                 "imgurl": "new3.jpg"
             }
         ]
@@ -54,7 +54,7 @@
             },
             {
                 "id": 3,
-                "name": "Spherical / Cylindrical Roller Bearing",
+                "name": "Spherical / Cylindrical Roller Bearings",
                 "imgurl": "new3.jpg"
             }
         ]

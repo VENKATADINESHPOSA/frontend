@@ -36,7 +36,7 @@ const ManufacturingZones = () => {
               <strong>ZWZ Manufacturing Zones</strong>
             </h5>
             <p className="zones-text">
-              ZWZ manufacturing facilities are spread over 6 Industrial Zones in
+              ZWZ manufacturing facilities are spread over 6 industrial zones in
               China. There are 22 production plants within these 6 zones. The
               six zones are as follows.
             </p>
@@ -63,6 +63,7 @@ const ManufacturingZones = () => {
         <span
           className={activeCircle === 2 ? "active-slide" : "in-active-slide"}
           onClick={() => handleClick(secondThreeZones, 2)}
+          style={{ marginLeft: "15px" }}
         ></span>
       </div>
     </div>

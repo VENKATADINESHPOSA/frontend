@@ -1,28 +1,21 @@
-.about-banner-div {
-  display: flex;
-  height: 250px;
-  margin-right: 5%;
-  margin-left: 5%;
-}
 .about-banner-first-section {
-  width: 50%;
-  display: inline;
-  padding-top: 2%;
+  padding: 25px 0px 0px 85px;
 }
 .about-heading {
   text-align: center;
   color: #0c629f;
 }
 .about-text {
-  font-size: small;
+  font-size: medium;
   color: #949494;
 }
-.about-banner-second-section {
-  width: 50%;
-  display: inline;
-}
-.about-banner-image {
-  display: block;
-  height: 100%;
+.banner-image-about {
+  width: 375px;
+  height: auto;
   margin-left: 25%;
+}
+.about-banner {
+  margin-top: 180px;
+  padding: 0px 30px 30px 30px;
+  background-color: #f7f7f7;
 }

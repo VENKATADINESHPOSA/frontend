@@ -14,9 +14,7 @@ const UpdatedAbout = (props) => {
   return (
     <div className="about-div">
       <Header {...props} />
-      <div className="about-banner">
-        <AboutBanner />
-      </div>
+      <AboutBanner />
       <ZWZChina />
       <ManufacturingZones />
       <JointVenture />

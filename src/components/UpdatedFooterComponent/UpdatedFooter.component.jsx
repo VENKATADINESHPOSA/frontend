@@ -48,7 +48,7 @@ const Footer = () => {
                 />
               </Col>
               <Col sm="10" style={{ fontSize: "14px", color: "#7e7e7e" }}>
-                615 Raheja Chambers 213 Nariman Point Mumbai, Maharashtra
+                615 Raheja Chambers 213 Nariman Point, Mumbai, Maharashtra.
               </Col>
             </Row>
             <Row style={{ padding: "5px 0" }}>
