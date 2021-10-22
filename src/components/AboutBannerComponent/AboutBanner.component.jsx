@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./AboutBanner.styles.scss";
 import { Button, Row, Col } from "reactstrap";
 // import Modal from "../FooterModalComponent/FooterModal.component";
