@@ -16,6 +16,7 @@ import Signup from "~/views/Signup";
 import ForgotPassword from "~/views/ForgotPassword";
 import Home from "~/views/Home";
 import UpdatedNodHomeComponent from "./views/UpdatedNodHome/UpdatedNodHome.component";
+import UpdatedNodAboutUsComponent from "./views/UpdatedNodAboutUs/UpdatedNodAboutUs.component";
 import UpdatedHome from "./views/UpdatedHome/UpdatedHome.component";
 import UpdatedAboutComponent from "./views/UpdatedAbout/UpdatedAbout.component";
 import Home1 from "~/views/Home1";
@@ -45,6 +46,8 @@ import Registeraddress from "~/views/Signup/register";
 import ListingPage from "~/views/ListingPage";
 
 import "./app.scss";
+import KoyoPage from "./views/KoyoPage/KoyoPage.component";
+import DpiPageComponent from "./views/DpiPage/DpiPage.component";
 
 var hostname = window.location.hostname;
 
@@ -222,6 +225,13 @@ class App extends Component {
           <Route exact path="/listing" component={ListingPage} />
           <Route exact path="/register" component={Registeraddress} />
           <Route exact path="/nodHome" component={UpdatedNodHomeComponent} />
+          <Route
+            exact
+            path="/nodAbout"
+            component={UpdatedNodAboutUsComponent}
+          />
+          <Route exact path="/koyo" component={KoyoPage} />
+          <Route exact path="/dpi" component={DpiPageComponent} />
         </Switch>
       </React.Fragment>
     );
