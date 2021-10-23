@@ -48,6 +48,7 @@ import ListingPage from "~/views/ListingPage";
 import "./app.scss";
 import KoyoPage from "./views/KoyoPage/KoyoPage.component";
 import DpiPageComponent from "./views/DpiPage/DpiPage.component";
+import NodContactUsPageComponent from "./views/NodContactUsPage/NodContactUsPage.component";
 
 var hostname = window.location.hostname;
 
@@ -225,6 +226,7 @@ class App extends Component {
           <Route exact path="/listing" component={ListingPage} />
           <Route exact path="/register" component={Registeraddress} />
           <Route exact path="/nodHome" component={UpdatedNodHomeComponent} />
+          <Route exact path="/nodContact" component={NodContactUsPageComponent} />
           <Route
             exact
             path="/nodAbout"
