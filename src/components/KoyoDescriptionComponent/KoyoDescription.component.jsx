@@ -6,9 +6,8 @@ const KoyoDescription = () => {
     <div className="koyo-description-div">
       <h1 className="koyo-page-heading">Koyo</h1>
       <p className="koyo-page-text">
-        NOD Bearings Pvt. Ltd. is the leading distributor of Koyo in United Arab
-        Emirates and associated with Koyo Seiko Co. Ltd since 1969 covering over
-        50 years.
+        NOD Bearings Pvt. Ltd. is the National Distributor of Koyo in India. We
+        are celebrating over 50 years working with Koyo.
       </p>
     </div>
   );

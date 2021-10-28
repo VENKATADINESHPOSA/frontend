@@ -9,6 +9,18 @@ const DpiDescription = () => {
         NOD Bearings Pvt. Ltd. are the Owners, Manufacturers and Exclusive
         Distributors Worldwide for DPI Bearings.
       </p>
+      <p className="dpi-page-text">For further information Please visit :</p>
+      <div
+        style={{ textAlign: "center", fontWeight: "bold", fontSize: "x-large" }}
+      >
+        <a
+          href="http://dpibearings.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          www.dpibearings.com
+        </a>
+      </div>
     </div>
   );
 };

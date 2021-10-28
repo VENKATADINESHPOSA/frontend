@@ -24,40 +24,55 @@ const NodBrandsSection = () => {
             <img
               className="koyo-image"
               alt="koyo-pic"
-              style={{ width: "75%", paddingTop: "13px" }}
+              style={{ width: "75%", paddingTop: "13px", cursor: "pointer" }}
               src={require(`~/assets/NewImages/brands/koyo.png`)}
+              onClick={(event) => (window.location.href = "/koyo")}
             />
           </Col>
           <Col sm>
             <img
               className="dpi-image"
               alt="dpi-pic"
-              style={{ width: "75%", paddingTop: "10px" }}
+              style={{ width: "75%", paddingTop: "10px", cursor: "pointer" }}
               src={require(`~/assets/NewImages/brands/dpi.png`)}
+              onClick={(event) => (window.location.href = "/dpi")}
             />
           </Col>
           <Col sm>
             <img
               className="zwz-image"
               alt="zwz-pic"
-              style={{ width: "75%", marginLeft: "13px" }}
+              style={{ width: "75%", marginLeft: "13px", cursor: "pointer" }}
               src={require(`~/assets/NewImages/brands/zwz.png`)}
+              onClick={(event) => (window.location.href = "/zwz")}
             />
           </Col>
           <Col sm>
             <img
               className="iko-image"
               alt="iko-pic"
-              style={{ width: "75%", paddingTop: "20px", marginLeft: "15px" }}
+              style={{
+                width: "75%",
+                paddingTop: "20px",
+                marginLeft: "15px",
+                cursor: "pointer",
+              }}
               src={require(`~/assets/NewImages/brands/iko.png`)}
+              onClick={(event) => (window.location.href = "/iko")}
             />
           </Col>
           <Col sm>
             <img
               className="wzwn-image"
               alt="wzwn-pic"
-              style={{ width: "90%", paddingTop: "20px", marginLeft: "25px" }}
+              style={{
+                width: "90%",
+                paddingTop: "20px",
+                marginLeft: "25px",
+                cursor: "pointer",
+              }}
               src={require(`~/assets/NewImages/brands/wzwn.png`)}
+              onClick={(event) => (window.location.href = "/wzwn")}
             />
           </Col>
         </Row>
@@ -89,7 +104,11 @@ const NodBrandsSection = () => {
               </p>
             </div>
             <div style={{ textAlign: "center", paddingBottom: "20px" }}>
-              <Button color="primary" style={{ textTransform: "none" }}>
+              <Button
+                color="primary"
+                style={{ textTransform: "none" }}
+                onClick={(event) => (window.location.href = "/signup")}
+              >
                 Sign Up
               </Button>
             </div>

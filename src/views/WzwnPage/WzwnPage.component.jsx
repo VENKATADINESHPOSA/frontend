@@ -1,16 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
-import "./DpiPage.styles.scss";
+import "./wzwnPage.styles.scss";
 import Header from "~/components/Header";
 import Copyright from "../../components/CopyrightComponent/Copyright.component";
 import FooterNod from "../../components/FooterNodComponent/FooterNod.component";
-import DpiDescription from "../../components/DpiDescription/DpiDescription.component";
-
-const DpiPage = (props) => {
+import WzwnDescription from "../../components/WzwnDescriptionComponent/WzwnDescription.component";
+const WzwnPage = (props) => {
   return (
-    <div className="dpi-page-div">
+    <div className="wzwn-page-div">
       <Header {...props} />
-      <DpiDescription />
+      <WzwnDescription />
       <FooterNod />
       <Copyright />
     </div>
@@ -24,4 +23,4 @@ export default connect((state) => ({
   ...state.cartItemVal,
   ...state.updateCartItemData,
   ...state.removeCartData,
-}))(DpiPage);
+}))(WzwnPage);

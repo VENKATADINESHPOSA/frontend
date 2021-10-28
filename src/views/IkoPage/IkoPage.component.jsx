@@ -1,16 +1,23 @@
 import React from "react";
 import { connect } from "react-redux";
-import "./DpiPage.styles.scss";
+import "./IkoPage.styles.scss";
 import Header from "~/components/Header";
 import Copyright from "../../components/CopyrightComponent/Copyright.component";
 import FooterNod from "../../components/FooterNodComponent/FooterNod.component";
-import DpiDescription from "../../components/DpiDescription/DpiDescription.component";
+import Iframe from "../../components/IframeComponent/Iframe.component";
+import IkoDescription from "../../components/IkoDescriptionComponent/IkoDescription.component";
 
-const DpiPage = (props) => {
+const IkoPage = (props) => {
   return (
-    <div className="dpi-page-div">
+    <div className="iko-page-div">
       <Header {...props} />
-      <DpiDescription />
+      <IkoDescription />
+      <Iframe
+        src="https://www.ikont.com/"
+        height="500"
+        width="100%"
+        title="koyo"
+      />
       <FooterNod />
       <Copyright />
     </div>
@@ -24,4 +31,4 @@ export default connect((state) => ({
   ...state.cartItemVal,
   ...state.updateCartItemData,
   ...state.removeCartData,
-}))(DpiPage);
+}))(IkoPage);

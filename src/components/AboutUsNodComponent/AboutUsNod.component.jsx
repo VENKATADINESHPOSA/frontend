@@ -13,7 +13,11 @@ const AboutUsNod = () => {
         looking for.
       </p>
       <div className="nod-about-us-button-div">
-        <Button color="primary" style={{ textTransform: "none" }}>
+        <Button
+          color="primary"
+          style={{ textTransform: "none" }}
+          onClick={(event) => (window.location.href = "/nodAbout")}
+        >
           Know More
         </Button>
       </div>

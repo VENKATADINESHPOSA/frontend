@@ -48,9 +48,18 @@ import ListingPage from "~/views/ListingPage";
 import "./app.scss";
 import KoyoPage from "./views/KoyoPage/KoyoPage.component";
 import DpiPageComponent from "./views/DpiPage/DpiPage.component";
+import ZwzPageComponent from "./views/ZwzPage/ZwzPage.component";
 import NodContactUsPageComponent from "./views/NodContactUsPage/NodContactUsPage.component";
+import WzwnPageComponent from "./views/WzwnPage/WzwnPage.component";
+import IkoPageComponent from "./views/IkoPage/IkoPage.component";
+import UpdatedHomeComponent from "./views/UpdatedHome/UpdatedHome.component";
 
 var hostname = window.location.hostname;
+let HomePage;
+console.log("app.js", hostname);
+hostname === "localhost" || hostname === "nod.prtouch.com"
+  ? (HomePage = UpdatedNodHomeComponent)
+  : (HomePage = UpdatedHomeComponent);
 
 class App extends Component {
   constructor(props) {
@@ -183,10 +192,10 @@ class App extends Component {
     return (
       <React.Fragment>
         <Switch>
-          <Route exact path="/" component={UpdatedHome} />
+          <Route exact path="/" component={HomePage} />
           <Route exact path="/login-type" component={LoginType} />
           /*
-          <Route exact path="/home" component={UpdatedHome} />
+          <Route exact path="/home" component={HomePage} />
           */
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
@@ -226,7 +235,11 @@ class App extends Component {
           <Route exact path="/listing" component={ListingPage} />
           <Route exact path="/register" component={Registeraddress} />
           <Route exact path="/nodHome" component={UpdatedNodHomeComponent} />
-          <Route exact path="/nodContact" component={NodContactUsPageComponent} />
+          <Route
+            exact
+            path="/nodContact"
+            component={NodContactUsPageComponent}
+          />
           <Route
             exact
             path="/nodAbout"
@@ -234,6 +247,9 @@ class App extends Component {
           />
           <Route exact path="/koyo" component={KoyoPage} />
           <Route exact path="/dpi" component={DpiPageComponent} />
+          <Route exact path="/zwz" component={ZwzPageComponent} />
+          <Route exact path="/wzwn" component={WzwnPageComponent} />
+          <Route exact path="/iko" component={IkoPageComponent} />
         </Switch>
       </React.Fragment>
     );

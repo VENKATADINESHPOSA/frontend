@@ -1,16 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
-import "./DpiPage.styles.scss";
+import "./zwzPage.styles.scss";
 import Header from "~/components/Header";
 import Copyright from "../../components/CopyrightComponent/Copyright.component";
 import FooterNod from "../../components/FooterNodComponent/FooterNod.component";
-import DpiDescription from "../../components/DpiDescription/DpiDescription.component";
+import ZwzDescription from "../../components/ZwzDescriptionComponent/ZwzDescription.component";
 
-const DpiPage = (props) => {
+const ZwzPage = (props) => {
   return (
-    <div className="dpi-page-div">
+    <div className="zwz-page-div">
       <Header {...props} />
-      <DpiDescription />
+      <ZwzDescription />
       <FooterNod />
       <Copyright />
     </div>
@@ -24,4 +24,4 @@ export default connect((state) => ({
   ...state.cartItemVal,
   ...state.updateCartItemData,
   ...state.removeCartData,
-}))(DpiPage);
+}))(ZwzPage);

@@ -27,55 +27,68 @@ const NodContactComponent = () => {
           <form>
             <Grid container spacing={1}>
               <Grid xs={12} sm={6} item>
-                <TextField
-                  label="First Name"
-                  placeholder="Enter your first name"
-                  variant="outlined"
-                  fullWidth
-                  required
-                  classes={{ borderBottom: "0px" }}
-                />
+                <div className="form-div">
+                  <input
+                    type="text"
+                    name="first-name"
+                    required
+                    autoComplete="off"
+                  />
+                  <label for="first-name" className="label-name">
+                    <span className="content-name">First Name</span>
+                  </label>
+                </div>
               </Grid>
               <Grid xs={12} sm={6} item>
-                <TextField
-                  label="Last Name"
-                  placeholder="Enter your Last Name"
-                  variant="outlined"
-                  fullWidth
-                  required
-                />
+                <div className="form-div">
+                  <input
+                    type="text"
+                    name="last-name"
+                    required
+                    autoComplete="off"
+                  />
+                  <label for="last-name" className="label-name">
+                    <span className="content-name">Last Name</span>
+                  </label>
+                </div>
               </Grid>
               <Grid xs={12} item>
-                <TextField
-                  label="Email"
-                  type="email"
-                  placeholder="Enter your email"
-                  variant="outlined"
-                  fullWidth
-                  required
-                />
+                <div className="form-div">
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    autoComplete="off"
+                  />
+                  <label for="email" className="label-name">
+                    <span className="content-name">Email</span>
+                  </label>
+                </div>
               </Grid>
               <Grid xs={12} item>
-                <TextField
-                  label="Phone Number"
-                  type="number"
-                  placeholder="Enter your phone number"
-                  variant="outlined"
-                  fullWidth
-                  required
-                  disableUnderline={true}
-                />
+                <div className="form-div">
+                  <input
+                    type="number"
+                    name="phone-number"
+                    required
+                    autoComplete="off"
+                  />
+                  <label for="phone-number" className="label-name">
+                    <span className="content-name">Phone Number</span>
+                  </label>
+                </div>
               </Grid>
               <Grid xs={12} item>
-                <TextField
-                  label="Message"
-                  placeholder="Type your message here."
-                  variant="outlined"
-                  fullWidth
-                  required
-                  multiline
-                  rows={4}
-                />
+                <div>
+                  <label for="message">Message:</label>
+                  <textarea
+                    rows="4"
+                    name="message"
+                    required
+                    autoComplete="off"
+                    style={{ outlineColor: "#5fa8d3" }}
+                  ></textarea>
+                </div>
               </Grid>
               <Grid xs={12} item>
                 <Button
