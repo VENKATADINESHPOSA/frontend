@@ -129,7 +129,7 @@ class Login extends Component {
 		if (hostname == "localhost" || hostname == "nod.prtouch.com") {
 			url = 'http://apinod.prtouch.com:8081/api/add_item/'	    
 		}else{
-			url = 'http://apizwz.prtouch.com:8081/api/add_item/'	
+			url = 'http://apistore.zwz.co.in/api/add_item/'	
 		}
 
 		for(var i = 0 ; i < this.props.cart.length ; i++){
@@ -177,7 +177,7 @@ class Login extends Component {
 	    	console.log(response);
 	    	
 	    	/*this.props.history.push('/cart');
-	    	if (window.location.href === 'http://nod.prtouch.com:8081/cart' || window.location.href === 'http://zwz.prtouch.com:8081/cart' ){
+	    	if (window.location.href === 'http://nod.prtouch.com:8081/cart' || window.location.href === 'http://store.zwz.co.in/cart' ){
 	    			window.location.reload();
 	    	}*/
 	    	/*window.location.reload();*/
@@ -287,7 +287,7 @@ class Login extends Component {
 
 		console.log(window.location.href);
 
-		if (window.location.href === "http://zwz.prtouch.com:8081/login#" || window.location.href === "http://localhost:3000/login" || window.location.href === "http://zwz.prtouch.com:8081/login" ) {
+		if (window.location.href === "http://store.zwz.co.in/login#" || window.location.href === "http://localhost:3000/login" || window.location.href === "http://store.zwz.co.in/login" ) {
 
 			const response = await login({
 			username: this.state.username,

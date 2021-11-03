@@ -260,12 +260,12 @@ class Signup extends Component {
     		return false;
     	}
 		
-		if (window.location.href === "http://zwz.prtouch.com:8081/signup#" || window.location.href === "http://zwz.prtouch.com:8081/signup" ) {
-			this.state.api_url = "http://apizwz.prtouch.com:8081/authentication/user/signup/";
+		if (window.location.href === "http://store.zwz.co.in/signup#" || window.location.href === "http://store.zwz.co.in/signup" ) {
+			this.state.api_url = "http://apistore.zwz.co.in/authentication/user/signup/";
 		}else if(window.location.href === "http://nod.prtouch.com:8081/signup#" || window.location.href === "http://nod.prtouch.com:8081/signup" || window.location.href === "http://localhost:3000/signup#" || window.location.href === "http://localhost:3000/signup"){
 			this.state.api_url = "http://apinod.prtouch.com/authentication/user/signup/";
 		}else{
-			this.state.api_url = "http://apizwz.prtouch.com:8081/authentication/user/signup/";
+			this.state.api_url = "http://apistore.zwz.co.in/authentication/user/signup/";
 		}
 
 		localStorage.setItem('emailforverification', this.state.email);

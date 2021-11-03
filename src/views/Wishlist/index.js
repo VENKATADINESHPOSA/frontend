@@ -66,7 +66,7 @@ class Wishlist extends Component {
 			reference_num: sessionStorage.getItem('reference_number')
 		})
 
-		if (window.location.href === 'http://zwz.prtouch.com:8081/product-category') {
+		if (window.location.href === 'http://store.zwz.co.in/product-category') {
 		console.log(this.props.product)
 		var ProductData = sessionStorage.getItem('product_data');
 		var ProductData1 = JSON.parse(ProductData);
@@ -217,7 +217,7 @@ class Wishlist extends Component {
 			}))
 		}*/
 
-		if (window.location.href==="http://zwz.prtouch.com:8081/product-category" || window.location.href==="http://localhost:3000/product-category" ) {
+		if (window.location.href==="http://store.zwz.co.in/product-category" || window.location.href==="http://localhost:3000/product-category" ) {
 
 		if (this.props.isLoggedIn) {
 

@@ -78,7 +78,7 @@ class OrderPlaced extends Component {
 			left_data : JSON.parse(localStorage.getItem('left_cart_data'))
 		})
 
-		if (window.location.href === 'http://zwz.prtouch.com:8081/product-category') {
+		if (window.location.href === 'http://store.zwz.co.in/product-category') {
 		console.log(this.props.product)
 		var ProductData = localStorage.getItem('product_data');
 		var ProductData1 = JSON.parse(ProductData);
@@ -104,7 +104,7 @@ class OrderPlaced extends Component {
 
 
 
-		axios.post('http://apizwz.prtouch.com:8081/api/item_availability/', {
+		axios.post('http://apistore.zwz.co.in/api/item_availability/', {
 	    	"searching_key": ProductData1.itemname[0]
 	    }
 
@@ -233,7 +233,7 @@ class OrderPlaced extends Component {
 			}))
 		}*/
 
-		if (window.location.href==="http://zwz.prtouch.com:8081/product-category" || window.location.href==="http://localhost:3000/product-category" ) {
+		if (window.location.href==="http://store.zwz.co.in/product-category" || window.location.href==="http://localhost:3000/product-category" ) {
 
 		if (this.props.isLoggedIn) {
 
@@ -248,7 +248,7 @@ class OrderPlaced extends Component {
 		    arr.push(orderData);
 
 
-		axios.post('http://apizwz.prtouch.com:8081/api/add_item/' , 
+		axios.post('http://apistore.zwz.co.in/api/add_item/' , 
 
 		 {
 		 	

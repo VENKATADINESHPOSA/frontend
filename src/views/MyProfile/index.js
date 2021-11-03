@@ -98,13 +98,13 @@ class MyProfile extends Component {
   			return false;
   		}
   		var url=''
-		if ( window.location.href === "http://zwz.prtouch.com:8081/my-profile" || window.location.href === "http://zwz.prtouch.com:8081/my-profile#"){
-			url="http://apizwz.prtouch.com:8081/authentication/user/createDeliveryAddress/"
+		if ( window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#"){
+			url="http://apistore.zwz.co.in/authentication/user/createDeliveryAddress/"
 		}
 		else if(window.location.href === "http://nod.prtouch.com:8081/my-profile" || window.location.href === "http://nod.prtouch.com:8081/my-profile#" || window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#"){
 			url="http://apinod.prtouch.com:8081/authentication/user/createDeliveryAddress/"
 		}else{
-			url="http://apizwz.prtouch.com:8081/authentication/user/createDeliveryAddress/"
+			url="http://apistore.zwz.co.in/authentication/user/createDeliveryAddress/"
 		}
 		
 			axios(url,
@@ -153,9 +153,9 @@ class MyProfile extends Component {
 	}
 
 	oncityList(statename){
-		if (window.location.href === "http://zwz.prtouch.com:8081/shipping/" || window.location.href === "http://zwz.prtouch.com:8081/shipping" || window.location.href === "http://zwz.prtouch.com:8081/shipping#" || window.location.href === "http://localhost:3000/shipping/" || window.location.href === "http://localhost:3000/shipping#" || window.location.href === "http://localhost:3000/shipping" ) 
+		if (window.location.href === "http://store.zwz.co.in/shipping/" || window.location.href === "http://store.zwz.co.in/shipping" || window.location.href === "http://store.zwz.co.in/shipping#" || window.location.href === "http://localhost:3000/shipping/" || window.location.href === "http://localhost:3000/shipping#" || window.location.href === "http://localhost:3000/shipping" ) 
 		{
-			axios('http://apizwz.prtouch.com:8081/authentication/city_list/',
+			axios('http://apistore.zwz.co.in/authentication/city_list/',
 				{
 				method: 'POST',
 				headers: {
@@ -268,13 +268,13 @@ class MyProfile extends Component {
 			billingcityId:'',
 		});
 		var url=''
-		if (window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://zwz.prtouch.com:8081/my-profile" || window.location.href === "http://zwz.prtouch.com:8081/my-profile#"){
-			url="http://apizwz.prtouch.com:8081/authentication/city_list/"
+		if (window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#"){
+			url="http://apistore.zwz.co.in/authentication/city_list/"
 		}
 		else if(window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://nod.prtouch.com:8081/my-profile" || window.location.href === "http://nod.prtouch.com:8081/my-profile#"){
 			url="http://apinod.prtouch.com:8081/authentication/city_list/"
 		}else{
-			url="http://apizwz.prtouch.com:8081/authentication/city_list/"
+			url="http://apistore.zwz.co.in/authentication/city_list/"
 		}
 			axios.post(url , 
 		 	{
@@ -331,12 +331,12 @@ class MyProfile extends Component {
 	updateBillingInformation(e){
 		e.preventDefault()
 		var billing_url=""
-		if(window.location.href === "http://zwz.prtouch.com:8081/my-profile" || window.location.href === "http://zwz.prtouch.com:8081/my-profile#" || window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#") {
-			billing_url = "http://apizwz.prtouch.com:8081/authentication/update_get_info/" 
+		if(window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#" || window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#") {
+			billing_url = "http://apistore.zwz.co.in/authentication/update_get_info/" 
 		}else if(window.location.href === "http://nod.prtouch.com:8081/my-profile" || window.location.href === "http://nod.prtouch.com:8081/my-profile#" || window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#") {
 			billing_url = "http://apinod.prtouch.com:8081/authentication/update_get_info/"
 		}else{
-			billing_url = "http://apizwz.prtouch.com:8081/authentication/update_get_info/"
+			billing_url = "http://apistore.zwz.co.in/authentication/update_get_info/"
 		}
 			if (this.state.billingaddress == "") {
 				 cogoToast.error('Please Enter Billing Address');
@@ -385,15 +385,15 @@ class MyProfile extends Component {
 	updateProfileInformation(e){
 		e.preventDefault()
 		var url=''
-		if (window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://zwz.prtouch.com:8081/my-profile" || window.location.href === "http://zwz.prtouch.com:8081/my-profile#"){
-			url="http://apizwz.prtouch.com:8081/authentication/update_get_info/"
+		if (window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#"){
+			url="http://apistore.zwz.co.in/authentication/update_get_info/"
 		}
 		else if(window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://nod.prtouch.com:8081/my-profile" || window.location.href === "http://nod.prtouch.com:8081/my-profile#"){
 			url="http://apinod.prtouch.com:8081/authentication/update_get_info/"
 		}else{
-			url="http://apizwz.prtouch.com:8081/authentication/update_get_info/"
+			url="http://apistore.zwz.co.in/authentication/update_get_info/"
 		}
-		/*if(window.location.href === "http://zwz.prtouch.com:8081/my-profile" || window.location.href === "http://zwz.prtouch.com:8081/my-profile#" || window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#") {*/
+		/*if(window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#" || window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#") {*/
 			if (this.state.gstNumber == "") {
 				this.setState({
 					error1: true,
@@ -458,7 +458,7 @@ class MyProfile extends Component {
 
 	updateProfile(){
 		var url=''
-		if (window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://zwz.prtouch.com:8081/my-profile" || window.location.href === "http://zwz.prtouch.com:8081/my-profile#"){
+		if (window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#"){
 			url="http://apizwz.prtouch.com/authentication/update_get_info/"
 		}
 		else if(window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://nod.prtouch.com:8081/my-profile" || window.location.href === "http://nod.prtouch.com:8081/my-profile#"){
@@ -466,7 +466,7 @@ class MyProfile extends Component {
 		}else{
 			url="http://apizwz.prtouch.com/authentication/update_get_info/"
 		}
-		/*if(window.location.href === "http://zwz.prtouch.com:8081/my-profile" || window.location.href === "http://zwz.prtouch.com:8081/my-profile#" || window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#") {*/
+		/*if(window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#" || window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#") {*/
 			if (this.state.gstNumber == "") {
 				this.setState({
 					error1: true,
@@ -566,7 +566,7 @@ class MyProfile extends Component {
 		}*/
 	}
 	async statelist(e){	
-		if (window.location.href === "http://zwz.prtouch.com:8081/my-profile#" || window.location.href === "http://zwz.prtouch.com:8081/my-profile" || window.location.href=="http://localhost:3000/my-profile" ) {
+		if (window.location.href === "http://store.zwz.co.in/my-profile#" || window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href=="http://localhost:3000/my-profile" ) {
 			var url = "http://apizwz.prtouch.com/authentication/state_list/";
 		} else if (window.location.href === "http://nod.prtouch.com:8081/my-profile#" || window.location.href === "http://nod.prtouch.com:8081/my-profile" || window.location.href=="http://localhost:3000/my-profile" ) {
 			var url = "http://apinod.prtouch.com/authentication/state_list/";
@@ -603,7 +603,7 @@ class MyProfile extends Component {
 	}
 	componentDidMount(){
 		window.scrollTo(0, 0)
-		if (window.location.href === "http://zwz.prtouch.com:8081/my-profile" || window.location.href === "http://zwz.prtouch.com:8081/my-profile#" || window.location.href === "http://localhost:3000/my-profile" ) {
+		if (window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#" || window.location.href === "http://localhost:3000/my-profile" ) {
 			var stateData = '';
 			axios.get('http://apizwz.prtouch.com/authentication/get_info/',
     	  		{
@@ -666,7 +666,7 @@ class MyProfile extends Component {
            })
 		})
 		}
-		if (window.location.href === "http://zwz.prtouch.com:8081/my-profile" || window.location.href === "http://zwz.prtouch.com:8081/my-profile#" || window.location.href === "http://localhost:3000/my-profile") {
+		if (window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#" || window.location.href === "http://localhost:3000/my-profile") {
     	axios.get('http://apizwz.prtouch.com/authentication/get_info/',
       {
          headers: {

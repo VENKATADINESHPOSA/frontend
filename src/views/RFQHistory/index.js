@@ -78,7 +78,7 @@ class RFQHistory extends Component {
   addToCartData(){
     const postData = this.state.posts.filter(data => data.isChecked == true);
     
-    if(window.location.href == "http://zwz.prtouch.com:8081/rfq-history" || window.location.href == "http://localhost:3000/rfq-history"){
+    if(window.location.href == "http://store.zwz.co.in/rfq-history" || window.location.href == "http://localhost:3000/rfq-history"){
 
       var arr = [];
       for(var i= 0 ; i < postData.length ; i++ ){
@@ -94,7 +94,7 @@ class RFQHistory extends Component {
         arr.push(orderData);
       }
 
-      axios.post('http://apizwz.prtouch.com:8081/api/add_item/' , 
+      axios.post('http://apistore.zwz.co.in/api/add_item/' , 
         {
     
           "item_info": arr
@@ -330,9 +330,9 @@ class RFQHistory extends Component {
       status: status
     })*/
 
-    if (window.location.href == 'http://zwz.prtouch.com:8081/rfq-history' || window.location.href == "http://localhost:3000/rfq-history") {
+    if (window.location.href == 'http://store.zwz.co.in/rfq-history' || window.location.href == "http://localhost:3000/rfq-history") {
 
-      axios.get('http://apizwz.prtouch.com:8081/authentication/get_info/',
+      axios.get('http://apistore.zwz.co.in/authentication/get_info/',
             {
             headers: {
                   'Content-Type': 'application/json',
@@ -376,14 +376,14 @@ class RFQHistory extends Component {
 
 
 
-    if (window.location.href==="http://zwz.prtouch.com:8081/rfq-history" ||  window.location.href==="http://localhost:3000/rfq-history" || window.location.href==="http://zwz.prtouch.com:8081/rfq-history#") {
+    if (window.location.href==="http://store.zwz.co.in/rfq-history" ||  window.location.href==="http://localhost:3000/rfq-history" || window.location.href==="http://store.zwz.co.in/rfq-history#") {
       this.setState({
         isActive: true
       })
 
       console.log(this.state.isActive);
 
-      axios.post('http://apizwz.prtouch.com:8081/api/all_rfq_history/' , 
+      axios.post('http://apistore.zwz.co.in/api/all_rfq_history/' , 
 
       {
         
@@ -670,7 +670,7 @@ class RFQHistory extends Component {
       }))
     }*/
 
-    if (window.location.href==="http://zwz.prtouch.com:8081/product-category" || window.location.href==="http://localhost:3000/product-category" ) {
+    if (window.location.href==="http://store.zwz.co.in/product-category" || window.location.href==="http://localhost:3000/product-category" ) {
 
       if (this.props.isLoggedIn) {
 
@@ -686,7 +686,7 @@ class RFQHistory extends Component {
             arr.push(orderData);
 
 
-        axios.post('http://apizwz.prtouch.com:8081/api/add_item/' , 
+        axios.post('http://apistore.zwz.co.in/api/add_item/' , 
 
         {
           

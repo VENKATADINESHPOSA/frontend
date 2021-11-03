@@ -463,7 +463,7 @@ onChangeAvailability(e){
 
 OnSaveGst(){
   
-  if(window.location.href === "http://zwz.prtouch.com:8081/cart" || window.location.href === "http://zwz.prtouch.com:8081/cart#" || window.location.href=== "http://localhost:3000/cart#" || window.location.href=== "http://localhost:3000/cart") {
+  if(window.location.href === "http://store.zwz.co.in/cart" || window.location.href === "http://store.zwz.co.in/cart#" || window.location.href=== "http://localhost:3000/cart#" || window.location.href=== "http://localhost:3000/cart") {
 
      axios.post('http://apizwz.prtouch.com/authentication/update_get_info/' , 
 
@@ -504,7 +504,7 @@ OnSaveGst(){
 
         /*if (response.data.success === false) {
           console.log("sdfghsdfghfalse");
-          window.location.href = "http://zwz.prtouch.com:8081/login"
+          window.location.href = "http://store.zwz.co.in/login"
         }*/
       })
       .catch(function (error) {
@@ -512,7 +512,7 @@ OnSaveGst(){
         
       });
 
-    }else if (window.location.href === "http://nod.prtouch.com:8081/cart" || window.location.href === "http://zwz.prtouch.com:8081/cart#" ) {
+    }else if (window.location.href === "http://nod.prtouch.com:8081/cart" || window.location.href === "http://store.zwz.co.in/cart#" ) {
 
       axios.post('http://apinod.prtouch.com/authentication/update_get_info/' , 
 
@@ -582,7 +582,7 @@ Successtoggle() {
   }
 
 shippingToggle() {
-  if (window.location.href === "http://zwz.prtouch.com:8081/cart" || window.location.href === "http://zwz.prtouch.com:8081/cart#" || window.location.href === "http://localhost:3000/cart") {
+  if (window.location.href === "http://store.zwz.co.in/cart" || window.location.href === "http://store.zwz.co.in/cart#" || window.location.href === "http://localhost:3000/cart") {
 
     axios.get('http://apizwz.prtouch.com/authentication/get_info/',
       {
@@ -687,7 +687,7 @@ async onUpdateQuantity(e,itemId, Quantity){
 
 if(e.key === 'Enter'){
 
-if (window.location.href === "http://zwz.prtouch.com:8081/cart" || window.location.href === "http://localhost:3000/cart") {
+if (window.location.href === "http://store.zwz.co.in/cart" || window.location.href === "http://localhost:3000/cart") {
 
 axios.post('http://apizwz.prtouch.com/api/update_item_quantity/' ,
 {
@@ -768,7 +768,7 @@ headers: {
 
 async getCartData(){
   var ref = this;
-  if (window.location.href === "http://localhost:3000/cart" || window.location.href === "http://zwz.prtouch.com:8081/cart") {
+  if (window.location.href === "http://localhost:3000/cart" || window.location.href === "http://store.zwz.co.in/cart") {
     this.setState({
       isActive: true
     })
@@ -954,7 +954,7 @@ this.props.dispatch(removeCartData([
 
 async removeItem(itemId){
 
-if (window.location.href === "http://zwz.prtouch.com:8081/cart"  || window.location.href.indexOf("http://localhost:3000/cart") > -1) {
+if (window.location.href === "http://store.zwz.co.in/cart"  || window.location.href.indexOf("http://localhost:3000/cart") > -1) {
 
 axios.post('http://apizwz.prtouch.com/api/remove_item_cart/' , 
 
@@ -1030,7 +1030,7 @@ this.props.history.push('/login');
 
 
 async goToRFQ1(){
-if (window.location.href ==="http://zwz.prtouch.com:8081/cart" || window.location.href === "http://localhost:3000/cart") {
+if (window.location.href ==="http://store.zwz.co.in/cart" || window.location.href === "http://localhost:3000/cart") {
   var arr = []
 
 //console.log(this.state.added_item);
@@ -1136,7 +1136,7 @@ headers: {
 
 
 async goToRFQ2(){
-if (window.location.href ==="http://zwz.prtouch.com:8081/cart" || window.location.href === "http://localhost:3000/cart") {
+if (window.location.href ==="http://store.zwz.co.in/cart" || window.location.href === "http://localhost:3000/cart") {
   var arr = []
 
 //console.log(this.state.added_item);
@@ -1224,7 +1224,7 @@ headers: {
 }
 
 async goToShipping(){
-if (window.location.href === "http://zwz.prtouch.com:8081/cart" || window.location.href === "http://localhost:3000/cart") {
+if (window.location.href === "http://store.zwz.co.in/cart" || window.location.href === "http://localhost:3000/cart") {
 var arr = []
 for(var i = 0; i < this.state.added_item.length; i++) {
   if (this.state.added_item[i].isChecked == true) {

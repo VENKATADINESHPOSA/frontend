@@ -80,9 +80,9 @@ class ProductCategory extends Component {
 
 	sendLink(){
 		
-		if (window.location.href === "http://zwz.prtouch.com:8081/product-category" ) {
+		if (window.location.href === "http://store.zwz.co.in/product-category" ) {
 			this.setState({
-				url: "http://zwz.prtouch.com:8081/productDetail/ZWZ:"+this.state.itemId
+				url: "http://store.zwz.co.in/productDetail/ZWZ:"+this.state.itemId
 			})
 
 			localStorage.setItem("itemId", this.state.itemId)
@@ -102,7 +102,7 @@ class ProductCategory extends Component {
 			this.shareToggel();
 
 		}
-		/*if (window.location.href === "http://zwz.prtouch.com:8081/product-category" || window.location.href === "http://localhost:3000/product-category") {
+		/*if (window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://localhost:3000/product-category") {
 			axios.get('http://apizwz.prtouch.com/api/ShareItem/ZWZ/'+this.state.itemId+"/" , 
 				{
 			 		headers: {
@@ -135,9 +135,9 @@ class ProductCategory extends Component {
 		})*/
 
 
-		if (window.location.href == 'http://zwz.prtouch.com:8081/product-category' || window.location.href == "http://localhost:3000/rfq-history") {
+		if (window.location.href == 'http://store.zwz.co.in/product-category' || window.location.href == "http://localhost:3000/rfq-history") {
 
-			axios.get('http://apizwz.prtouch.com:8081/authentication/get_info/',
+			axios.get('http://apistore.zwz.co.in/authentication/get_info/',
     	  		{
          		headers: {
               		'Content-Type': 'application/json',
@@ -168,7 +168,7 @@ class ProductCategory extends Component {
 		}
 
 
-		if (window.location.href === 'http://zwz.prtouch.com:8081/product-category' || window.location.href === 'http://localhost:3000/product-category') {
+		if (window.location.href === 'http://store.zwz.co.in/product-category' || window.location.href === 'http://localhost:3000/product-category') {
 		var ProductData = localStorage.getItem('product_data');
 		var ProductData1 = JSON.parse(ProductData);
 		var ProductVal = localStorage.getItem('product-val');
@@ -200,7 +200,7 @@ class ProductCategory extends Component {
 
 		
 
-		axios.post('http://apizwz.prtouch.com:8081/api/item_availability/', {
+		axios.post('http://apistore.zwz.co.in/api/item_availability/', {
 	    	"searching_key": ProductData1.itemname[0]
 	    }
 
@@ -292,7 +292,7 @@ class ProductCategory extends Component {
 		var quantity = parseInt(this.state.quantity);
 		var amount = price * quantity;
 
-		if (window.location.href==="http://zwz.prtouch.com:8081/product-category" || window.location.href==="http://localhost:3000/product-category" ) {
+		if (window.location.href==="http://store.zwz.co.in/product-category" || window.location.href==="http://localhost:3000/product-category" ) {
 		if (this.props.isLoggedIn) {
 		var arr = [];
 		var orderData = {};
@@ -302,7 +302,7 @@ class ProductCategory extends Component {
 		    orderData['quantity'] = this.state.quantity.toString();
 		    orderData['flag'] = "add_cart"
 		    arr.push(orderData);
-		axios.post('http://apizwz.prtouch.com:8081/api/add_item/' , 
+		axios.post('http://apistore.zwz.co.in/api/add_item/' , 
 		 {
 		 	"item_info": arr
 		 },{

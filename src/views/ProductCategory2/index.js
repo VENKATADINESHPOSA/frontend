@@ -83,9 +83,9 @@ class ProductCategory extends Component {
 
 	sendLink(){
 		
-		if (window.location.href === "http://zwz.prtouch.com:8081/product-category" ) {
+		if (window.location.href === "http://store.zwz.co.in/product-category" ) {
 			this.setState({
-				url: "http://zwz.prtouch.com:8081/productDetail/ZWZ:"+this.state.itemId
+				url: "http://store.zwz.co.in/productDetail/ZWZ:"+this.state.itemId
 			})
 
 			sessionStorage.setItem("itemId", this.state.itemId)
@@ -105,7 +105,7 @@ class ProductCategory extends Component {
 			this.shareToggel();
 
 		}
-		/*if (window.location.href === "http://zwz.prtouch.com:8081/product-category" || window.location.href === "http://localhost:3000/product-category") {
+		/*if (window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://localhost:3000/product-category") {
 			axios.get('http://apizwz.prtouch.com/api/ShareItem/ZWZ/'+this.state.itemId+"/" , 
 				{
 			 		headers: {
@@ -130,7 +130,7 @@ class ProductCategory extends Component {
 
 	componentDidMount(){
 		if (window.location.hostname === "zwz.prtouch.com" || window.location.hostname === "localhost") {
-			axios.post('http://apizwz.prtouch.com:8081/api/ShareItemDetails/',
+			axios.post('http://apistore.zwz.co.in/api/ShareItemDetails/',
 				{
 					"db_type": "ZWZ",
 					"itemId": itemId
@@ -287,7 +287,7 @@ class ProductCategory extends Component {
 		    orderData['quantity'] = this.state.quantity.toString();
 		    orderData['flag'] = "add_cart"
 		    arr.push(orderData);
-		axios.post('http://apizwz.prtouch.com:8081/api/add_item/' , 
+		axios.post('http://apistore.zwz.co.in/api/add_item/' , 
 		 {
 		 	"item_info": arr
 		 },{

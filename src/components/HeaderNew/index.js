@@ -93,7 +93,7 @@ class Header extends Component {
 
 
 
-		if (window.location.href=== 'http://zwz.prtouch.com:8081/') {
+		if (window.location.href=== 'http://store.zwz.co.in/') {
 			this.setState({
 				locationUrl: false,
 			})
@@ -113,7 +113,7 @@ class Header extends Component {
 				locationUrl: true,
 			})
 			console.log('nod');
-		}else if (window.location.href === 'http://zwz.prtouch.com:8081/home') {
+		}else if (window.location.href === 'http://store.zwz.co.in/home') {
 			this.setState({
 				locationUrl: false,
 			})
@@ -123,7 +123,7 @@ class Header extends Component {
 				locationUrl: true,
 			})
 			console.log('nod');
-		}else if (window.location.href === 'http://zwz.prtouch.com:8081/product-category') {
+		}else if (window.location.href === 'http://store.zwz.co.in/product-category') {
 			this.setState({
 				locationUrl: false,
 			})

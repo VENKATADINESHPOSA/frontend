@@ -70,7 +70,7 @@ class OrderHistory extends Component {
 	}
 
 	componentDidMount(){
-		if (window.location.href==="http://zwz.prtouch.com:8081/rfq-history" || window.location.href==="http://zwz.prtouch.com:8081/order-history" || window.location.href === "http://zwz.prtouch.com:8081/order-history#" || window.location.href.indexOf("http://localhost:3000/order-history") > -1) {
+		if (window.location.href==="http://store.zwz.co.in/rfq-history" || window.location.href==="http://store.zwz.co.in/order-history" || window.location.href === "http://store.zwz.co.in/order-history#" || window.location.href.indexOf("http://localhost:3000/order-history") > -1) {
 			this.setState({
 				isActive: true
 			})
@@ -210,7 +210,7 @@ class OrderHistory extends Component {
 			}))
 		}*/
 
-		if (window.location.href==="http://zwz.prtouch.com:8081/product-category" || window.location.href==="http://localhost:3000/product-category" ) {
+		if (window.location.href==="http://store.zwz.co.in/product-category" || window.location.href==="http://localhost:3000/product-category" ) {
 
 		if (this.props.isLoggedIn) {
 

@@ -120,7 +120,7 @@ class Home extends Component {
 		if (this.props.location.pathname !== "/login" && this.props.location.pathname !== "/signup" && this.props.location.pathname !== "/product-category" && this.props.location.pathname !== "/productDetail") {
 
 			console.log("second if condition");
-		 axios.post('http://apizwz.prtouch.com:8081/authentication/tokencheck/' , 
+		 axios.post('http://apistore.zwz.co.in/authentication/tokencheck/' , 
 
 		 {
 		 	
@@ -220,9 +220,9 @@ class Home extends Component {
 	    .catch(function (error) {
 	    });
 
-		}else if (window.location.href==="http://zwz.prtouch.com:8081/home") {
+		}else if (window.location.href==="http://store.zwz.co.in/home") {
 
-		axios.post('http://apizwz.prtouch.com:8081/api/add_item/' , 
+		axios.post('http://apistore.zwz.co.in/api/add_item/' , 
 
 		 {
 		 	

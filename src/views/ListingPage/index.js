@@ -103,7 +103,7 @@ class ListingPage extends Component{
 		    arr.push(orderData);
 
 
-			axios.post('http://apizwz.prtouch.com:8081/api/add_item/' , 
+			axios.post('http://apistore.zwz.co.in/api/add_item/' , 
 
 		 	{
 		 	

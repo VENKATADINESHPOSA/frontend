@@ -65,10 +65,10 @@ class ReviewRFI extends Component {
 		})
 		var arr_data = localStorage.getItem('RFIArrayData');
 		var arr_data1 = JSON.parse(arr_data);
-		if (window.location.href ==="http://zwz.prtouch.com:8081/rfq-review" || window.location.href === "http://localhost:3000/cart") {
+		if (window.location.href ==="http://store.zwz.co.in/rfq-review" || window.location.href === "http://localhost:3000/cart") {
   
 
-		axios.post('http://apizwz.prtouch.com:8081/api/customer_master/',{
+		axios.post('http://apistore.zwz.co.in/api/customer_master/',{
 
 		"item_info": arr_data1
 		},{
@@ -170,10 +170,10 @@ class ReviewRFI extends Component {
   			})
   			return false;
   		}
-		if (window.location.href === "http://localhost:3000/shipping" || window.location.href === "http://zwz.prtouch.com:8081/shipping" || window.location.href === "http://zwz.prtouch.com:8081/shipping#" || window.location.href === "http://localhost:3000/shipping/" ||  window.location.href === "http://localhost:3000/shipping#") 
+		if (window.location.href === "http://localhost:3000/shipping" || window.location.href === "http://store.zwz.co.in/shipping" || window.location.href === "http://store.zwz.co.in/shipping#" || window.location.href === "http://localhost:3000/shipping/" ||  window.location.href === "http://localhost:3000/shipping#") 
 		{
 			console.log("sdfghdfgthyj");
-			axios('http://apizwz.prtouch.com:8081/authentication/user/createDeliveryAddress/',
+			axios('http://apistore.zwz.co.in/authentication/user/createDeliveryAddress/',
 				{
 				method: 'POST',
 				headers: {
@@ -272,7 +272,7 @@ class ReviewRFI extends Component {
 
 	}
 	/*oncityList(cityName){
-		if (window.location.href === "http://zwz.prtouch.com:8081/shipping/" || window.location.href === "http://zwz.prtouch.com:8081/shipping" || window.location.href === "http://zwz.prtouch.com:8081/shipping#" || window.location.href === "http://localhost:3000/shipping/" || window.location.href === "http://localhost:3000/shipping#" || window.location.href === "http://localhost:3000/shipping" ) 
+		if (window.location.href === "http://store.zwz.co.in/shipping/" || window.location.href === "http://store.zwz.co.in/shipping" || window.location.href === "http://store.zwz.co.in/shipping#" || window.location.href === "http://localhost:3000/shipping/" || window.location.href === "http://localhost:3000/shipping#" || window.location.href === "http://localhost:3000/shipping" ) 
 		{
 			axios('http://apizwz.prtouch.com/authentication/city_list/',
 				{
@@ -358,9 +358,9 @@ class ReviewRFI extends Component {
           	
           	arr.push(orderData);
 		}
-		if (window.location.href === "http://zwz.prtouch.com:8081/shipping/" || window.location.href === "http://zwz.prtouch.com:8081/shipping" || window.location.href === "http://zwz.prtouch.com:8081/shipping#" || window.location.href === "http://localhost:3000/shipping/" || window.location.href === "http://localhost:3000/shipping#" || window.location.href === "http://localhost:3000/shipping" ) 
+		if (window.location.href === "http://store.zwz.co.in/shipping/" || window.location.href === "http://store.zwz.co.in/shipping" || window.location.href === "http://store.zwz.co.in/shipping#" || window.location.href === "http://localhost:3000/shipping/" || window.location.href === "http://localhost:3000/shipping#" || window.location.href === "http://localhost:3000/shipping" ) 
 		{
-			axios('http://apizwz.prtouch.com:8081/api/sales_confirmation/',
+			axios('http://apistore.zwz.co.in/api/sales_confirmation/',
 				{
 				method: 'POST',
 				headers: {
@@ -444,9 +444,9 @@ class ReviewRFI extends Component {
 		
 
 
-		if (window.location.href === "http://zwz.prtouch.com:8081/shipping/" || window.location.href === "http://zwz.prtouch.com:8081/shipping" || window.location.href === "http://zwz.prtouch.com:8081/shipping#" || window.location.href === "http://localhost:3000/shipping" || window.location.href === "http://localhost:3000/shipping/" || window.location.href === "http://localhost:3000/shipping#") 
+		if (window.location.href === "http://store.zwz.co.in/shipping/" || window.location.href === "http://store.zwz.co.in/shipping" || window.location.href === "http://store.zwz.co.in/shipping#" || window.location.href === "http://localhost:3000/shipping" || window.location.href === "http://localhost:3000/shipping/" || window.location.href === "http://localhost:3000/shipping#") 
 		{		
-			axios.get('http://apizwz.prtouch.com:8081/authentication/get_info/',
+			axios.get('http://apistore.zwz.co.in/authentication/get_info/',
     	  		{
          		headers: {
               		'Content-Type': 'application/json',
@@ -467,7 +467,7 @@ class ReviewRFI extends Component {
 				})
 
 
-				axios('http://apizwz.prtouch.com:8081/authentication/city_list/',
+				axios('http://apistore.zwz.co.in/authentication/city_list/',
 				{
 				method: 'POST',
 				headers: {
@@ -488,7 +488,7 @@ class ReviewRFI extends Component {
 
 			
 
-		axios.get('http://apizwz.prtouch.com:8081/authentication/state_list/',
+		axios.get('http://apistore.zwz.co.in/authentication/state_list/',
 			{
 				headers:{
 					'Content-Type' : 'application/json',

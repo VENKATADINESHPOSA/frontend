@@ -43,17 +43,17 @@ class ForgotPassword extends Component {
   verifyUser() {
     var ref = this;
     if (
-      window.location.href === "http://zwz.prtouch.com:8081/forget-password#" ||
-      window.location.href === "http://zwz.prtouch.com:8081/forget-password"
+      window.location.href === "http://store.zwz.co.in/forget-password#" ||
+      window.location.href === "http://store.zwz.co.in/forget-password"
     ) {
-      var url = "http://apizwz.prtouch.com:8081/authentication/check_user/";
+      var url = "http://apistore.zwz.co.in/authentication/check_user/";
     } else if (
       window.location.href === "http://nod.prtouch.com:8081/forget-password#" ||
       window.location.href === "http://nod.prtouch.com:8081/forget-password"
     ) {
       var url = "http://apinod.prtouch.com:8081/authentication/check_user/";
     } else {
-      var url = "http://apizwz.prtouch.com:8081/authentication/check_user/";
+      var url = "http://apistore.zwz.co.in/authentication/check_user/";
     }
 
     axios
@@ -101,20 +101,20 @@ class ForgotPassword extends Component {
   submitOtp() {
     var ref = this;
     if (
-      window.location.href === "http://zwz.prtouch.com:8081/forget-password#" ||
-      window.location.href === "http://zwz.prtouch.com:8081/forget-password"
+      window.location.href === "http://store.zwz.co.in/forget-password#" ||
+      window.location.href === "http://store.zwz.co.in/forget-password"
     ) {
       var url =
-        "http://apizwz.prtouch.com:8081/authentication/otp/verification/";
+        "http://apistore.zwz.co.in/authentication/otp/verification/";
     } else if (
       window.location.href === "http://nod.prtouch.com:8081/forget-password#" ||
       window.location.href === "http://nod.prtouch.com:8081/forget-password"
     ) {
       var url =
-        "http://apizwz.prtouch.com:8081/authentication/otp/verification/";
+        "http://apistore.zwz.co.in/authentication/otp/verification/";
     } else {
       var url =
-        "http://apizwz.prtouch.com:8081/authentication/otp/verification/";
+        "http://apistore.zwz.co.in/authentication/otp/verification/";
     }
 
     axios
@@ -275,7 +275,7 @@ class ForgotPassword extends Component {
     if (hostname === "zwz.prtouch.com") {
       axios
         .post(
-          "http://apizwz.prtouch.com:8081/authentication/change_password/",
+          "http://apistore.zwz.co.in/authentication/change_password/",
           {
             db_type: "zwz",
             user_name: ref.state.username,

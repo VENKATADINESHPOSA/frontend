@@ -206,7 +206,7 @@ class Home6 extends Component {
 	    .catch(function (error) {
 	    });
 
-		}else if (window.location.href==="http://zwz.prtouch.com:8081/home") {
+		}else if (window.location.href==="http://store.zwz.co.in/home") {
 
 		axios.post('http://apizwz.prtouch.com/api/add_item/' , 
 

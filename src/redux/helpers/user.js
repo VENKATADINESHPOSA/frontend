@@ -4,7 +4,7 @@ import axios from 'axios';
 export const login = async info => {
 	try{
 		//console.log(info)
-	    const response = await axios('http://apizwz.prtouch.com:8081/authentication/token/',
+	    const response = await axios('http://apistore.zwz.co.in/authentication/token/',
 	        {
 	            method: 'POST',
 	            headers: {

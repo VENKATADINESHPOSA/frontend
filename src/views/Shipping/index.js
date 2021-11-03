@@ -97,10 +97,10 @@ class Shipping extends Component {
   			})
   			return false;
   		}
-		if (window.location.href === "http://localhost:3000/shipping" || window.location.href === "http://zwz.prtouch.com:8081/shipping" || window.location.href === "http://zwz.prtouch.com:8081/shipping#" || window.location.href === "http://localhost:3000/shipping/" ||  window.location.href === "http://localhost:3000/shipping#") 
+		if (window.location.href === "http://localhost:3000/shipping" || window.location.href === "http://store.zwz.co.in/shipping" || window.location.href === "http://store.zwz.co.in/shipping#" || window.location.href === "http://localhost:3000/shipping/" ||  window.location.href === "http://localhost:3000/shipping#") 
 		{
 			console.log("sdfghdfgthyj");
-			axios('http://apizwz.prtouch.com:8081/authentication/user/createDeliveryAddress/',
+			axios('http://apistore.zwz.co.in/authentication/user/createDeliveryAddress/',
 				{
 				method: 'POST',
 				headers: {
@@ -199,7 +199,7 @@ class Shipping extends Component {
 
 	}
 	/*oncityList(cityName){
-		if (window.location.href === "http://zwz.prtouch.com:8081/shipping/" || window.location.href === "http://zwz.prtouch.com:8081/shipping" || window.location.href === "http://zwz.prtouch.com:8081/shipping#" || window.location.href === "http://localhost:3000/shipping/" || window.location.href === "http://localhost:3000/shipping#" || window.location.href === "http://localhost:3000/shipping" ) 
+		if (window.location.href === "http://store.zwz.co.in/shipping/" || window.location.href === "http://store.zwz.co.in/shipping" || window.location.href === "http://store.zwz.co.in/shipping#" || window.location.href === "http://localhost:3000/shipping/" || window.location.href === "http://localhost:3000/shipping#" || window.location.href === "http://localhost:3000/shipping" ) 
 		{
 			axios('http://apizwz.prtouch.com/authentication/city_list/',
 				{
@@ -288,9 +288,9 @@ class Shipping extends Component {
           	
           	arr.push(orderData);
 		}
-		if (window.location.href === "http://zwz.prtouch.com:8081/shipping/" || window.location.href === "http://zwz.prtouch.com:8081/shipping" || window.location.href === "http://zwz.prtouch.com:8081/shipping#" || window.location.href === "http://localhost:3000/shipping/" || window.location.href === "http://localhost:3000/shipping#" || window.location.href === "http://localhost:3000/shipping" ) 
+		if (window.location.href === "http://store.zwz.co.in/shipping/" || window.location.href === "http://store.zwz.co.in/shipping" || window.location.href === "http://store.zwz.co.in/shipping#" || window.location.href === "http://localhost:3000/shipping/" || window.location.href === "http://localhost:3000/shipping#" || window.location.href === "http://localhost:3000/shipping" ) 
 		{
-			axios('http://apizwz.prtouch.com:8081/api/sales_confirmation/',
+			axios('http://apistore.zwz.co.in/api/sales_confirmation/',
 				{
 				method: 'POST',
 				headers: {
@@ -379,9 +379,9 @@ class Shipping extends Component {
 		
 
 
-		if (window.location.href === "http://zwz.prtouch.com:8081/shipping/" || window.location.href === "http://zwz.prtouch.com:8081/shipping" || window.location.href === "http://zwz.prtouch.com:8081/shipping#" || window.location.href === "http://localhost:3000/shipping" || window.location.href === "http://localhost:3000/shipping/" || window.location.href === "http://localhost:3000/shipping#") 
+		if (window.location.href === "http://store.zwz.co.in/shipping/" || window.location.href === "http://store.zwz.co.in/shipping" || window.location.href === "http://store.zwz.co.in/shipping#" || window.location.href === "http://localhost:3000/shipping" || window.location.href === "http://localhost:3000/shipping/" || window.location.href === "http://localhost:3000/shipping#") 
 		{		
-			axios.get('http://apizwz.prtouch.com:8081/authentication/get_info/',
+			axios.get('http://apistore.zwz.co.in/authentication/get_info/',
     	  		{
          		headers: {
               		'Content-Type': 'application/json',
@@ -402,7 +402,7 @@ class Shipping extends Component {
 				})
 
 
-				axios('http://apizwz.prtouch.com:8081/authentication/city_list/',
+				axios('http://apistore.zwz.co.in/authentication/city_list/',
 				{
 				method: 'POST',
 				headers: {
@@ -423,7 +423,7 @@ class Shipping extends Component {
 
 			
 
-		axios.get('http://apizwz.prtouch.com:8081/authentication/state_list/',
+		axios.get('http://apistore.zwz.co.in/authentication/state_list/',
 			{
 				headers:{
 					'Content-Type' : 'application/json',
