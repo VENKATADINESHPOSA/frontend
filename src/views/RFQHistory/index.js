@@ -94,7 +94,7 @@ class RFQHistory extends Component {
         arr.push(orderData);
       }
 
-      axios.post('http://apistore.zwz.co.in/api/add_item/' , 
+      axios.post('http://api.store.zwz.co.in/api/add_item/' , 
         {
     
           "item_info": arr
@@ -332,7 +332,7 @@ class RFQHistory extends Component {
 
     if (window.location.href == 'http://store.zwz.co.in/rfq-history' || window.location.href == "http://localhost:3000/rfq-history") {
 
-      axios.get('http://apistore.zwz.co.in/authentication/get_info/',
+      axios.get('http://api.store.zwz.co.in/authentication/get_info/',
             {
             headers: {
                   'Content-Type': 'application/json',
@@ -383,7 +383,7 @@ class RFQHistory extends Component {
 
       console.log(this.state.isActive);
 
-      axios.post('http://apistore.zwz.co.in/api/all_rfq_history/' , 
+      axios.post('http://api.store.zwz.co.in/api/all_rfq_history/' , 
 
       {
         
@@ -686,7 +686,7 @@ class RFQHistory extends Component {
             arr.push(orderData);
 
 
-        axios.post('http://apistore.zwz.co.in/api/add_item/' , 
+        axios.post('http://api.store.zwz.co.in/api/add_item/' , 
 
         {
           

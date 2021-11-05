@@ -104,7 +104,7 @@ class OrderPlaced extends Component {
 
 
 
-		axios.post('http://apistore.zwz.co.in/api/item_availability/', {
+		axios.post('http://api.store.zwz.co.in/api/item_availability/', {
 	    	"searching_key": ProductData1.itemname[0]
 	    }
 
@@ -248,7 +248,7 @@ class OrderPlaced extends Component {
 		    arr.push(orderData);
 
 
-		axios.post('http://apistore.zwz.co.in/api/add_item/' , 
+		axios.post('http://api.store.zwz.co.in/api/add_item/' , 
 
 		 {
 		 	

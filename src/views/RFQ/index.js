@@ -93,7 +93,7 @@ class RFQ extends Component {
 
 
 
-		axios.post('http://apistore.zwz.co.in/api/item_availability/', {
+		axios.post('http://api.store.zwz.co.in/api/item_availability/', {
 	    	"searching_key": ProductData1.itemname[0]
 	    }
 
@@ -171,7 +171,7 @@ class RFQ extends Component {
 		if (window.location.href=== "http://store.zwz.co.in/rfq") {
 
 
-			axios.post('http://apistore.zwz.co.in/api/rfq_history/' , 
+			axios.post('http://api.store.zwz.co.in/api/rfq_history/' , 
 
 		 {
 		 	
@@ -314,7 +314,7 @@ class RFQ extends Component {
 		    arr.push(orderData);
 
 
-		axios.post('http://apistore.zwz.co.in/api/add_item/' , 
+		axios.post('http://api.store.zwz.co.in/api/add_item/' , 
 
 		 {
 		 	

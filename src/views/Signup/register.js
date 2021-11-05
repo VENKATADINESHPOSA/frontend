@@ -139,11 +139,11 @@ class Registeraddress extends Component {
 	
 	async ResendOTP(e){
 		if (window.location.href === "http://store.zwz.co.in/register#" || window.location.href === "http://store.zwz.co.in/register" ) {
-			this.state.api_url = "http://apistore.zwz.co.in/authentication/mobile/otp_sent/";
+			this.state.api_url = "http://api.store.zwz.co.in/authentication/mobile/otp_sent/";
 		}else if(window.location.href === "http://nod.prtouch.com:8081/register#" || window.location.href === "http://nod.prtouch.com:8081/register" || window.location.href === "http://localhost:3000/register#" || window.location.href === "http://localhost:3000/register"){
 			this.state.api_url = "http://apinod.prtouch.com:8081/authentication/mobile/otp_sent/";
 		}else{
-			this.state.api_url = "http://apistore.zwz.co.in/authentication/mobile/otp_sent/";
+			this.state.api_url = "http://api.store.zwz.co.in/authentication/mobile/otp_sent/";
 		}
 			var mobile 	= this.state.mobilenumber;
 			var url = this.state.api_url;
@@ -173,14 +173,14 @@ class Registeraddress extends Component {
 		var otp 	= this.state.otpvalue;
 
 		if (window.location.href === "http://store.zwz.co.in/register#" || window.location.href === "http://store.zwz.co.in/register" ) {
-			var url = "http://apistore.zwz.co.in/authentication/otp/verification/";
-			var api_url = "http://apistore.zwz.co.in/authentication/user/profile/update/";
+			var url = "http://api.store.zwz.co.in/authentication/otp/verification/";
+			var api_url = "http://api.store.zwz.co.in/authentication/user/profile/update/";
 		} else if(window.location.href === "http://nod.prtouch.com:8081/register#" || window.location.href === "http://nod.prtouch.com:8081/register" || window.location.href === "http://localhost:3000/register#" || window.location.href === "http://localhost:3000/register"){
 			var url = "http://apinod.prtouch.com:8081/authentication/otp/verification/";
 			var api_url = "http://apinod.prtouch.com:8081/authentication/user/profile/update/";
 		}else{
-			var api_url = "http://apistore.zwz.co.in/authentication/user/profile/update/";
-			var url = "http://apistore.zwz.co.in/authentication/otp/verification/";
+			var api_url = "http://api.store.zwz.co.in/authentication/user/profile/update/";
+			var url = "http://api.store.zwz.co.in/authentication/otp/verification/";
 		}
 		
 		var datastring = {
@@ -252,11 +252,11 @@ class Registeraddress extends Component {
 
 	async statelist(e){	
 		if (window.location.href === "http://store.zwz.co.in/register#" || window.location.href === "http://store.zwz.co.in/register" ) {
-			var url = "http://apistore.zwz.co.in/authentication/state_list/";
+			var url = "http://api.store.zwz.co.in/authentication/state_list/";
 		} else if(window.location.href === "http://nod.prtouch.com:8081/register#" || window.location.href === "http://nod.prtouch.com:8081/register" || window.location.href === "http://localhost:3000/register#" || window.location.href === "http://localhost:3000/register"){
 			var url = "http://apinod.prtouch.com:8081/authentication/state_list/";
 		}else{
-			var url = "http://apistore.zwz.co.in/authentication/state_list/";
+			var url = "http://api.store.zwz.co.in/authentication/state_list/";
 		}
 		
 		var datastring = {
@@ -294,11 +294,11 @@ class Registeraddress extends Component {
 
 	async citylist(e){	
 		if (window.location.href === "http://store.zwz.co.in/register#" || window.location.href === "http://store.zwz.co.in/register" ) {
-			var url = "http://apistore.zwz.co.in/authentication/city_list/";
+			var url = "http://api.store.zwz.co.in/authentication/city_list/";
 		} else if(window.location.href === "http://nod.prtouch.com:8081/register#" || window.location.href === "http://nod.prtouch.com:8081/register" || window.location.href === "http://localhost:3000/register#" || window.location.href === "http://localhost:3000/register"){
 			var url = "http://apinod.prtouch.com:8081/authentication/city_list/";
 		}else{
-			var url = "http://apistore.zwz.co.in/authentication/city_list/";
+			var url = "http://api.store.zwz.co.in/authentication/city_list/";
 		}
 		
 		console.log(localStorage.getItem('state_data'));
@@ -434,14 +434,14 @@ class Registeraddress extends Component {
     	var api_url = "";
 		
 		if (window.location.href === "http://store.zwz.co.in/register#" || window.location.href === "http://store.zwz.co.in/register" ) {
-			api_url = "http://apistore.zwz.co.in/authentication/user/profile/update/";
-			var otp_url = "http://apistore.zwz.co.in/authentication/mobile/otp_sent/"
+			api_url = "http://api.store.zwz.co.in/authentication/user/profile/update/";
+			var otp_url = "http://api.store.zwz.co.in/authentication/mobile/otp_sent/"
 		}else if(window.location.href === "http://nod.prtouch.com:8081/register" || window.location.href === "http://nod.prtouch.com:8081/register#" || window.location.href === "http://localhost:3000/register" || window.location.href === "http://localhost:3000/register#" ){
 			api_url = "http://apinod.prtouch.com:8081/authentication/user/profile/update/";
 			var otp_url = "http://apinod.prtouch.com:8081/authentication/mobile/otp_sent/"
 		}else{
-			api_url = "http://apistore.zwz.co.in/authentication/user/profile/update/";
-			var otp_url = "http://apistore.zwz.co.in/authentication/mobile/otp_sent/"
+			api_url = "http://api.store.zwz.co.in/authentication/user/profile/update/";
+			var otp_url = "http://api.store.zwz.co.in/authentication/mobile/otp_sent/"
 		}
 		var url = api_url;
 		var mobile = this.state.mobilenumber;

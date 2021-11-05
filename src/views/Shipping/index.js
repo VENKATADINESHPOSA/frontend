@@ -100,7 +100,7 @@ class Shipping extends Component {
 		if (window.location.href === "http://localhost:3000/shipping" || window.location.href === "http://store.zwz.co.in/shipping" || window.location.href === "http://store.zwz.co.in/shipping#" || window.location.href === "http://localhost:3000/shipping/" ||  window.location.href === "http://localhost:3000/shipping#") 
 		{
 			console.log("sdfghdfgthyj");
-			axios('http://apistore.zwz.co.in/authentication/user/createDeliveryAddress/',
+			axios('http://api.store.zwz.co.in/authentication/user/createDeliveryAddress/',
 				{
 				method: 'POST',
 				headers: {
@@ -290,7 +290,7 @@ class Shipping extends Component {
 		}
 		if (window.location.href === "http://store.zwz.co.in/shipping/" || window.location.href === "http://store.zwz.co.in/shipping" || window.location.href === "http://store.zwz.co.in/shipping#" || window.location.href === "http://localhost:3000/shipping/" || window.location.href === "http://localhost:3000/shipping#" || window.location.href === "http://localhost:3000/shipping" ) 
 		{
-			axios('http://apistore.zwz.co.in/api/sales_confirmation/',
+			axios('http://api.store.zwz.co.in/api/sales_confirmation/',
 				{
 				method: 'POST',
 				headers: {
@@ -381,7 +381,7 @@ class Shipping extends Component {
 
 		if (window.location.href === "http://store.zwz.co.in/shipping/" || window.location.href === "http://store.zwz.co.in/shipping" || window.location.href === "http://store.zwz.co.in/shipping#" || window.location.href === "http://localhost:3000/shipping" || window.location.href === "http://localhost:3000/shipping/" || window.location.href === "http://localhost:3000/shipping#") 
 		{		
-			axios.get('http://apistore.zwz.co.in/authentication/get_info/',
+			axios.get('http://api.store.zwz.co.in/authentication/get_info/',
     	  		{
          		headers: {
               		'Content-Type': 'application/json',
@@ -402,7 +402,7 @@ class Shipping extends Component {
 				})
 
 
-				axios('http://apistore.zwz.co.in/authentication/city_list/',
+				axios('http://api.store.zwz.co.in/authentication/city_list/',
 				{
 				method: 'POST',
 				headers: {
@@ -423,7 +423,7 @@ class Shipping extends Component {
 
 			
 
-		axios.get('http://apistore.zwz.co.in/authentication/state_list/',
+		axios.get('http://api.store.zwz.co.in/authentication/state_list/',
 			{
 				headers:{
 					'Content-Type' : 'application/json',

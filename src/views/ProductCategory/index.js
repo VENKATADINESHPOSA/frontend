@@ -137,7 +137,7 @@ class ProductCategory extends Component {
 
 		if (window.location.href == 'http://store.zwz.co.in/product-category' || window.location.href == "http://localhost:3000/rfq-history") {
 
-			axios.get('http://apistore.zwz.co.in/authentication/get_info/',
+			axios.get('http://api.store.zwz.co.in/authentication/get_info/',
     	  		{
          		headers: {
               		'Content-Type': 'application/json',
@@ -200,7 +200,7 @@ class ProductCategory extends Component {
 
 		
 
-		axios.post('http://apistore.zwz.co.in/api/item_availability/', {
+		axios.post('http://api.store.zwz.co.in/api/item_availability/', {
 	    	"searching_key": ProductData1.itemname[0]
 	    }
 
@@ -302,7 +302,7 @@ class ProductCategory extends Component {
 		    orderData['quantity'] = this.state.quantity.toString();
 		    orderData['flag'] = "add_cart"
 		    arr.push(orderData);
-		axios.post('http://apistore.zwz.co.in/api/add_item/' , 
+		axios.post('http://api.store.zwz.co.in/api/add_item/' , 
 		 {
 		 	"item_info": arr
 		 },{

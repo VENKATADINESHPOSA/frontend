@@ -4,7 +4,7 @@ import axios from 'axios';
 export const login = async info => {
 	try{
 		//console.log(info)
-	    const response = await axios('http://apistore.zwz.co.in/authentication/token/',
+	    const response = await axios('http://api.store.zwz.co.in/authentication/token/',
 	        {
 	            method: 'POST',
 	            headers: {

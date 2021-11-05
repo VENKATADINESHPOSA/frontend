@@ -130,7 +130,7 @@ class ProductCategory extends Component {
 
 	componentDidMount(){
 		if (window.location.hostname === "zwz.prtouch.com" || window.location.hostname === "localhost") {
-			axios.post('http://apistore.zwz.co.in/api/ShareItemDetails/',
+			axios.post('http://api.store.zwz.co.in/api/ShareItemDetails/',
 				{
 					"db_type": "ZWZ",
 					"itemId": itemId
@@ -287,7 +287,7 @@ class ProductCategory extends Component {
 		    orderData['quantity'] = this.state.quantity.toString();
 		    orderData['flag'] = "add_cart"
 		    arr.push(orderData);
-		axios.post('http://apistore.zwz.co.in/api/add_item/' , 
+		axios.post('http://api.store.zwz.co.in/api/add_item/' , 
 		 {
 		 	"item_info": arr
 		 },{

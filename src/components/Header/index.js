@@ -24,7 +24,7 @@ let hostname = window.location.hostname;
 var LOGO = "";
 var nodlogo = false;
 var title = "";
-if (hostname == "zwz.prtouch.com") {
+if (hostname == "store.zwz.co.in") {
   LOGO = logo;
   nodlogo = false;
   title = "ZWZ";
@@ -133,7 +133,7 @@ class Header extends Component {
         console.log("second if condition");
         axios
           .post(
-            "http://apistore.zwz.co.in/authentication/tokencheck/",
+            "http://api.store.zwz.co.in/authentication/tokencheck/",
 
             {
               tokenkey: localStorage.getItem("auth_key"),
@@ -252,7 +252,7 @@ class Header extends Component {
 
           axios
             .post(
-              "http://apistore.zwz.co.in/api/multiSearch/",
+              "http://api.store.zwz.co.in/api/multiSearch/",
               {
                 searching_key: e.target.value,
               },
@@ -338,7 +338,7 @@ class Header extends Component {
     ) {
       axios
         .get(
-          "http://apistore.zwz.co.in/api/display_additem/",
+          "http://api.store.zwz.co.in/api/display_additem/",
 
           {
             headers: {
@@ -524,7 +524,7 @@ class Header extends Component {
 // ===========================================================================
       axios
         .post(
-          "http://apistore.zwz.co.in/api/display_product/",
+          "http://api.store.zwz.co.in/api/display_product/",
           {
             item_id: productVal,
             flag: "false",
@@ -636,7 +636,7 @@ class Header extends Component {
     if (hostname === "zwz.prtouch.com" || hostname === "localhost") {
       axios
         .post(
-          "http://apistore.zwz.co.in/authentication/user/logout/",
+          "http://api.store.zwz.co.in/authentication/user/logout/",
 
           {
             user: this.state.login_details,
@@ -755,7 +755,7 @@ class Header extends Component {
     ) {
       axios
         .post(
-          "http://apistore.zwz.co.in/api/display_product/",
+          "http://api.store.zwz.co.in/api/display_product/",
           {
             item_id: productValue,
             flag: "true",
@@ -889,7 +889,7 @@ class Header extends Component {
 
       if (e.target.value != 0) {
         axios
-          .post("http://apistore.zwz.co.in/api/search_product/", {
+          .post("http://api.store.zwz.co.in/api/search_product/", {
             searching_key: e.target.value,
           })
           .then(function (response) {
@@ -1110,7 +1110,7 @@ class Header extends Component {
 
         axios
           .post(
-            "http://apistore.zwz.co.in/api/add_item/",
+            "http://api.store.zwz.co.in/api/add_item/",
 
             {
               item_info: arr,

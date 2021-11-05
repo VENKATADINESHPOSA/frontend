@@ -120,7 +120,7 @@ class Home extends Component {
 		if (this.props.location.pathname !== "/login" && this.props.location.pathname !== "/signup" && this.props.location.pathname !== "/product-category" && this.props.location.pathname !== "/productDetail") {
 
 			console.log("second if condition");
-		 axios.post('http://apistore.zwz.co.in/authentication/tokencheck/' , 
+		 axios.post('http://api.store.zwz.co.in/authentication/tokencheck/' , 
 
 		 {
 		 	
@@ -222,7 +222,7 @@ class Home extends Component {
 
 		}else if (window.location.href==="http://store.zwz.co.in/home") {
 
-		axios.post('http://apistore.zwz.co.in/api/add_item/' , 
+		axios.post('http://api.store.zwz.co.in/api/add_item/' , 
 
 		 {
 		 	

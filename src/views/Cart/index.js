@@ -760,7 +760,7 @@ OnSaveGst(){
   
   if(window.location.href === "http://store.zwz.co.in/cart" || window.location.href === "http://store.zwz.co.in/cart#" || window.location.href=== "http://localhost:3000/cart#" || window.location.href=== "http://localhost:3000/cart") {
 
-     axios.post('http://apistore.zwz.co.in/authentication/update_get_info/' , 
+     axios.post('http://api.store.zwz.co.in/authentication/update_get_info/' , 
 
      {
       
@@ -921,7 +921,7 @@ Successtoggle() {
 shippingToggle() {
   if (window.location.href === "http://store.zwz.co.in/cart" || window.location.href === "http://store.zwz.co.in/cart#" || window.location.href === "http://localhost:3000/cart") {
 
-    axios.get('http://apistore.zwz.co.in/authentication/get_info/',
+    axios.get('http://api.store.zwz.co.in/authentication/get_info/',
       {
          headers: {
               'Content-Type': 'application/json',
@@ -944,7 +944,7 @@ shippingToggle() {
     });
 
   } else  if (window.location.href === "http://nod.prtouch.com:8081/cart" || window.location.href === "http://nod.prtouch.com:8081/cart#") {
-    axios.get('http://apistore.zwz.co.in/authentication/get_info/',
+    axios.get('http://api.store.zwz.co.in/authentication/get_info/',
       {
          headers: {
               'Content-Type': 'application/json',
@@ -981,12 +981,12 @@ shippingToggle() {
 
     var url=''
     if (window.location.href === "http://store.zwz.co.in/cart"){
-      url="http://apistore.zwz.co.in/api/get_avlinfo/"
+      url="http://api.store.zwz.co.in/api/get_avlinfo/"
     }
     else if(window.location.href === "http://nod.prtouch.com:8081/cart" || window.location.href === "http://localhost:3000/cart"  || window.location.href === "http://nod.prtouch.com:8081/cart#"){
       url="http://apinod.prtouch.com:8081/api/get_avlinfo/"
     }else{
-      url="http://apistore.zwz.co.in/api/get_avlinfo/"
+      url="http://api.store.zwz.co.in/api/get_avlinfo/"
     }
       axios.get(url , 
       {
@@ -1044,7 +1044,7 @@ before_login_total_amount: totalAmount
 async onUpdateQuantity(e,itemId, Quantity){
 /*if(e.key === 'Enter'){*/
 if (window.location.href === "http://store.zwz.co.in/cart" || window.location.href === "http://localhost:3000/cart") {
-axios.post('http://apistore.zwz.co.in/api/update_item_quantity/' ,
+axios.post('http://api.store.zwz.co.in/api/update_item_quantity/' ,
 {
 "item_id": itemId,
 "item_quantity": Quantity
@@ -1153,7 +1153,7 @@ async getCartData(){
       isActive: true
     })
     
-    axios.get('http://apistore.zwz.co.in/api/display_additem/' , {
+    axios.get('http://api.store.zwz.co.in/api/display_additem/' , {
         headers: {'Authorization' : 'Token ' + localStorage.getItem('auth_key')} 
       }
     ).then((response) =>  {
@@ -1359,7 +1359,7 @@ async removeItem(itemId){
 
 if (window.location.href === "http://store.zwz.co.in/cart"  || window.location.href.indexOf("http://localhost:3000/cart") > -1) {
 
-axios.post('http://apistore.zwz.co.in/api/remove_item_cart/' , 
+axios.post('http://api.store.zwz.co.in/api/remove_item_cart/' , 
 
 {
 
@@ -1450,7 +1450,7 @@ for(var i = 0; i < this.state.added_item.length; i++) {
   }
 }
 
-axios.post('http://apistore.zwz.co.in/api/check_rfq_status/',{
+axios.post('http://api.store.zwz.co.in/api/check_rfq_status/',{
 
 "item_info": arr
 },{
@@ -1595,7 +1595,7 @@ for(var i = 0; i < this.state.added_item.length; i++) {
   }
 }
 
-axios.post('http://apistore.zwz.co.in/api/sales_confirmation/' , 
+axios.post('http://api.store.zwz.co.in/api/sales_confirmation/' , 
 {
 "item_info": arr
 },{
