@@ -68,7 +68,7 @@ const responsive = {
 let hostname = window.location.hostname;
 var Name = "";
 var nodlogo = false
-if (hostname == "zwz.prtouch.com") {
+if (hostname == "store.zwz.co.in") {
 	Name = "ZWZ"
 	
 }else{
@@ -114,7 +114,7 @@ class Home extends Component {
 	async AutoLogout(){
 		console.log(this.props.match);
 
-		if(hostname === "zwz.prtouch.com" || hostname === "localhost") {
+		if(hostname === "store.zwz.co.in" || hostname === "localhost") {
 			console.log("first if condition");
 			console.log("path" + this.props.location.pathname)
 		if (this.props.location.pathname !== "/login" && this.props.location.pathname !== "/signup" && this.props.location.pathname !== "/product-category" && this.props.location.pathname !== "/productDetail") {

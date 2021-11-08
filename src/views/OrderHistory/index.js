@@ -85,7 +85,7 @@ class OrderHistory extends Component {
 
 		if (window.location.href == 'http://store.zwz.co.in/order-history' || window.location.href == "http://localhost:3000/order-history") {
 
-			axios.get('http://apizwz.prtouch.com/authentication/get_info/',
+			axios.get('http://api.store.zwz.co.in/authentication/get_info/',
     	  		{
          		headers: {
               		'Content-Type': 'application/json',
@@ -126,7 +126,7 @@ class OrderHistory extends Component {
 				isActive: true
 			})
 
-			axios.get('http://apizwz.prtouch.com/api/my_order/' , {
+			axios.get('http://api.store.zwz.co.in/api/my_order/' , {
 			 	 headers: {
 	          	'Authorization' : 'Token ' + localStorage.getItem('auth_key')
 	        	} 
@@ -230,7 +230,7 @@ class OrderHistory extends Component {
     	var invoice_id =  post.mysc_order_no.split('I');
     	var getInvoiceId = invoice_id[0]
     	if (window.location.href == 'http://store.zwz.co.in/order-history' || window.location.href == 'http://store.zwz.co.in/order-history#' || window.location.href.indexOf("http://localhost:3000/order-history") > -1 ) {
-    		var url = 'http://apizwz.prtouch.com/api/print_sales_invoice/'+getInvoiceId+'/'
+    		var url = 'http://api.store.zwz.co.in/api/print_sales_invoice/'+getInvoiceId+'/'
     	}else if (window.location.href == 'http://nod.prtouch.com:8081/order-history' || window.location.href == 'http://nod.prtouch.com:8081/order-history#') {
     		var url = 'http://apinod.prtouch.com/api/print_sales_invoice/'+getInvoiceId+'/'
     	}
@@ -375,7 +375,7 @@ openInvoice(data){
 		    arr.push(orderData);
 
 
-		axios.post('http://apizwz.prtouch.com/api/add_item/' , 
+		axios.post('http://api.store.zwz.co.in/api/add_item/' , 
 
 		 {
 		 	

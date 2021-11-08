@@ -92,7 +92,7 @@ class Header extends Component {
       quantity: "1",
       quantity1: "1",
       cart_num: "",
-      locationUrl: hostname == "zwz.prtouch.com" ? false : true,
+      locationUrl: hostname == "store.zwz.co.in" ? false : true,
       cart_withoutLogin: false,
       nod_hover_pannel: false,
       zwz_hover_pannel: false,
@@ -121,7 +121,7 @@ class Header extends Component {
   async AutoLogout() {
     console.log(this.props.match);
 
-    if (hostname === "zwz.prtouch.com" || hostname === "localhost") {
+    if (hostname === "store.zwz.co.in" || hostname === "localhost") {
       console.log("first if condition");
       console.log("path" + this.props.location.pathname);
       if (
@@ -213,7 +213,7 @@ class Header extends Component {
       if (
         window.location.href === "http://store.zwz.co.in/login#" ||
         hostname === "localhost" ||
-        hostname === "zwz.prtouch.com" ||
+        hostname === "store.zwz.co.in" ||
         window.location.href === "http://store.zwz.co.in/" ||
         window.location.href === "http://store.zwz.co.in/home" ||
         window.location.href === "http://store.zwz.co.in/home#" ||
@@ -297,7 +297,7 @@ class Header extends Component {
     var login_detail_type = window.localStorage.getItem("login_type");
     document.addEventListener("mousedown", this.hideTypeahead, false);
 
-    /*if (window.location.hostname==="zwz.prtouch.com") {
+    /*if (window.location.hostname==="store.zwz.co.in") {
 			this.setState({
 				locationUrl: false
 			})
@@ -329,7 +329,7 @@ class Header extends Component {
   async getCartData() {
     if (
       window.location.href === "http://store.zwz.co.in/cart" ||
-      hostname === "zwz.prtouch.com" ||
+      hostname === "store.zwz.co.in" ||
       window.location.href === "http://store.zwz.co.in/home" ||
       window.location.href === "http://store.zwz.co.in/product-category" ||
       window.location.href === "http://store.zwz.co.in/rfq" ||
@@ -501,7 +501,7 @@ class Header extends Component {
 
     if (
       window.location.href === "http://store.zwz.co.in/login#" ||
-      hostname === "zwz.prtouch.com" ||
+      hostname === "store.zwz.co.in" ||
       window.location.href === "http://store.zwz.co.in/" ||
       window.location.href === "http://store.zwz.co.in/home" ||
       window.location.href === "http://store.zwz.co.in/product-category" ||
@@ -633,7 +633,7 @@ class Header extends Component {
   }
 
   onLogout() {
-    if (hostname === "zwz.prtouch.com" || hostname === "localhost") {
+    if (hostname === "store.zwz.co.in" || hostname === "localhost") {
       axios
         .post(
           "http://api.store.zwz.co.in/authentication/user/logout/",
@@ -737,7 +737,7 @@ class Header extends Component {
 
     if (
       window.location.href === "http://store.zwz.co.in/login#" ||
-      hostname === "zwz.prtouch.com" ||
+      hostname === "store.zwz.co.in" ||
       window.location.href === "http://store.zwz.co.in/" ||
       window.location.href === "http://store.zwz.co.in/home" ||
       window.location.href === "http://store.zwz.co.in/product-category" ||
@@ -861,7 +861,7 @@ class Header extends Component {
 
     if (
       window.location.href === "http://store.zwz.co.in/login#" ||
-      hostname === "zwz.prtouch.com" ||
+      hostname === "store.zwz.co.in" ||
       window.location.href === "http://store.zwz.co.in/" ||
       window.location.href === "http://store.zwz.co.in/home" ||
       window.location.href === "http://store.zwz.co.in/home#" ||
@@ -1079,7 +1079,7 @@ class Header extends Component {
 
     if (
       window.location.href === "http://store.zwz.co.in/login#" ||
-      hostname === "zwz.prtouch.com" ||
+      hostname === "store.zwz.co.in" ||
       window.location.href === "http://store.zwz.co.in/" ||
       window.location.href === "http://store.zwz.co.in/home" ||
       window.location.href === "http://store.zwz.co.in/product-category" ||

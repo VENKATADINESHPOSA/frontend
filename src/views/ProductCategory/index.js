@@ -103,7 +103,7 @@ class ProductCategory extends Component {
 
 		}
 		/*if (window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://localhost:3000/product-category") {
-			axios.get('http://apizwz.prtouch.com/api/ShareItem/ZWZ/'+this.state.itemId+"/" , 
+			axios.get('http://api.store.zwz.co.in/api/ShareItem/ZWZ/'+this.state.itemId+"/" , 
 				{
 			 		headers: {
 	          			'Authorization' : 'Token ' + sessionStorage.getItem('auth_key')

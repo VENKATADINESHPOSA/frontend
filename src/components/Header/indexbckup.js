@@ -185,7 +185,7 @@ class Header extends Component {
 
 
 
-		if (window.location.hostname==="zwz.prtouch.com") {
+		if (window.location.hostname==="store.zwz.co.in") {
 			this.setState({
 				locationUrl: false
 			})
@@ -236,7 +236,7 @@ class Header extends Component {
 	async getCartData(){
 
 		if (window.location.href === "http://store.zwz.co.in/cart" || 
-			hostname === "zwz.prtouch.com" || hostname === "localhost" ||
+			hostname === "store.zwz.co.in" || hostname === "localhost" ||
 			
 			window.location.href === "http://store.zwz.co.in/home" || 
 			window.location.href === "http://store.zwz.co.in/product-category" || 
@@ -249,7 +249,7 @@ class Header extends Component {
 			window.location.href.indexOf("http://localhost:3000/order") > -1 ||
 			window.location.href.indexOf("http://localhost:3000/product-category") > -1)  {
 
-		axios.get('http://apizwz.prtouch.com/api/display_additem/' , 
+		axios.get('http://api.store.zwz.co.in/api/display_additem/' , 
 
 		{
 		 	 headers: {
@@ -435,12 +435,12 @@ class Header extends Component {
 
 	    });
 
-	    if (window.location.href === "http://store.zwz.co.in/login#" || hostname === "zwz.prtouch.com" || hostname === "localhost" || window.location.href === "http://store.zwz.co.in/" || window.location.href === "http://store.zwz.co.in/home" || window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://store.zwz.co.in/cart" || window.location.href === "http://localhost:3000/home#" || window.location.href === "http://localhost:3000/login#"  || window.location.href === "http://localhost:3000" || window.location.href === "http://localhost:3000/login" || window.location.href === "http://localhost:3000/product-category" ||  window.location.href === "http://localhost:3000/cart" || window.location.href==="http://store.zwz.co.in/rfq" || window.location.href==="http://store.zwz.co.in/order-history" || window.location.href==="http://store.zwz.co.in/order-detail" ||window.location.href === "http://store.zwz.co.in/rfq-history" ) {
+	    if (window.location.href === "http://store.zwz.co.in/login#" || hostname === "store.zwz.co.in" || hostname === "localhost" || window.location.href === "http://store.zwz.co.in/" || window.location.href === "http://store.zwz.co.in/home" || window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://store.zwz.co.in/cart" || window.location.href === "http://localhost:3000/home#" || window.location.href === "http://localhost:3000/login#"  || window.location.href === "http://localhost:3000" || window.location.href === "http://localhost:3000/login" || window.location.href === "http://localhost:3000/product-category" ||  window.location.href === "http://localhost:3000/cart" || window.location.href==="http://store.zwz.co.in/rfq" || window.location.href==="http://store.zwz.co.in/order-history" || window.location.href==="http://store.zwz.co.in/order-detail" ||window.location.href === "http://store.zwz.co.in/rfq-history" ) {
 	    	this.setState({
 				zwz_hover_pannel: true
 	    	})
 
-	    axios.post('http://apizwz.prtouch.com/api/display_product/', {
+	    axios.post('http://api.store.zwz.co.in/api/display_product/', {
 	    	item_id: productVal,
 	    	flag: "false"
 	    })
@@ -536,9 +536,9 @@ class Header extends Component {
 
 	onLogout(){
 
-		if (hostname === "zwz.prtouch.com" || hostname === "localhost") {
+		if (hostname === "store.zwz.co.in" || hostname === "localhost") {
 
-		 axios.post('http://apizwz.prtouch.com/authentication/user/logout/' , 
+		 axios.post('http://api.store.zwz.co.in/authentication/user/logout/' , 
 
 		 {
 		 	
@@ -690,9 +690,9 @@ class Header extends Component {
 	     console.log(productValue);
 	     sessionStorage.setItem('product-val', productValue)
 
-	    if (window.location.href === "http://store.zwz.co.in/login#"  || hostname==="localhost" || hostname === "zwz.prtouch.com" || window.location.href === "http://store.zwz.co.in/" || window.location.href === "http://store.zwz.co.in/home" || window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://store.zwz.co.in/cart" || window.location.href === "http://localhost:3000/home#" || window.location.href === "http://localhost:3000/login#"  || window.location.href === "http://localhost:3000" || window.location.href === "http://localhost:3000/login" || window.location.href === "http://localhost:3000/product-category" ||  window.location.href === "http://localhost:3000/cart" || window.location.href==="http://store.zwz.co.in/rfq" || window.location.href==="http://store.zwz.co.in/order-history" || window.location.href==="http://store.zwz.co.in/order-detail" ) {
+	    if (window.location.href === "http://store.zwz.co.in/login#"  || hostname==="localhost" || hostname === "store.zwz.co.in" || window.location.href === "http://store.zwz.co.in/" || window.location.href === "http://store.zwz.co.in/home" || window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://store.zwz.co.in/cart" || window.location.href === "http://localhost:3000/home#" || window.location.href === "http://localhost:3000/login#"  || window.location.href === "http://localhost:3000" || window.location.href === "http://localhost:3000/login" || window.location.href === "http://localhost:3000/product-category" ||  window.location.href === "http://localhost:3000/cart" || window.location.href==="http://store.zwz.co.in/rfq" || window.location.href==="http://store.zwz.co.in/order-history" || window.location.href==="http://store.zwz.co.in/order-detail" ) {
 
-	    axios.post('http://apizwz.prtouch.com/api/display_product/', {
+	    axios.post('http://api.store.zwz.co.in/api/display_product/', {
 	    	item_id: productValue,
 	    	flag: "true"
 	    })
@@ -792,7 +792,7 @@ class Header extends Component {
 		 })
 
 
-		if (window.location.href === "http://store.zwz.co.in/login#" || hostname === "localhost" || hostname === "zwz.prtouch.com" || window.location.href === "http://store.zwz.co.in/" || window.location.href === "http://store.zwz.co.in/home" ||  window.location.href === "http://store.zwz.co.in/home#" || window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://store.zwz.co.in/cart" || window.location.href === "http://localhost:3000/home#" || window.location.href === "http://localhost:3000/login#"  || window.location.href === "http://localhost:3000/login" || window.location.href === "http://localhost:3000/product-category" ||  window.location.href === "http://localhost:3000/cart" || window.location.href==="http://store.zwz.co.in/rfq" || window.location.href==="http://store.zwz.co.in/order-history" || window.location.href==="http://store.zwz.co.in/order-detail" || window.location.href ==="http://store.zwz.co.in/rfq-history" ) {
+		if (window.location.href === "http://store.zwz.co.in/login#" || hostname === "localhost" || hostname === "store.zwz.co.in" || window.location.href === "http://store.zwz.co.in/" || window.location.href === "http://store.zwz.co.in/home" ||  window.location.href === "http://store.zwz.co.in/home#" || window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://store.zwz.co.in/cart" || window.location.href === "http://localhost:3000/home#" || window.location.href === "http://localhost:3000/login#"  || window.location.href === "http://localhost:3000/login" || window.location.href === "http://localhost:3000/product-category" ||  window.location.href === "http://localhost:3000/cart" || window.location.href==="http://store.zwz.co.in/rfq" || window.location.href==="http://store.zwz.co.in/order-history" || window.location.href==="http://store.zwz.co.in/order-detail" || window.location.href ==="http://store.zwz.co.in/rfq-history" ) {
 			this.setState({
 				zwz_search_pannel: true
 			})
@@ -804,7 +804,7 @@ class Header extends Component {
 
 	    if (e.target.value != 0) {
 
-	    axios.post('http://apizwz.prtouch.com/api/search_product/', {
+	    axios.post('http://api.store.zwz.co.in/api/search_product/', {
 	    	searching_key: e.target.value
 	        
 
@@ -1017,7 +1017,7 @@ class Header extends Component {
 			
 		})*/
 
-		if (window.location.href === "http://store.zwz.co.in/login#" || hostname === "localhost" || hostname === "zwz.prtouch.com" || window.location.href === "http://store.zwz.co.in/" || window.location.href === "http://store.zwz.co.in/home" || window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://store.zwz.co.in/cart" || window.location.href === "http://localhost:3000/home#" || window.location.href === "http://localhost:3000/login#"  || window.location.href === "http://localhost:3000" || window.location.href === "http://localhost:3000/login" || window.location.href === "http://localhost:3000/product-category" ||  window.location.href === "http://localhost:3000/cart" || window.location.href === "http://store.zwz.co.in/rfq" || window.location.href === "http://store.zwz.co.in/order-history" ) {
+		if (window.location.href === "http://store.zwz.co.in/login#" || hostname === "localhost" || hostname === "store.zwz.co.in" || window.location.href === "http://store.zwz.co.in/" || window.location.href === "http://store.zwz.co.in/home" || window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://store.zwz.co.in/cart" || window.location.href === "http://localhost:3000/home#" || window.location.href === "http://localhost:3000/login#"  || window.location.href === "http://localhost:3000" || window.location.href === "http://localhost:3000/login" || window.location.href === "http://localhost:3000/product-category" ||  window.location.href === "http://localhost:3000/cart" || window.location.href === "http://store.zwz.co.in/rfq" || window.location.href === "http://store.zwz.co.in/order-history" ) {
 
 		if (this.props.isLoggedIn) {
 
@@ -1033,7 +1033,7 @@ class Header extends Component {
 		    arr.push(orderData);
 
 
-		axios.post('http://apizwz.prtouch.com/api/add_item/' , 
+		axios.post('http://api.store.zwz.co.in/api/add_item/' , 
 
 		 {
 		 	

@@ -216,7 +216,7 @@ class Header extends Component {
 
 	    });
 
-	    axios.post('http://apizwz.prtouch.com/api/display_product/', {
+	    axios.post('http://api.store.zwz.co.in/api/display_product/', {
 	    	item_id: productVal,
 	    	flag:"false"
 	    })
@@ -258,7 +258,7 @@ class Header extends Component {
 	}
 
 	onLogout(){
-		 axios.post('http://apizwz.prtouch.com/authentication/user/logout/' , 
+		 axios.post('http://api.store.zwz.co.in/authentication/user/logout/' , 
 
 		 {
 		 	
@@ -303,7 +303,7 @@ class Header extends Component {
 	     console.log(productValue);
 	     sessionStorage.setItem('product-val', productValue)
 
-	    axios.post('http://apizwz.prtouch.com/api/display_product/', {
+	    axios.post('http://api.store.zwz.co.in/api/display_product/', {
 	    	item_id: productValue,
 	    	flag: "false"
 	    })
@@ -366,7 +366,7 @@ class Header extends Component {
 	    });
 	    if (e.target.value != 0) {
 
-	    axios.post('http://apizwz.prtouch.com/api/search_product/', {
+	    axios.post('http://api.store.zwz.co.in/api/search_product/', {
 	    	searching_key: e.target.value
 	        
 
@@ -475,7 +475,7 @@ class Header extends Component {
 		    arr.push(orderData);
 
 
-		axios.post('http://apizwz.prtouch.com/api/add_item/' , 
+		axios.post('http://api.store.zwz.co.in/api/add_item/' , 
 
 		 {
 		 	

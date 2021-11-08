@@ -16,7 +16,7 @@ let hostname = window.location.hostname;
 var baseURL = localStorage.getItem('url');
 var LOGO = "";
 var nodlogo = false
-if (hostname == "zwz.prtouch.com") {
+if (hostname == "store.zwz.co.in") {
 	LOGO = logo
 	nodlogo = false
 

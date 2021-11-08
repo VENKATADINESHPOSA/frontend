@@ -459,12 +459,12 @@ class MyProfile extends Component {
 	updateProfile(){
 		var url=''
 		if (window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#"){
-			url="http://apizwz.prtouch.com/authentication/update_get_info/"
+			url="http://api.store.zwz.co.in/authentication/update_get_info/"
 		}
 		else if(window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://nod.prtouch.com:8081/my-profile" || window.location.href === "http://nod.prtouch.com:8081/my-profile#"){
 			url="http://apinod.prtouch.com/authentication/update_get_info/"
 		}else{
-			url="http://apizwz.prtouch.com/authentication/update_get_info/"
+			url="http://api.store.zwz.co.in/authentication/update_get_info/"
 		}
 		/*if(window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#" || window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#") {*/
 			if (this.state.gstNumber == "") {
@@ -567,11 +567,11 @@ class MyProfile extends Component {
 	}
 	async statelist(e){	
 		if (window.location.href === "http://store.zwz.co.in/my-profile#" || window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href=="http://localhost:3000/my-profile" ) {
-			var url = "http://apizwz.prtouch.com/authentication/state_list/";
+			var url = "http://api.store.zwz.co.in/authentication/state_list/";
 		} else if (window.location.href === "http://nod.prtouch.com:8081/my-profile#" || window.location.href === "http://nod.prtouch.com:8081/my-profile" || window.location.href=="http://localhost:3000/my-profile" ) {
 			var url = "http://apinod.prtouch.com/authentication/state_list/";
 		}else{
-			var url = "http://apizwz.prtouch.com/authentication/state_list/";
+			var url = "http://api.store.zwz.co.in/authentication/state_list/";
 		}
 		var datastring = {
 			url	:	url
@@ -605,7 +605,7 @@ class MyProfile extends Component {
 		window.scrollTo(0, 0)
 		if (window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#" || window.location.href === "http://localhost:3000/my-profile" ) {
 			var stateData = '';
-			axios.get('http://apizwz.prtouch.com/authentication/get_info/',
+			axios.get('http://api.store.zwz.co.in/authentication/get_info/',
     	  		{
          		headers: {
               		'Content-Type': 'application/json',
@@ -627,7 +627,7 @@ class MyProfile extends Component {
                     billing_details_b_pincode : response.data.data.billing_details.b_pincode
 				})
 
-				axios('http://apizwz.prtouch.com/authentication/city_list/',
+				axios('http://api.store.zwz.co.in/authentication/city_list/',
 				{
 				method: 'POST',
 				headers: {
@@ -653,7 +653,7 @@ class MyProfile extends Component {
 	    	});
 
 
-		axios.get('http://apizwz.prtouch.com/authentication/state_list/',
+		axios.get('http://api.store.zwz.co.in/authentication/state_list/',
 			{
 				headers:{
 					'Content-Type' : 'application/json',
@@ -667,7 +667,7 @@ class MyProfile extends Component {
 		})
 		}
 		if (window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#" || window.location.href === "http://localhost:3000/my-profile") {
-    	axios.get('http://apizwz.prtouch.com/authentication/get_info/',
+    	axios.get('http://api.store.zwz.co.in/authentication/get_info/',
       {
          headers: {
               'Content-Type': 'application/json',

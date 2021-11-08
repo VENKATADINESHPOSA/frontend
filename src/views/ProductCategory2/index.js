@@ -106,7 +106,7 @@ class ProductCategory extends Component {
 
 		}
 		/*if (window.location.href === "http://store.zwz.co.in/product-category" || window.location.href === "http://localhost:3000/product-category") {
-			axios.get('http://apizwz.prtouch.com/api/ShareItem/ZWZ/'+this.state.itemId+"/" , 
+			axios.get('http://api.store.zwz.co.in/api/ShareItem/ZWZ/'+this.state.itemId+"/" , 
 				{
 			 		headers: {
 	          			'Authorization' : 'Token ' + sessionStorage.getItem('auth_key')
@@ -129,7 +129,7 @@ class ProductCategory extends Component {
 
 
 	componentDidMount(){
-		if (window.location.hostname === "zwz.prtouch.com" || window.location.hostname === "localhost") {
+		if (window.location.hostname === "store.zwz.co.in" || window.location.hostname === "localhost") {
 			axios.post('http://api.store.zwz.co.in/api/ShareItemDetails/',
 				{
 					"db_type": "ZWZ",
@@ -275,7 +275,7 @@ class ProductCategory extends Component {
 		var amount = price * quantity;
 
 		
-		if (window.location.hostname === "zwz.prtouch.com" || window.location.hostname === "localhost"){
+		if (window.location.hostname === "store.zwz.co.in" || window.location.hostname === "localhost"){
 			console.log("hello");
 		if (this.props.isLoggedIn) {
 			console.log(ProductData1);

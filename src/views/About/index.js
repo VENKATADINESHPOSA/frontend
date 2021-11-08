@@ -20,7 +20,7 @@ import {updateCartItemData} from '~/redux/action/cartItemVal';
 let hostname = window.location.hostname;
 var Name = "";
 var nodlogo = false
-if (hostname == "zwz.prtouch.com") {
+if (hostname == "store.zwz.co.in") {
 	Name = "ZWZ"
 	
 }else{
@@ -65,13 +65,13 @@ class About extends Component {
 	async AutoLogout(){
 		console.log(this.props.match);
 
-		if(hostname === "zwz.prtouch.com" || hostname === "localhost") {
+		if(hostname === "store.zwz.co.in" || hostname === "localhost") {
 			console.log("first if condition");
 			console.log("path" + this.props.location.pathname)
 		if (this.props.location.pathname !== "/login" && this.props.location.pathname !== "/signup" && this.props.location.pathname !== "/product-category" && this.props.location.pathname !== "/productDetail") {
 
 			console.log("second if condition");
-		 axios.post('http://apizwz.prtouch.com/authentication/tokencheck/' , 
+		 axios.post('http://api.store.zwz.co.in/authentication/tokencheck/' , 
 
 		 {
 		 	
@@ -173,7 +173,7 @@ class About extends Component {
 
 		}else if (window.location.href==="http://store.zwz.co.in/home") {
 
-		axios.post('http://apizwz.prtouch.com/api/add_item/' , 
+		axios.post('http://api.store.zwz.co.in/api/add_item/' , 
 
 		 {
 		 	

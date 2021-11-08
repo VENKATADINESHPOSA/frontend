@@ -226,7 +226,7 @@ class MyProfile extends Component {
             "b_city_id":1
 		 }
 
-		 axios.post('http://apizwz.prtouch.com/authentication/update_get_info/' , 
+		 axios.post('http://api.store.zwz.co.in/authentication/update_get_info/' , 
 
 		 {
 		 	"key" : "my_profile"
@@ -287,11 +287,11 @@ class MyProfile extends Component {
 
 	async statelist(e){	
 		if (window.location.href === "http://store.zwz.co.in/signup#" || window.location.href === "http://store.zwz.co.in/signup" ) {
-			var url = "http://apizwz.prtouch.com/authentication/state_list/";
+			var url = "http://api.store.zwz.co.in/authentication/state_list/";
 		} else if(window.location.href === "http://nod.prtouch.com:8081/signup#" || window.location.href === "http://nod.prtouch.com:8081/signup" || window.location.href === "http://localhost:3000/login#" || window.location.href === "http://localhost:3000/login"){
 			var url = "http://apinod.prtouch.com/authentication/state_list/";
 		}else{
-			var url = "http://apizwz.prtouch.com/authentication/state_list/";
+			var url = "http://api.store.zwz.co.in/authentication/state_list/";
 		}
 		
 		var datastring = {
@@ -338,7 +338,7 @@ class MyProfile extends Component {
 		if (window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#" || window.location.href === "http://localhost:3000/my-profile") {
 			
 
-    axios.get('http://apizwz.prtouch.com/authentication/get_info/',
+    axios.get('http://api.store.zwz.co.in/authentication/get_info/',
       {
          headers: {
               'Content-Type': 'application/json',
@@ -381,7 +381,7 @@ class MyProfile extends Component {
 
   } else  if (window.location.href === "http://nod.prtouch.com:8081/my-profile" || window.location.href === "http://nod.prtouch.com:8081/my-profile#") {
 
-    axios.get('http://apizwz.prtouch.com/authentication/get_info/',
+    axios.get('http://api.store.zwz.co.in/authentication/get_info/',
       {
          headers: {
               'Content-Type': 'application/json',

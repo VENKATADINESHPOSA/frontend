@@ -274,7 +274,7 @@ class ReviewRFI extends Component {
 	/*oncityList(cityName){
 		if (window.location.href === "http://store.zwz.co.in/shipping/" || window.location.href === "http://store.zwz.co.in/shipping" || window.location.href === "http://store.zwz.co.in/shipping#" || window.location.href === "http://localhost:3000/shipping/" || window.location.href === "http://localhost:3000/shipping#" || window.location.href === "http://localhost:3000/shipping" ) 
 		{
-			axios('http://apizwz.prtouch.com/authentication/city_list/',
+			axios('http://api.store.zwz.co.in/authentication/city_list/',
 				{
 				method: 'POST',
 				headers: {

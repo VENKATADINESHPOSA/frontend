@@ -92,7 +92,7 @@ class Wishlist extends Component {
 
 
 
-		axios.post('http://apizwz.prtouch.com/api/item_availability/', {
+		axios.post('http://api.store.zwz.co.in/api/item_availability/', {
 	    	"searching_key": ProductData1.itemname[0]
 	    }
 
@@ -232,7 +232,7 @@ class Wishlist extends Component {
 		    arr.push(orderData);
 
 
-		axios.post('http://apizwz.prtouch.com/api/add_item/' , 
+		axios.post('http://api.store.zwz.co.in/api/add_item/' , 
 
 		 {
 		 	

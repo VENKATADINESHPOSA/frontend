@@ -114,7 +114,7 @@ class App extends Component {
         })
       );
     }
-    if (hostname === "zwz.prtouch.com" || hostname === "localhost") {
+    if (hostname === "store.zwz.co.in" || hostname === "localhost") {
       console.log("first if condition");
       console.log("path" + this.props.location.pathname);
     }
@@ -123,7 +123,7 @@ class App extends Component {
   async AutoLogout() {
     console.log(this.props.match);
 
-    if (hostname === "zwz.prtouch.com" || hostname === "localhost") {
+    if (hostname === "store.zwz.co.in" || hostname === "localhost") {
       console.log("first if condition");
       console.log("path" + this.props.location.pathname);
       if (
@@ -136,7 +136,7 @@ class App extends Component {
         console.log("second if condition");
         axios
           .post(
-            "http://apizwz.prtouch.com/authentication/tokencheck/",
+            "http://api.store.zwz.co.in/authentication/tokencheck/",
 
             {
               tokenkey: localStorage.getItem("auth_key"),

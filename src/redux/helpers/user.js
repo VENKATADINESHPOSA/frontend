@@ -89,7 +89,7 @@ export const register = async info => {
 /*export const mobileverfication = async info => {
 	try{
 		console.log(info)
-	    const response = await axios('http://apizwz.prtouch.com/authentication/mobile/otp_sent/',
+	    const response = await axios('http://api.store.zwz.co.in/authentication/mobile/otp_sent/',
 	        {
 	            method: 'POST',
 	            headers: {

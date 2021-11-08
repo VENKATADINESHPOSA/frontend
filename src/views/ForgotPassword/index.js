@@ -11,7 +11,7 @@ let hostname = window.location.hostname;
 var baseURL = localStorage.getItem("url");
 var LOGO = "";
 var nodlogo = false;
-if (hostname == "zwz.prtouch.com") {
+if (hostname == "store.zwz.co.in") {
   LOGO = logo;
   nodlogo = false;
 } else {
@@ -179,7 +179,7 @@ class ForgotPassword extends Component {
 		   	 })
 		    console.log(ref.state.emailVal);
 
-		    axios.post('http://apizwz.prtouch.com/authentication/check_user/', {
+		    axios.post('http://api.store.zwz.co.in/authentication/check_user/', {
 		    	db_type: "zwz",
 		        user_name: event.target.value,
 
@@ -272,7 +272,7 @@ class ForgotPassword extends Component {
 
   onForgotPassword(event) {
     var ref = this;
-    if (hostname === "zwz.prtouch.com") {
+    if (hostname === "store.zwz.co.in") {
       axios
         .post(
           "http://api.store.zwz.co.in/authentication/change_password/",

@@ -75,7 +75,7 @@ class OrderHistory extends Component {
 				isActive: true
 			})
 
-			axios.get('http://apizwz.prtouch.com/api/my_order/' , {
+			axios.get('http://api.store.zwz.co.in/api/my_order/' , {
 			 	 headers: {
 	          	'Authorization' : 'Token ' + sessionStorage.getItem('auth_key')
 	        	} 
@@ -225,7 +225,7 @@ class OrderHistory extends Component {
 		    arr.push(orderData);
 
 
-		axios.post('http://apizwz.prtouch.com/api/add_item/' , 
+		axios.post('http://api.store.zwz.co.in/api/add_item/' , 
 
 		 {
 		 	
