@@ -244,13 +244,13 @@ class Signup extends Component {
       this.state.api_url =
         "http://api.store.zwz.co.in/authentication/user/signup/";
     } else if (
-      window.location.href === "http://nod.prtouch.com:8081/signup#" ||
-      window.location.href === "http://nod.prtouch.com:8081/signup" ||
+      window.location.href === "http://store.nodbearings.net/signup#" ||
+      window.location.href === "http://store.nodbearings.net/signup" ||
       window.location.href === "http://localhost:3000/signup#" ||
       window.location.href === "http://localhost:3000/signup"
     ) {
       this.state.api_url =
-        "http://apinod.prtouch.com/authentication/user/signup/";
+        "http://api.store.nodbearings.net/authentication/user/signup/";
     } else {
       this.state.api_url =
         "http://api.store.zwz.co.in/authentication/user/signup/";

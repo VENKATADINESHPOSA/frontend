@@ -59,7 +59,7 @@ class Login extends Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    baseUrl = localStorage.getItem("url") + ":8081";
+    baseUrl = localStorage.getItem("url");
 
     console.log(this.props.match);
     if (this.reCaptchaEl) {
@@ -108,15 +108,15 @@ class Login extends Component {
     console.log(this.props.cart);
     var url = "";
 
-    if (hostname == "localhost" || hostname == "nod.prtouch.com") {
-      url = "http://apinod.prtouch.com:8081/api/add_item/";
+    if (hostname == "localhost" || hostname == "store.nodbearings.net") {
+      url = "http://api.store.nodbearings.net/api/add_item/";
     } else {
       url = "http://api.store.zwz.co.in/api/add_item/";
     }
 
     for (var i = 0; i < this.props.cart.length; i++) {
       var orderData = {};
-      if (hostname == "localhost" || hostname == "nod.prtouch.com") {
+      if (hostname == "localhost" || hostname == "store.nodbearings.net") {
         orderData["item_id"] = this.props.cart[i].itemid.toString();
         orderData["item_name"] = this.props.cart[i].itemname;
         orderData["amount_per_unit"] = this.props.cart[i].Amount;
@@ -152,7 +152,7 @@ class Login extends Component {
         console.log(response);
 
         /*this.props.history.push('/cart');
-	    	if (window.location.href === 'http://nod.prtouch.com:8081/cart' || window.location.href === 'http://store.zwz.co.in/cart' ){
+	    	if (window.location.href === 'http://store.nodbearings.net/cart' || window.location.href === 'http://store.zwz.co.in/cart' ){
 	    			window.location.reload();
 	    	}*/
         /*window.location.reload();*/
@@ -173,7 +173,7 @@ class Login extends Component {
 
   componentWillMount() {
     if (
-      window.location.href === "http://nod.prtouch.com:8081/login" ||
+      window.location.href === "http://store.nodbearings.net/login" ||
       window.location.href === "http://localhost:3000/login"
     ) {
       this.setState({
@@ -293,9 +293,9 @@ class Login extends Component {
         alert(response.message);
       }
     } else if (
-      window.location.href === "http://nod.prtouch.com:8081/login#" ||
+      window.location.href === "http://store.nodbearings.net/login#" ||
       window.location.href === "http://localhost:3000/login#" ||
-      window.location.href === "http://nod.prtouch.com:8081/login"
+      window.location.href === "http://store.nodbearings.net/login"
     ) {
       const response = await loginNod({
         username: this.state.username,

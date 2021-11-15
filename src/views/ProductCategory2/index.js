@@ -97,9 +97,9 @@ class ProductCategory extends Component {
 			sessionStorage.setItem("itemId", this.state.itemId)
 			this.shareToggel();
 
-		}else if (window.location.href === "http://nod.prtouch.com:8081/product-category") {
+		}else if (window.location.href === "http://store.nodbearings.net/product-category") {
 			this.setState({
-				url: "http://nod.prtouch.com:8081/productDetail/NOD:"+this.state.itemId
+				url: "http://store.nodbearings.net/productDetail/NOD:"+this.state.itemId
 			})
 			sessionStorage.setItem("itemId", this.state.itemId)
 			this.shareToggel();
@@ -170,8 +170,8 @@ class ProductCategory extends Component {
        		})
        		.catch(function (error) {
     		});
-		}else if (window.location.hostname === "nod.prtouch.com") {
-			axios.post('http://apinod.prtouch.com:8081/api/ShareItemDetails/',
+		}else if (window.location.hostname === "store.nodbearings.net") {
+			axios.post('http://api.store.nodbearings.net/api/ShareItemDetails/',
 				{
 					"db_type": "NOD",
 					"itemId": itemId
@@ -324,7 +324,7 @@ class ProductCategory extends Component {
 			this.props.history.push('/cart');
 		}
 
-		} else if (window.location.href==="http://nod.prtouch.com:8081/product-category") {
+		} else if (window.location.href==="http://store.nodbearings.net/product-category") {
 
 		if (this.props.isLoggedIn) {
 
@@ -339,7 +339,7 @@ class ProductCategory extends Component {
 		    arr.push(orderData);
 
 
-		axios.post('http://apinod.prtouch.com:8081/api/add_item/' , 
+		axios.post('http://api.store.nodbearings.net/api/add_item/' , 
 
 		 {
 		 	
@@ -417,7 +417,7 @@ class ProductCategory extends Component {
 
 
 
-		 if (window.location.href==="http://nod.prtouch.com:8081/product-category" ||  window.location.href==="http://localhost:3000/product-category" ) {
+		 if (window.location.href==="http://store.nodbearings.net/product-category" ||  window.location.href==="http://localhost:3000/product-category" ) {
 
 		if (this.props.isLoggedIn) {
 
@@ -432,7 +432,7 @@ class ProductCategory extends Component {
 		    arr.push(orderData);
 
 
-		axios.post('http://apinod.prtouch.com:8081/api/add_item/' , 
+		axios.post('http://api.store.nodbearings.net/api/add_item/' , 
 
 		 {
 		 	

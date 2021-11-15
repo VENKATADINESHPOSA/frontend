@@ -29,7 +29,7 @@ export const login = async info => {
 export const loginNod = async info => {
 	try{
 		//console.log(info)
-	    const response = await axios('http://apinod.prtouch.com:8081/authentication/token/',
+	    const response = await axios('http://api.store.nodbearings.net/authentication/token/',
 	        {
 	            method: 'POST',
 	            headers: {

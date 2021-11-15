@@ -47,8 +47,8 @@ class Emailverification extends Component {
 		var baseurl = sessionStorage.getItem("url")
 		if (window.location.href === "http://store.zwz.co.in/signup#" || window.location.href === "http://store.zwz.co.in/signup" ) {
 			this.state.api_url = " http://api.store.zwz.co.in/authentication/resend_email/";
-		}else if(window.location.href === "http://nod.prtouch.com:8081/signup#" || window.location.href === "http://nod.prtouch.com:8081/signup" || window.location.href === "http://localhost:3000/login#" || window.location.href === "http://localhost:3000/login"){
-			this.state.api_url = " http://apinod.prtouch.com:8081/authentication/resend_email/";
+		}else if(window.location.href === "http://store.nodbearings.net/signup#" || window.location.href === "http://store.nodbearings.net/signup" || window.location.href === "http://localhost:3000/login#" || window.location.href === "http://localhost:3000/login"){
+			this.state.api_url = " http://api.store.nodbearings.net/authentication/resend_email/";
 		}else{
 			this.state.api_url = " http://api.store.zwz.co.in/authentication/resend_email/";
 		}

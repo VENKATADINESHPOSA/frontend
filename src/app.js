@@ -56,10 +56,15 @@ import UpdatedHomeComponent from "./views/UpdatedHome/UpdatedHome.component";
 
 var hostname = window.location.hostname;
 let HomePage;
+let AboutPage;
 console.log("app.js", hostname);
-hostname === "localhost" || hostname === "nod.prtouch.com"
+hostname === "localhost" || hostname === "store.nodbearings.net"
   ? (HomePage = UpdatedNodHomeComponent)
   : (HomePage = UpdatedHomeComponent);
+
+hostname === "localhost" || hostname === "store.nodbearings.net"
+  ? (AboutPage = UpdatedNodAboutUsComponent)
+  : (AboutPage = UpdatedAboutComponent);
 
 class App extends Component {
   constructor(props) {
@@ -75,7 +80,7 @@ class App extends Component {
     if (hostname == "localhost") {
       if ("condition") {
       }
-      window.localStorage.setItem("url", "http://nod.prtouch.com");
+      window.localStorage.setItem("url", "http://store.nodbearings.net");
       console.log("ifCondition", localStorage.getItem("url"));
     } else {
       window.localStorage.setItem("url", "http://" + hostname);
@@ -89,7 +94,7 @@ class App extends Component {
 
       window.localStorage.setItem("login_type", this.state.login_type);
       console.log(this.state.login_type);
-    } else if (window.location.href === "http://nod.prtouch.com:8081/") {
+    } else if (window.location.href === "http://store.nodbearings.net/") {
       this.setState({
         login_type: true,
       });
@@ -157,7 +162,7 @@ class App extends Component {
           })
           .catch(function (error) {});
       }
-    } else if (hostname === "nod.prtouch.com") {
+    } else if (hostname === "store.nodbearings.net") {
       if (
         this.props.location.pathname !== "/" &&
         this.props.location.pathname !== "/login" &&
@@ -165,7 +170,7 @@ class App extends Component {
       ) {
         axios
           .post(
-            "http://apinod.prtouch.com/authentication/tokencheck/",
+            "http://api.store.nodbearings.net/authentication/tokencheck/",
 
             {
               tokenkey: localStorage.getItem("auth_key"),
@@ -217,7 +222,7 @@ class App extends Component {
           />
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/shipping" component={Shipping} />
-          <Route exact path="/about" component={UpdatedAboutComponent} />
+          <Route exact path="/about" component={AboutPage} />
           <Route exact path="/privacy-policy" component={privacyPolicy} />
           <Route exact path="/terms-condition" component={termsCondition} />
           <Route

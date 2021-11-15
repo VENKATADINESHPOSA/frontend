@@ -5,7 +5,7 @@ import UpdatedNodHomeComponent from "../../views/UpdatedNodHome/UpdatedNodHome.c
 const HomePageComponent = () => {
   const hostname = window.location.hostname;
   console.log(hostname)
-  return hostname === "nod.prtouch.com" ? (
+  return hostname === "store.nodbearings.net" ? (
     <UpdatedNodHomeComponent />
   ) : (
     <UpdatedHomeComponent />

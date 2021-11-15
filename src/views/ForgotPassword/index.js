@@ -48,10 +48,10 @@ class ForgotPassword extends Component {
     ) {
       var url = "http://api.store.zwz.co.in/authentication/check_user/";
     } else if (
-      window.location.href === "http://nod.prtouch.com:8081/forget-password#" ||
-      window.location.href === "http://nod.prtouch.com:8081/forget-password"
+      window.location.href === "http://store.nodbearings.net/forget-password#" ||
+      window.location.href === "http://store.nodbearings.net/forget-password"
     ) {
-      var url = "http://apinod.prtouch.com:8081/authentication/check_user/";
+      var url = "http://api.store.nodbearings.net/authentication/check_user/";
     } else {
       var url = "http://api.store.zwz.co.in/authentication/check_user/";
     }
@@ -107,8 +107,8 @@ class ForgotPassword extends Component {
       var url =
         "http://api.store.zwz.co.in/authentication/otp/verification/";
     } else if (
-      window.location.href === "http://nod.prtouch.com:8081/forget-password#" ||
-      window.location.href === "http://nod.prtouch.com:8081/forget-password"
+      window.location.href === "http://store.nodbearings.net/forget-password#" ||
+      window.location.href === "http://store.nodbearings.net/forget-password"
     ) {
       var url =
         "http://api.store.zwz.co.in/authentication/otp/verification/";
@@ -301,10 +301,10 @@ class ForgotPassword extends Component {
             error: "Invalid username and/or password",
           });
         });
-    } else if (hostname === "nod.prtouch.com") {
+    } else if (hostname === "store.nodbearings.net") {
       axios
         .post(
-          "http://apinod.prtouch.com:8081/authentication/change_password/",
+          "http://api.store.nodbearings.net/authentication/change_password/",
           {
             db_type: "zwz",
             user_name: ref.state.username,

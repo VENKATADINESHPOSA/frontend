@@ -131,10 +131,10 @@ class Shipping extends Component {
 					cogoToast.success(response.data.message);*/
 				}
 				)
-		}else if ( window.location.href === "http://nod.prtouch.com:8081/shipping" || window.location.href === "http://nod.prtouch.com:8081/shipping#") 
+		}else if ( window.location.href === "http://store.nodbearings.net/shipping" || window.location.href === "http://store.nodbearings.net/shipping#") 
 		{
 			console.log("sdfghdfgthyj");
-			axios('http://apinod.prtouch.com:8081/authentication/user/createDeliveryAddress/',
+			axios('http://api.store.nodbearings.net/authentication/user/createDeliveryAddress/',
 				{
 				method: 'POST',
 				headers: {
@@ -218,9 +218,9 @@ class Shipping extends Component {
 					cityList : response.data.data
 				})
 				)
-		}else if (window.location.href === "http://nod.prtouch.com:8081/shipping/" || window.location.href === "http://nod.prtouch.com:8081/shipping" || window.location.href === "http://nod.prtouch.com:8081/shipping#") 
+		}else if (window.location.href === "http://store.nodbearings.net/shipping/" || window.location.href === "http://store.nodbearings.net/shipping" || window.location.href === "http://store.nodbearings.net/shipping#") 
 		{
-			axios('http://apinod.prtouch.com/authentication/city_list/',
+			axios('http://api.store.nodbearings.net/authentication/city_list/',
 				{
 				method: 'POST',
 				headers: {
@@ -320,9 +320,9 @@ class Shipping extends Component {
 						isDisabled: false
 					})
 			   }).catch(function (error) {});
-		}else if (window.location.href === "http://nod.prtouch.com:8081/shipping/" || window.location.href === "http://nod.prtouch.com:8081/shipping" || window.location.href === "http://nod.prtouch.com:8081/shipping#"  ) 
+		}else if (window.location.href === "http://store.nodbearings.net/shipping/" || window.location.href === "http://store.nodbearings.net/shipping" || window.location.href === "http://store.nodbearings.net/shipping#"  ) 
 		{
-			axios('http://apinod.prtouch.com:8081/api/sales_confirmation/',
+			axios('http://api.store.nodbearings.net/api/sales_confirmation/',
 				{
 				method: 'POST',
 				headers: {
@@ -435,9 +435,9 @@ class Shipping extends Component {
            		stateList : response.data.data
            })
 		})
-		}else if (window.location.href === "http://nod.prtouch.com:8081/shipping/" || window.location.href === "http://nod.prtouch.com:8081/shipping" || window.location.href === "http://nod.prtouch.com:8081/shipping#") 
+		}else if (window.location.href === "http://store.nodbearings.net/shipping/" || window.location.href === "http://store.nodbearings.net/shipping" || window.location.href === "http://store.nodbearings.net/shipping#") 
 		{		
-			axios.get('http://apinod.prtouch.com:8081/authentication/get_info/',
+			axios.get('http://api.store.nodbearings.net/authentication/get_info/',
     	  		{
          		headers: {
               		'Content-Type': 'application/json',
@@ -457,7 +457,7 @@ class Shipping extends Component {
                     billing_details_b_pincode : response.data.data.billing_details.b_pincode
 				})
 
-				axios('http://apinod.prtouch.com:8081/authentication/city_list/',
+				axios('http://api.store.nodbearings.net/authentication/city_list/',
 				{
 				method: 'POST',
 				headers: {
@@ -478,7 +478,7 @@ class Shipping extends Component {
 			})
 
 			
-		axios.get('http://apinod.prtouch.com:8081/authentication/state_list/',
+		axios.get('http://api.store.nodbearings.net/authentication/state_list/',
 			{
 				headers:{
 					'Content-Type' : 'application/json',

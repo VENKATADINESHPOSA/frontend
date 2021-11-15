@@ -98,9 +98,9 @@ class OrderHistory extends Component {
 				})	
 			})
 
-		}else if (window.location.href == 'http://nod.prtouch.com:8081/order-history') {
+		}else if (window.location.href == 'http://store.nodbearings.net/order-history') {
 
-			axios.get('http://apinod.prtouch.com/authentication/get_info/',
+			axios.get('http://api.store.nodbearings.net/authentication/get_info/',
     	  		{
          		headers: {
               		'Content-Type': 'application/json',
@@ -155,11 +155,11 @@ class OrderHistory extends Component {
 		    		isActive : false
 				})
 		    }).catch(function (error) {});
-		}else if(window.location.href==="http://nod.prtouch.com:8081/order-history"  || window.location.href==="http://nod.prtouch.com:8081/order-history#"){
+		}else if(window.location.href==="http://store.nodbearings.net/order-history"  || window.location.href==="http://store.nodbearings.net/order-history#"){
 			this.setState({
 				isActive: true
 			})
-			axios.get('http://apinod.prtouch.com/api/my_order/' , {
+			axios.get('http://api.store.nodbearings.net/api/my_order/' , {
 			 	headers: {
 	          		'Authorization' : 'Token ' + localStorage.getItem('auth_key')
 	        	} 
@@ -231,8 +231,8 @@ class OrderHistory extends Component {
     	var getInvoiceId = invoice_id[0]
     	if (window.location.href == 'http://store.zwz.co.in/order-history' || window.location.href == 'http://store.zwz.co.in/order-history#' || window.location.href.indexOf("http://localhost:3000/order-history") > -1 ) {
     		var url = 'http://api.store.zwz.co.in/api/print_sales_invoice/'+getInvoiceId+'/'
-    	}else if (window.location.href == 'http://nod.prtouch.com:8081/order-history' || window.location.href == 'http://nod.prtouch.com:8081/order-history#') {
-    		var url = 'http://apinod.prtouch.com/api/print_sales_invoice/'+getInvoiceId+'/'
+    	}else if (window.location.href == 'http://store.nodbearings.net/order-history' || window.location.href == 'http://store.nodbearings.net/order-history#') {
+    		var url = 'http://api.store.nodbearings.net/api/print_sales_invoice/'+getInvoiceId+'/'
     	}
     	
 
@@ -283,7 +283,7 @@ openInvoice(data){
 				window.open(response.data);
 			})
 
-		}else if (window.location.href == 'http://nod.prtouch.com:8081/order-history') {
+		}else if (window.location.href == 'http://store.nodbearings.net/order-history') {
 
 			axios.get(data,
     	  		{
@@ -422,7 +422,7 @@ openInvoice(data){
 			this.props.history.push('/cart');
 		}
 
-		} else if (window.location.href==="http://nod.prtouch.com:8081/product-category") {
+		} else if (window.location.href==="http://store.nodbearings.net/product-category") {
 
 		if (this.props.isLoggedIn) {
 
@@ -437,7 +437,7 @@ openInvoice(data){
 		    arr.push(orderData);
 
 
-		axios.post('http://apinod.prtouch.com/api/add_item/' , 
+		axios.post('http://api.store.nodbearings.net/api/add_item/' , 
 
 		 {
 		 	
@@ -501,7 +501,7 @@ openInvoice(data){
 		var price = parseInt(Price);
 		var quantity = 10;
 		var amount = price * quantity;
-		 if (window.location.href==="http://nod.prtouch.com:8081/product-category" ||  window.location.href==="http://localhost:3000/product-category" ) {
+		 if (window.location.href==="http://store.nodbearings.net/product-category" ||  window.location.href==="http://localhost:3000/product-category" ) {
 
 		if (this.props.isLoggedIn) {
 
@@ -516,7 +516,7 @@ openInvoice(data){
 		    arr.push(orderData);
 
 
-		axios.post('http://apinod.prtouch.com/api/add_item/' , 
+		axios.post('http://api.store.nodbearings.net/api/add_item/' , 
 
 		 {
 		 	

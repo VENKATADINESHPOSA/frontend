@@ -158,7 +158,7 @@ class Header extends Component {
           })
           .catch(function (error) {});
       }
-    } else if (hostname === "nod.prtouch.com") {
+    } else if (hostname === "store.nodbearings.net") {
       if (
         this.props.location.pathname !== "/login" &&
         this.props.location.pathname !== "/signup" &&
@@ -167,7 +167,7 @@ class Header extends Component {
       ) {
         axios
           .post(
-            "http://apinod.prtouch.com:8081/authentication/tokencheck/",
+            "http://api.store.nodbearings.net/authentication/tokencheck/",
 
             {
               tokenkey: localStorage.getItem("auth_key"),
@@ -217,10 +217,8 @@ class Header extends Component {
         window.location.href === "http://store.zwz.co.in/" ||
         window.location.href === "http://store.zwz.co.in/home" ||
         window.location.href === "http://store.zwz.co.in/home#" ||
-        window.location.href ===
-          "http://store.zwz.co.in/product-category" ||
-        window.location.href ===
-          "http://store.zwz.co.in/product-category" ||
+        window.location.href === "http://store.zwz.co.in/product-category" ||
+        window.location.href === "http://store.zwz.co.in/product-category" ||
         window.location.href === "http://store.zwz.co.in/cart" ||
         window.location.href === "http://localhost:3000/home#" ||
         window.location.href === "http://localhost:3000/login#" ||
@@ -301,7 +299,7 @@ class Header extends Component {
 			this.setState({
 				locationUrl: false
 			})
-		}else if (window.location.hostname==="nod.prtouch.com") {
+		}else if (window.location.hostname==="store.nodbearings.net") {
 			this.setState({
 				locationUrl: true
 			})
@@ -362,23 +360,23 @@ class Header extends Component {
         })
         .catch(function (error) {});
     } else if (
-      window.location.href === "http://nod.prtouch.com:8081/cart" ||
+      window.location.href === "http://store.nodbearings.net/cart" ||
       hostname === "localhost" ||
-      hostname === "nod.prtouch.com" ||
-      window.location.href === "http://nod.prtouch.com:8081/home" ||
-      window.location.href === "http://nod.prtouch.com:8081/product-category" ||
+      hostname === "store.nodbearings.net" ||
+      window.location.href === "http://store.nodbearings.net/home" ||
+      window.location.href === "http://store.nodbearings.net/product-category" ||
       window.location.href === "http://localhost:3000/cart" ||
       window.location.href === "http://localhost:3000/rfq-history#" ||
       window.location.href === "http://localhost:3000/home" ||
       window.location.href === "http://localhost:3000/rfq" ||
-      window.location.href === "http://nod.prtouch.com:8081/order-detail" ||
-      window.location.href === "http://nod.prtouch.com:8081/rfq" ||
-      window.location.href === "http://nod.prtouch.com:8081/order-history" ||
-      window.location.href === "http://nod.prtouch.com:8081/rfq-history"
+      window.location.href === "http://store.nodbearings.net/order-detail" ||
+      window.location.href === "http://store.nodbearings.net/rfq" ||
+      window.location.href === "http://store.nodbearings.net/order-history" ||
+      window.location.href === "http://store.nodbearings.net/rfq-history"
     ) {
       axios
         .get(
-          "http://apinod.prtouch.com:8081/api/display_additem/",
+          "http://api.store.nodbearings.net/api/display_additem/",
 
           {
             headers: {
@@ -521,7 +519,7 @@ class Header extends Component {
       this.setState({
         zwz_hover_pannel: true,
       });
-// ===========================================================================
+      // ===========================================================================
       axios
         .post(
           "http://api.store.zwz.co.in/api/display_product/",
@@ -562,20 +560,20 @@ class Header extends Component {
         })
         .catch(function (error) {});
     } else if (
-      window.location.href === "http://nod.prtouch.com:8081/login#" ||
+      window.location.href === "http://store.nodbearings.net/login#" ||
       hostname === "localhost" ||
-      hostname === "nod.prtouch.com" ||
+      hostname === "store.nodbearings.net" ||
       hostname === "localhost" ||
       window.location.href === "http://localhost:3000/" ||
-      window.location.href === "http://nod.prtouch.com:8081/" ||
-      window.location.href === "http://nod.prtouch.com:8081/home" ||
-      window.location.href === "http://nod.prtouch.com:8081/product-category" ||
-      window.location.href === "http://nod.prtouch.com:8081/product-category" ||
-      window.location.href === "http://nod.prtouch.com:8081/cart" ||
-      window.location.href === "http://nod.prtouch.com:8081/rfq" ||
-      window.location.href === "http://nod.prtouch.com:8081/order-history" ||
-      window.location.href === "http://nod.prtouch.com:8081/order-detail" ||
-      window.location.href === "http://nod.prtouch.com:8081/rfq-history"
+      window.location.href === "http://store.nodbearings.net/" ||
+      window.location.href === "http://store.nodbearings.net/home" ||
+      window.location.href === "http://store.nodbearings.net/product-category" ||
+      window.location.href === "http://store.nodbearings.net/product-category" ||
+      window.location.href === "http://store.nodbearings.net/cart" ||
+      window.location.href === "http://store.nodbearings.net/rfq" ||
+      window.location.href === "http://store.nodbearings.net/order-history" ||
+      window.location.href === "http://store.nodbearings.net/order-detail" ||
+      window.location.href === "http://store.nodbearings.net/rfq-history"
     ) {
       this.setState({
         nod_hover_pannel: true,
@@ -583,7 +581,7 @@ class Header extends Component {
 
       axios
         .post(
-          "http://apinod.prtouch.com:8081/api/display_product/",
+          "http://api.store.nodbearings.net/api/display_product/",
           {
             /*searching_key: itemName*/
             item_id: itemName,
@@ -665,10 +663,10 @@ class Header extends Component {
             window.location.href = "/login";
           }
         });
-    } else if (hostname === "nod.prtouch.com") {
+    } else if (hostname === "store.nodbearings.net") {
       axios
         .post(
-          "http://apinod.prtouch.com:8081/authentication/user/logout/",
+          "http://api.store.nodbearings.net/authentication/user/logout/",
           {
             user: this.state.login_details,
           },
@@ -706,7 +704,7 @@ class Header extends Component {
     localStorage.setItem("nod_product_name", productName);
 
     axios
-      .post("http://apinod.prtouch.com:8081/api/item_availability/", {
+      .post("http://api.store.nodbearings.net/api/item_availability/", {
         searching_key: productName,
       })
       .then((response) => {
@@ -794,24 +792,24 @@ class Header extends Component {
         })
         .catch(function (error) {});
     } else if (
-      window.location.href === "http://nod.prtouch.com:8081/login#" ||
+      window.location.href === "http://store.nodbearings.net/login#" ||
       hostname === "localhost" ||
-      hostname === "nod.prtouch.com" ||
-      window.location.href === "http://nod.prtouch.com:8081/" ||
-      window.location.href === "http://nod.prtouch.com:8081/home" ||
-      window.location.href === "http://nod.prtouch.com:8081/product-category" ||
-      window.location.href === "http://nod.prtouch.com:8081/product-category" ||
-      window.location.href === "http://nod.prtouch.com:8081/cart" ||
-      window.location.href === "http://nod.prtouch.com:8081/rfq" ||
-      window.location.href === "http://nod.prtouch.com:8081/order-history" ||
-      window.location.href === "http://nod.prtouch.com:8081/order-detail" ||
+      hostname === "store.nodbearings.net" ||
+      window.location.href === "http://store.nodbearings.net/" ||
+      window.location.href === "http://store.nodbearings.net/home" ||
+      window.location.href === "http://store.nodbearings.net/product-category" ||
+      window.location.href === "http://store.nodbearings.net/product-category" ||
+      window.location.href === "http://store.nodbearings.net/cart" ||
+      window.location.href === "http://store.nodbearings.net/rfq" ||
+      window.location.href === "http://store.nodbearings.net/order-history" ||
+      window.location.href === "http://store.nodbearings.net/order-detail" ||
       window.location.href === "http://localhost:3000/rfq" ||
       window.location.href === "http://localhost:3000/order-history" ||
       window.location.href === "http://localhost:3000/order-detail"
     ) {
       axios
         .post(
-          "http://apinod.prtouch.com:8081/api/display_product/",
+          "http://api.store.nodbearings.net/api/display_product/",
           {
             item_id: productValue,
             flag: "true",
@@ -924,21 +922,21 @@ class Header extends Component {
     } else if (
       window.location.href === "http://localhost:3000/" ||
       hostname === "localhost" ||
-      hostname === "nod.prtouch.com" ||
+      hostname === "store.nodbearings.net" ||
       window.location.href === "http://localhost:3000/home" ||
-      window.location.href === "http://nod.prtouch.com:8081/login#" ||
-      window.location.href === "http://nod.prtouch.com:8081/" ||
-      window.location.href === "http://nod.prtouch.com:8081/home" ||
-      window.location.href === "http://nod.prtouch.com:8081/product-category" ||
-      window.location.href === "http://nod.prtouch.com:8081/product-category" ||
-      window.location.href === "http://nod.prtouch.com:8081/cart" ||
-      window.location.href === "http://nod.prtouch.com:8081/rfq" ||
-      window.location.href === "http://nod.prtouch.com:8081/order-history" ||
-      window.location.href === "http://nod.prtouch.com:8081/order-detail" ||
+      window.location.href === "http://store.nodbearings.net/login#" ||
+      window.location.href === "http://store.nodbearings.net/" ||
+      window.location.href === "http://store.nodbearings.net/home" ||
+      window.location.href === "http://store.nodbearings.net/product-category" ||
+      window.location.href === "http://store.nodbearings.net/product-category" ||
+      window.location.href === "http://store.nodbearings.net/cart" ||
+      window.location.href === "http://store.nodbearings.net/rfq" ||
+      window.location.href === "http://store.nodbearings.net/order-history" ||
+      window.location.href === "http://store.nodbearings.net/order-detail" ||
       window.location.href === "http://localhost:3000/rfq" ||
       window.location.href === "http://localhost:3000/order-history" ||
       window.location.href === "http://localhost:3000/order-detail" ||
-      window.location.href === "http://nod.prtouch.com:8081/rfq-history"
+      window.location.href === "http://store.nodbearings.net/rfq-history"
     ) {
       this.setState({
         nod_search_pannel: true,
@@ -954,7 +952,7 @@ class Header extends Component {
       }
 
       if (e.target.value != 0) {
-        /*axios.post('http://apinod.prtouch.com/api/search_product/', {
+        /*axios.post('http://api.store.nodbearings.net/api/search_product/', {
 	    	searching_key: e.target.value
 	        
 
@@ -966,7 +964,7 @@ class Header extends Component {
 	    )*/
 
         axios({
-          url: "http://apinod.prtouch.com:8081/api/search_product/",
+          url: "http://api.store.nodbearings.net/api/search_product/",
           method: "POST",
           data: {
             searching_key: e.target.value,
@@ -1203,16 +1201,16 @@ class Header extends Component {
         this.props.history.push("/cart");
       }
     } else if (
-      window.location.href === "http://nod.prtouch.com:8081/login#" ||
+      window.location.href === "http://store.nodbearings.net/login#" ||
       hostname === "localhost" ||
-      hostname === "nod.prtouch.com" ||
-      window.location.href === "http://nod.prtouch.com:8081/" ||
-      window.location.href === "http://nod.prtouch.com:8081/home" ||
-      window.location.href === "http://nod.prtouch.com:8081/product-category" ||
-      window.location.href === "http://nod.prtouch.com:8081/product-category" ||
-      window.location.href === "http://nod.prtouch.com:8081/cart" ||
-      window.location.href === "http://nod.prtouch.com:8081/rfq" ||
-      window.location.href === "http://nod.prtouch.com:8081/order-history" ||
+      hostname === "store.nodbearings.net" ||
+      window.location.href === "http://store.nodbearings.net/" ||
+      window.location.href === "http://store.nodbearings.net/home" ||
+      window.location.href === "http://store.nodbearings.net/product-category" ||
+      window.location.href === "http://store.nodbearings.net/product-category" ||
+      window.location.href === "http://store.nodbearings.net/cart" ||
+      window.location.href === "http://store.nodbearings.net/rfq" ||
+      window.location.href === "http://store.nodbearings.net/order-history" ||
       window.location.href === "http://localhost:3000/rfq" ||
       window.location.href === "http://localhost:3000/order-history"
     ) {
@@ -1230,7 +1228,7 @@ class Header extends Component {
 
         axios
           .post(
-            "http://apinod.prtouch.com:8081/api/add_item/",
+            "http://api.store.nodbearings.net/api/add_item/",
 
             {
               item_info: arr,
@@ -1247,7 +1245,7 @@ class Header extends Component {
               showTypeahead: false,
             });
 
-            /*if (window.location.href === 'http://nod.prtouch.com:8081/cart' || window.location.href === 'http://store.zwz.co.in/cart' ){
+            /*if (window.location.href === 'http://store.nodbearings.net/cart' || window.location.href === 'http://store.zwz.co.in/cart' ){
 	    			window.location.reload();
 	    	}*/
             /*window.location.reload();*/
@@ -1342,17 +1340,17 @@ class Header extends Component {
     console.log(itemData);
 
     if (
-      window.location.href === "http://nod.prtouch.com:8081/login#" ||
+      window.location.href === "http://store.nodbearings.net/login#" ||
       hostname === "localhost" ||
-      hostname === "nod.prtouch.com" ||
-      window.location.href === "http://nod.prtouch.com:8081/" ||
-      window.location.href === "http://nod.prtouch.com:8081/home" ||
-      window.location.href === "http://nod.prtouch.com:8081/product-category" ||
-      window.location.href === "http://nod.prtouch.com:8081/product-category" ||
-      window.location.href === "http://nod.prtouch.com:8081/cart" ||
+      hostname === "store.nodbearings.net" ||
+      window.location.href === "http://store.nodbearings.net/" ||
+      window.location.href === "http://store.nodbearings.net/home" ||
+      window.location.href === "http://store.nodbearings.net/product-category" ||
+      window.location.href === "http://store.nodbearings.net/product-category" ||
+      window.location.href === "http://store.nodbearings.net/cart" ||
       window.location.href === "http://localhost:3000/" ||
-      window.location.href === "http://nod.prtouch.com:8081/rfq" ||
-      window.location.href === "http://nod.prtouch.com:8081/order-history"
+      window.location.href === "http://store.nodbearings.net/rfq" ||
+      window.location.href === "http://store.nodbearings.net/order-history"
     ) {
       if (this.props.isLoggedIn) {
         var arr = [];
@@ -1368,7 +1366,7 @@ class Header extends Component {
 
         axios
           .post(
-            "http://apinod.prtouch.com:8081/api/add_item/",
+            "http://api.store.nodbearings.net/api/add_item/",
 
             {
               item_info: arr,
@@ -1903,9 +1901,10 @@ class Header extends Component {
                       href=""
                       onClick={(e) =>
                         this.props.match.path === "/register" ||
-                        this.props.match.path === "/emailverification" ||
-                        !this.props.isLoggedIn
-                          ? ""
+                        this.props.match.path === "/emailverification"
+                          ? // ||
+                            // !this.props.isLoggedIn
+                            ""
                           : this.goToAbout(e)
                       }
                       className={`${
@@ -1957,57 +1956,61 @@ class Header extends Component {
                     </a>
                   </li>
 
-                  <li>
-                    <a
-                      href=""
-                      id="TooltipExample"
-                      onClick={(e) =>
-                        this.props.match.path === "/register" ||
-                        this.props.match.path === "/emailverification" ||
-                        !this.props.isLoggedIn
-                          ? ""
-                          : this.goToRFQHistory(e)
-                      }
-                      className={`${
-                        this.props.match.path === "/rfq-history"
-                          ? "active"
-                          : "inactive"
-                      }`}
-                    >
-                      {" "}
-                      RFI
-                    </a>
-                    <Tooltip
-                      placement="bottom"
-                      style={{ fontSize: 13 }}
-                      isOpen={this.state.tooltipOpen}
-                      target="TooltipExample"
-                      toggle={this.toggle}
-                    >
-                      Request For Information
-                    </Tooltip>
-                  </li>
+                  {this.props.isLoggedIn && (
+                    <li>
+                      <a
+                        href=""
+                        id="TooltipExample"
+                        onClick={(e) =>
+                          this.props.match.path === "/register" ||
+                          this.props.match.path === "/emailverification" ||
+                          !this.props.isLoggedIn
+                            ? ""
+                            : this.goToRFQHistory(e)
+                        }
+                        className={`${
+                          this.props.match.path === "/rfq-history"
+                            ? "active"
+                            : "inactive"
+                        }`}
+                      >
+                        {" "}
+                        RFI
+                      </a>
+                      <Tooltip
+                        placement="bottom"
+                        style={{ fontSize: 13 }}
+                        isOpen={this.state.tooltipOpen}
+                        target="TooltipExample"
+                        toggle={this.toggle}
+                      >
+                        Request For Information
+                      </Tooltip>
+                    </li>
+                  )}
 
-                  <li>
-                    <a
-                      href=""
-                      onClick={(e) =>
-                        this.props.match.path === "/register" ||
-                        this.props.match.path === "/emailverification" ||
-                        !this.props.isLoggedIn
-                          ? ""
-                          : this.goToOrderHistory(e)
-                      }
-                      className={`${
-                        this.props.match.path === "/order-history"
-                          ? "active"
-                          : "inactive"
-                      }`}
-                    >
-                      {" "}
-                      Orders{" "}
-                    </a>
-                  </li>
+                  {this.props.isLoggedIn && (
+                    <li>
+                      <a
+                        href=""
+                        onClick={(e) =>
+                          this.props.match.path === "/register" ||
+                          this.props.match.path === "/emailverification" ||
+                          !this.props.isLoggedIn
+                            ? ""
+                            : this.goToOrderHistory(e)
+                        }
+                        className={`${
+                          this.props.match.path === "/order-history"
+                            ? "active"
+                            : "inactive"
+                        }`}
+                      >
+                        {" "}
+                        Orders{" "}
+                      </a>
+                    </li>
+                  )}
 
                   {this.props.isLoggedIn && (
                     <li>

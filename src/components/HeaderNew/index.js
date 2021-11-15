@@ -101,14 +101,14 @@ class Header extends Component {
 
 		}
 
-		else if (window.location.href=== 'http://nod.prtouch.com:8081/') {
+		else if (window.location.href=== 'http://store.nodbearings.net/') {
 			this.setState({
 				locationUrl: true,
 			})
 			console.log('nod');
 
 			
-		} else if (window.location.href === 'http://nod.prtouch.com:8081/login#' || window.location.href === 'http://nod.prtouch.com:8081/login') {
+		} else if (window.location.href === 'http://store.nodbearings.net/login#' || window.location.href === 'http://store.nodbearings.net/login') {
 			this.setState({
 				locationUrl: true,
 			})
@@ -118,7 +118,7 @@ class Header extends Component {
 				locationUrl: false,
 			})
 			console.log('nod');
-		}else if (window.location.href === 'http://nod.prtouch.com:8081/home') {
+		}else if (window.location.href === 'http://store.nodbearings.net/home') {
 			this.setState({
 				locationUrl: true,
 			})
@@ -128,12 +128,12 @@ class Header extends Component {
 				locationUrl: false,
 			})
 			console.log('nod');
-		}else if (window.location.href === 'http://nod.prtouch.com:8081/product-category') {
+		}else if (window.location.href === 'http://store.nodbearings.net/product-category') {
 			this.setState({
 				locationUrl: true,
 			})
 			console.log('nod');
-		}else if (window.location.href === 'http://nod.prtouch.com:8081/cart') {
+		}else if (window.location.href === 'http://store.nodbearings.net/cart') {
 			this.setState({
 				locationUrl: true,
 			})

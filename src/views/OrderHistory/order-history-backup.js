@@ -91,11 +91,11 @@ class OrderHistory extends Component {
 				// 	console.log(item)
 				// ));	
 		    }).catch(function (error) {});
-		}else if(window.location.href==="http://nod.prtouch.com:8081/order-history" || window.location.href==="http://nod.prtouch.com:8081/order-history#"){
+		}else if(window.location.href==="http://store.nodbearings.net/order-history" || window.location.href==="http://store.nodbearings.net/order-history#"){
 			this.setState({
 				isActive: true
 			})
-			axios.get('http://apinod.prtouch.com/api/my_order/' , {
+			axios.get('http://api.store.nodbearings.net/api/my_order/' , {
 			 	headers: {
 	          		'Authorization' : 'Token ' + sessionStorage.getItem('auth_key')
 	        	} 
@@ -272,7 +272,7 @@ class OrderHistory extends Component {
 			this.props.history.push('/cart');
 		}
 
-		} else if (window.location.href==="http://nod.prtouch.com:8081/product-category") {
+		} else if (window.location.href==="http://store.nodbearings.net/product-category") {
 
 		if (this.props.isLoggedIn) {
 
@@ -287,7 +287,7 @@ class OrderHistory extends Component {
 		    arr.push(orderData);
 
 
-		axios.post('http://apinod.prtouch.com/api/add_item/' , 
+		axios.post('http://api.store.nodbearings.net/api/add_item/' , 
 
 		 {
 		 	
@@ -365,7 +365,7 @@ class OrderHistory extends Component {
 
 
 
-		 if (window.location.href==="http://nod.prtouch.com:8081/product-category" ||  window.location.href==="http://localhost:3000/product-category" ) {
+		 if (window.location.href==="http://store.nodbearings.net/product-category" ||  window.location.href==="http://localhost:3000/product-category" ) {
 
 		if (this.props.isLoggedIn) {
 
@@ -380,7 +380,7 @@ class OrderHistory extends Component {
 		    arr.push(orderData);
 
 
-		axios.post('http://apinod.prtouch.com/api/add_item/' , 
+		axios.post('http://api.store.nodbearings.net/api/add_item/' , 
 
 		 {
 		 	

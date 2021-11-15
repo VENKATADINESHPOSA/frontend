@@ -137,9 +137,9 @@ class Home6 extends Component {
 	    });
 		}
 
-		}else if (hostname === "nod.prtouch.com") {
+		}else if (hostname === "store.nodbearings.net") {
 			if (this.props.location.pathname !== "/" && this.props.location.pathname !== "/login" && this.props.location.pathname !== "/signup") {
-			axios.post('http://apinod.prtouch.com/authentication/tokencheck/' , 
+			axios.post('http://api.store.nodbearings.net/authentication/tokencheck/' , 
 
 		 {
 		 	
@@ -188,9 +188,9 @@ class Home6 extends Component {
 
 		//console.log(arr);
 
-		if (window.location.href==="http://nod.prtouch.com:8081/home") {
+		if (window.location.href==="http://store.nodbearings.net/home") {
 
-		axios.post('http://apinod.prtouch.com/api/add_item/' , 
+		axios.post('http://api.store.nodbearings.net/api/add_item/' , 
 
 		 {
 		 	

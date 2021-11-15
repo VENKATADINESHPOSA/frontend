@@ -101,8 +101,8 @@ class MyProfile extends Component {
 		if ( window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#"){
 			url="http://api.store.zwz.co.in/authentication/user/createDeliveryAddress/"
 		}
-		else if(window.location.href === "http://nod.prtouch.com:8081/my-profile" || window.location.href === "http://nod.prtouch.com:8081/my-profile#" || window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#"){
-			url="http://apinod.prtouch.com:8081/authentication/user/createDeliveryAddress/"
+		else if(window.location.href === "http://store.nodbearings.net/my-profile" || window.location.href === "http://store.nodbearings.net/my-profile#" || window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#"){
+			url="http://api.store.nodbearings.net/authentication/user/createDeliveryAddress/"
 		}else{
 			url="http://api.store.zwz.co.in/authentication/user/createDeliveryAddress/"
 		}
@@ -172,9 +172,9 @@ class MyProfile extends Component {
 					cityList : response.data.data
 				})
 				)
-		}else if (window.location.href === "http://nod.prtouch.com:8081/shipping/" || window.location.href === "http://nod.prtouch.com:8081/shipping" || window.location.href === "http://nod.prtouch.com:8081/shipping#") 
+		}else if (window.location.href === "http://store.nodbearings.net/shipping/" || window.location.href === "http://store.nodbearings.net/shipping" || window.location.href === "http://store.nodbearings.net/shipping#") 
 		{
-			axios('http://apinod.prtouch.com:8081/authentication/city_list/',
+			axios('http://api.store.nodbearings.net/authentication/city_list/',
 				{
 				method: 'POST',
 				headers: {
@@ -271,8 +271,8 @@ class MyProfile extends Component {
 		if (window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#"){
 			url="http://api.store.zwz.co.in/authentication/city_list/"
 		}
-		else if(window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://nod.prtouch.com:8081/my-profile" || window.location.href === "http://nod.prtouch.com:8081/my-profile#"){
-			url="http://apinod.prtouch.com:8081/authentication/city_list/"
+		else if(window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://store.nodbearings.net/my-profile" || window.location.href === "http://store.nodbearings.net/my-profile#"){
+			url="http://api.store.nodbearings.net/authentication/city_list/"
 		}else{
 			url="http://api.store.zwz.co.in/authentication/city_list/"
 		}
@@ -333,8 +333,8 @@ class MyProfile extends Component {
 		var billing_url=""
 		if(window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#" || window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#") {
 			billing_url = "http://api.store.zwz.co.in/authentication/update_get_info/" 
-		}else if(window.location.href === "http://nod.prtouch.com:8081/my-profile" || window.location.href === "http://nod.prtouch.com:8081/my-profile#" || window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#") {
-			billing_url = "http://apinod.prtouch.com:8081/authentication/update_get_info/"
+		}else if(window.location.href === "http://store.nodbearings.net/my-profile" || window.location.href === "http://store.nodbearings.net/my-profile#" || window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#") {
+			billing_url = "http://api.store.nodbearings.net/authentication/update_get_info/"
 		}else{
 			billing_url = "http://api.store.zwz.co.in/authentication/update_get_info/"
 		}
@@ -388,8 +388,8 @@ class MyProfile extends Component {
 		if (window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#"){
 			url="http://api.store.zwz.co.in/authentication/update_get_info/"
 		}
-		else if(window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://nod.prtouch.com:8081/my-profile" || window.location.href === "http://nod.prtouch.com:8081/my-profile#"){
-			url="http://apinod.prtouch.com:8081/authentication/update_get_info/"
+		else if(window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://store.nodbearings.net/my-profile" || window.location.href === "http://store.nodbearings.net/my-profile#"){
+			url="http://api.store.nodbearings.net/authentication/update_get_info/"
 		}else{
 			url="http://api.store.zwz.co.in/authentication/update_get_info/"
 		}
@@ -435,9 +435,9 @@ class MyProfile extends Component {
 	    .catch(function (error) {
 	    });
 
-		/*}else if (window.location.href === "http://nod.prtouch.com:8081/my-profile" || window.location.href === "http://nod.prtouch.com:8081/my-profile#") {
+		/*}else if (window.location.href === "http://store.nodbearings.net/my-profile" || window.location.href === "http://store.nodbearings.net/my-profile#") {
 
-			axios.post('http://apinod.prtouch.com/authentication/update_get_info/' , 
+			axios.post('http://api.store.nodbearings.net/authentication/update_get_info/' , 
 
 		 {
 		 	
@@ -461,8 +461,8 @@ class MyProfile extends Component {
 		if (window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href === "http://store.zwz.co.in/my-profile#"){
 			url="http://api.store.zwz.co.in/authentication/update_get_info/"
 		}
-		else if(window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://nod.prtouch.com:8081/my-profile" || window.location.href === "http://nod.prtouch.com:8081/my-profile#"){
-			url="http://apinod.prtouch.com/authentication/update_get_info/"
+		else if(window.location.href === "http://localhost:3000/my-profile" || window.location.href === "http://localhost:3000/my-profile#" || window.location.href === "http://store.nodbearings.net/my-profile" || window.location.href === "http://store.nodbearings.net/my-profile#"){
+			url="http://api.store.nodbearings.net/authentication/update_get_info/"
 		}else{
 			url="http://api.store.zwz.co.in/authentication/update_get_info/"
 		}
@@ -546,9 +546,9 @@ class MyProfile extends Component {
 	    })
 	    .catch(function (error) {
 	    });
-		/*}else if (window.location.href === "http://nod.prtouch.com:8081/my-profile" || window.location.href === "http://nod.prtouch.com:8081/my-profile#") {
+		/*}else if (window.location.href === "http://store.nodbearings.net/my-profile" || window.location.href === "http://store.nodbearings.net/my-profile#") {
 
-			axios.post('http://apinod.prtouch.com/authentication/update_get_info/' , 
+			axios.post('http://api.store.nodbearings.net/authentication/update_get_info/' , 
 
 		 {
 		 	
@@ -568,8 +568,8 @@ class MyProfile extends Component {
 	async statelist(e){	
 		if (window.location.href === "http://store.zwz.co.in/my-profile#" || window.location.href === "http://store.zwz.co.in/my-profile" || window.location.href=="http://localhost:3000/my-profile" ) {
 			var url = "http://api.store.zwz.co.in/authentication/state_list/";
-		} else if (window.location.href === "http://nod.prtouch.com:8081/my-profile#" || window.location.href === "http://nod.prtouch.com:8081/my-profile" || window.location.href=="http://localhost:3000/my-profile" ) {
-			var url = "http://apinod.prtouch.com/authentication/state_list/";
+		} else if (window.location.href === "http://store.nodbearings.net/my-profile#" || window.location.href === "http://store.nodbearings.net/my-profile" || window.location.href=="http://localhost:3000/my-profile" ) {
+			var url = "http://api.store.nodbearings.net/authentication/state_list/";
 		}else{
 			var url = "http://api.store.zwz.co.in/authentication/state_list/";
 		}
@@ -710,8 +710,8 @@ class MyProfile extends Component {
        .catch(function (error) {
     });
     
-  } else  if (window.location.href === "http://nod.prtouch.com:8081/my-profile"  || window.location.href === "http://nod.prtouch.com:8081/my-profile#") {
-    axios.get('http://apinod.prtouch.com/authentication/get_info/',
+  } else  if (window.location.href === "http://store.nodbearings.net/my-profile"  || window.location.href === "http://store.nodbearings.net/my-profile#") {
+    axios.get('http://api.store.nodbearings.net/authentication/get_info/',
       {
          headers: {
               'Content-Type': 'application/json',
@@ -747,7 +747,7 @@ class MyProfile extends Component {
           state_name: response.data.data.CustomerDeliveryAddress.details[0].add_state_name,
         })
 
-        axios('http://apinod.prtouch.com/authentication/city_list/',
+        axios('http://api.store.nodbearings.net/authentication/city_list/',
 				{
 				method: 'POST',
 				headers: {
@@ -778,7 +778,7 @@ class MyProfile extends Component {
 			    	}
     });
 
-    axios.get('http://apinod.prtouch.com:8081/authentication/state_list/',
+    axios.get('http://api.store.nodbearings.net/authentication/state_list/',
 			{
 				headers:{
 					'Content-Type' : 'application/json',
