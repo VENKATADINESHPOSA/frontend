@@ -13,8 +13,8 @@ const ZwzDescription = () => {
       <div
         style={{ textAlign: "center", fontWeight: "bold", fontSize: "x-large" }}
       >
-        <a href="http://zwz.co.in/" target="_blank" rel="noopener noreferrer">
-          http://zwz.co.in/
+        <a href="https://zwz.co.in/" target="_blank" rel="noopener noreferrer">
+          https://zwz.co.in/
         </a>
       </div>
     </div>

@@ -98,7 +98,7 @@ class Header extends Component {
 	      error: ''
 	    });
 
-	    axios.post('http://apigwd.prtouch.com/api/display_product/', {
+	    axios.post('https://apigwd.prtouch.com/api/display_product/', {
 	    	item_name: dataVal
 	        
 
@@ -146,7 +146,7 @@ class Header extends Component {
 	    });
 	    if (e.target.value != 0) {
 
-	    axios.post('http://apigwd.prtouch.com/api/search_product/', {
+	    axios.post('https://apigwd.prtouch.com/api/search_product/', {
 	    	searching_key: e.target.value
 	        
 

@@ -7,7 +7,7 @@ const ignoredFiles = require('react-dev-utils/ignoredFiles');
 const paths = require('./paths');
 const fs = require('fs');
 
-const protocol = process.env.HTTPS === 'true' ? 'https' : 'http';
+const protocol = process.env.https === 'true' ? 'https' : 'https';
 const host = process.env.HOST || '0.0.0.0';
 
 module.exports = function(proxy, allowedHost) {
@@ -71,7 +71,7 @@ module.exports = function(proxy, allowedHost) {
     watchOptions: {
       ignored: ignoredFiles(paths.appSrc),
     },
-    // Enable HTTPS if the HTTPS environment variable is set to 'true'
+    // Enable https if the https environment variable is set to 'true'
     https: protocol === 'https',
     host,
     overlay: false,

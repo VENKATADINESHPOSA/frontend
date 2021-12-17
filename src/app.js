@@ -53,6 +53,7 @@ import NodContactUsPageComponent from "./views/NodContactUsPage/NodContactUsPage
 import WzwnPageComponent from "./views/WzwnPage/WzwnPage.component";
 import IkoPageComponent from "./views/IkoPage/IkoPage.component";
 import UpdatedHomeComponent from "./views/UpdatedHome/UpdatedHome.component";
+import { zwzurl, zwzapiurl, nodurl, nodapiurl } from "./urls.json"
 
 var hostname = window.location.hostname;
 let HomePage;
@@ -80,21 +81,21 @@ class App extends Component {
     if (hostname == "localhost") {
       if ("condition") {
       }
-      window.localStorage.setItem("url", "http://store.nodbearings.net");
+      window.localStorage.setItem("url", "https://store.nodbearings.net");
       console.log("ifCondition", localStorage.getItem("url"));
     } else {
-      window.localStorage.setItem("url", "http://" + hostname);
+      window.localStorage.setItem("url", "https://" + hostname);
     }
 
     console.log(this.props.location.pathname);
-    if (window.location.href === "http://localhost:3000/") {
+    if (window.location.href === "https://localhost:3000/") {
       this.setState({
         login_type: false,
       });
 
       window.localStorage.setItem("login_type", this.state.login_type);
       console.log(this.state.login_type);
-    } else if (window.location.href === "http://store.nodbearings.net/") {
+    } else if (window.location.href === "https://store.nodbearings.net/") {
       this.setState({
         login_type: true,
       });
@@ -141,7 +142,7 @@ class App extends Component {
         console.log("second if condition");
         axios
           .post(
-            "http://api.store.zwz.co.in/authentication/tokencheck/",
+            zwzapiurl + "authentication/tokencheck/",
 
             {
               tokenkey: localStorage.getItem("auth_key"),
@@ -170,7 +171,7 @@ class App extends Component {
       ) {
         axios
           .post(
-            "http://api.store.nodbearings.net/authentication/tokencheck/",
+            "https://api.store.nodbearings.net/authentication/tokencheck/",
 
             {
               tokenkey: localStorage.getItem("auth_key"),

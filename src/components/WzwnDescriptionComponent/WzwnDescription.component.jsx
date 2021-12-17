@@ -13,7 +13,7 @@ const WzwnDescription = () => {
         style={{ textAlign: "center", fontWeight: "bold", fontSize: "x-large" }}
       >
         <a
-          href="http://www.wzwn.com/en/login.jsp?errno=13&url=http%3A%2F%2Fwww.wzwn.com%2Fen%2F"
+          href="https://www.wzwn.com/en/login.jsp?errno=13&url=https%3A%2F%2Fwww.wzwn.com%2Fen%2F"
           target="_blank"
           rel="noopener noreferrer"
         >

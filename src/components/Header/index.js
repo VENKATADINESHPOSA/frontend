@@ -18,6 +18,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import { geolocated } from "react-geolocated";
 import cookie from "react-cookies";
+import { zwzurl, zwzapiurl, nodurl, nodapiurl } from "../../urls.json";
 
 let ongoingGetOptionsAPI = null;
 let hostname = window.location.hostname;
@@ -133,7 +134,7 @@ class Header extends Component {
         console.log("second if condition");
         axios
           .post(
-            "http://api.store.zwz.co.in/authentication/tokencheck/",
+            zwzapiurl + "authentication/tokencheck/",
 
             {
               tokenkey: localStorage.getItem("auth_key"),
@@ -167,7 +168,7 @@ class Header extends Component {
       ) {
         axios
           .post(
-            "http://api.store.nodbearings.net/authentication/tokencheck/",
+            "https://api.store.nodbearings.net/authentication/tokencheck/",
 
             {
               tokenkey: localStorage.getItem("auth_key"),
@@ -211,24 +212,24 @@ class Header extends Component {
       const { history } = this.props;
 
       if (
-        window.location.href === "http://store.zwz.co.in/login#" ||
+        window.location.href === zwzurl + "login#" ||
         hostname === "localhost" ||
         hostname === "store.zwz.co.in" ||
-        window.location.href === "http://store.zwz.co.in/" ||
-        window.location.href === "http://store.zwz.co.in/home" ||
-        window.location.href === "http://store.zwz.co.in/home#" ||
-        window.location.href === "http://store.zwz.co.in/product-category" ||
-        window.location.href === "http://store.zwz.co.in/product-category" ||
-        window.location.href === "http://store.zwz.co.in/cart" ||
-        window.location.href === "http://localhost:3000/home#" ||
-        window.location.href === "http://localhost:3000/login#" ||
-        window.location.href === "http://localhost:3000/login" ||
-        window.location.href === "http://localhost:3000/product-category" ||
-        window.location.href === "http://localhost:3000/cart" ||
-        window.location.href === "http://store.zwz.co.in/rfq" ||
-        window.location.href === "http://store.zwz.co.in/order-history" ||
-        window.location.href === "http://store.zwz.co.in/order-detail" ||
-        window.location.href === "http://store.zwz.co.in/rfq-history"
+        window.location.href === zwzurl ||
+        window.location.href === zwzurl + "home" ||
+        window.location.href === zwzurl + "home#" ||
+        window.location.href === zwzurl + "product-category" ||
+        window.location.href === zwzurl + "product-category" ||
+        window.location.href === zwzurl + "cart" ||
+        window.location.href === "https://localhost:3000/home#" ||
+        window.location.href === "https://localhost:3000/login#" ||
+        window.location.href === "https://localhost:3000/login" ||
+        window.location.href === "https://localhost:3000/product-category" ||
+        window.location.href === "https://localhost:3000/cart" ||
+        window.location.href === zwzurl + "rfq" ||
+        window.location.href === zwzurl + "order-history" ||
+        window.location.href === zwzurl + "order-detail" ||
+        window.location.href === zwzurl + "rfq-history"
       ) {
         localStorage.setItem("set_key", e.target.value);
         this.setState({
@@ -250,7 +251,7 @@ class Header extends Component {
 
           axios
             .post(
-              "http://api.store.zwz.co.in/api/multiSearch/",
+              zwzapiurl + "api/multiSearch/",
               {
                 searching_key: e.target.value,
               },
@@ -326,17 +327,17 @@ class Header extends Component {
 
   async getCartData() {
     if (
-      window.location.href === "http://store.zwz.co.in/cart" ||
+      window.location.href === zwzurl + "cart" ||
       hostname === "store.zwz.co.in" ||
-      window.location.href === "http://store.zwz.co.in/home" ||
-      window.location.href === "http://store.zwz.co.in/product-category" ||
-      window.location.href === "http://store.zwz.co.in/rfq" ||
-      window.location.href === "http://store.zwz.co.in/order-detail" ||
-      window.location.href === "http://store.zwz.co.in/rfq-history"
+      window.location.href === zwzurl + "home" ||
+      window.location.href === zwzurl + "product-category" ||
+      window.location.href === zwzurl + "rfq" ||
+      window.location.href === zwzurl + "order-detail" ||
+      window.location.href === zwzurl + "rfq-history"
     ) {
       axios
         .get(
-          "http://api.store.zwz.co.in/api/display_additem/",
+          zwzapiurl + "api/display_additem/",
 
           {
             headers: {
@@ -360,23 +361,24 @@ class Header extends Component {
         })
         .catch(function (error) {});
     } else if (
-      window.location.href === "http://store.nodbearings.net/cart" ||
+      window.location.href === "https://store.nodbearings.net/cart" ||
       hostname === "localhost" ||
       hostname === "store.nodbearings.net" ||
-      window.location.href === "http://store.nodbearings.net/home" ||
-      window.location.href === "http://store.nodbearings.net/product-category" ||
-      window.location.href === "http://localhost:3000/cart" ||
-      window.location.href === "http://localhost:3000/rfq-history#" ||
-      window.location.href === "http://localhost:3000/home" ||
-      window.location.href === "http://localhost:3000/rfq" ||
-      window.location.href === "http://store.nodbearings.net/order-detail" ||
-      window.location.href === "http://store.nodbearings.net/rfq" ||
-      window.location.href === "http://store.nodbearings.net/order-history" ||
-      window.location.href === "http://store.nodbearings.net/rfq-history"
+      window.location.href === "https://store.nodbearings.net/home" ||
+      window.location.href ===
+        "https://store.nodbearings.net/product-category" ||
+      window.location.href === "https://localhost:3000/cart" ||
+      window.location.href === "https://localhost:3000/rfq-history#" ||
+      window.location.href === "https://localhost:3000/home" ||
+      window.location.href === "https://localhost:3000/rfq" ||
+      window.location.href === "https://store.nodbearings.net/order-detail" ||
+      window.location.href === "https://store.nodbearings.net/rfq" ||
+      window.location.href === "https://store.nodbearings.net/order-history" ||
+      window.location.href === "https://store.nodbearings.net/rfq-history"
     ) {
       axios
         .get(
-          "http://api.store.nodbearings.net/api/display_additem/",
+          "https://api.store.nodbearings.net/api/display_additem/",
 
           {
             headers: {
@@ -498,23 +500,23 @@ class Header extends Component {
     });
 
     if (
-      window.location.href === "http://store.zwz.co.in/login#" ||
+      window.location.href === zwzurl + "login#" ||
       hostname === "store.zwz.co.in" ||
-      window.location.href === "http://store.zwz.co.in/" ||
-      window.location.href === "http://store.zwz.co.in/home" ||
-      window.location.href === "http://store.zwz.co.in/product-category" ||
-      window.location.href === "http://store.zwz.co.in/product-category" ||
-      window.location.href === "http://store.zwz.co.in/cart" ||
-      window.location.href === "http://localhost:3000/home#" ||
-      window.location.href === "http://localhost:3000/login#" ||
-      window.location.href === "http://localhost:3000" ||
-      window.location.href === "http://localhost:3000/login" ||
-      window.location.href === "http://localhost:3000/product-category" ||
-      window.location.href === "http://localhost:3000/cart" ||
-      window.location.href === "http://store.zwz.co.in/rfq" ||
-      window.location.href === "http://store.zwz.co.in/order-history" ||
-      window.location.href === "http://store.zwz.co.in/order-detail" ||
-      window.location.href === "http://store.zwz.co.in/rfq-history"
+      window.location.href === zwzurl ||
+      window.location.href === zwzurl + "home" ||
+      window.location.href === zwzurl + "product-category" ||
+      window.location.href === zwzurl + "product-category" ||
+      window.location.href === zwzurl + "cart" ||
+      window.location.href === "https://localhost:3000/home#" ||
+      window.location.href === "https://localhost:3000/login#" ||
+      window.location.href === "https://localhost:3000" ||
+      window.location.href === "https://localhost:3000/login" ||
+      window.location.href === "https://localhost:3000/product-category" ||
+      window.location.href === "https://localhost:3000/cart" ||
+      window.location.href === zwzurl + "rfq" ||
+      window.location.href === zwzurl + "order-history" ||
+      window.location.href === zwzurl + "order-detail" ||
+      window.location.href === zwzurl + "rfq-history"
     ) {
       this.setState({
         zwz_hover_pannel: true,
@@ -522,7 +524,7 @@ class Header extends Component {
       // ===========================================================================
       axios
         .post(
-          "http://api.store.zwz.co.in/api/display_product/",
+          zwzapiurl + "api/display_product/",
           {
             item_id: productVal,
             flag: "false",
@@ -560,20 +562,22 @@ class Header extends Component {
         })
         .catch(function (error) {});
     } else if (
-      window.location.href === "http://store.nodbearings.net/login#" ||
+      window.location.href === "https://store.nodbearings.net/login#" ||
       hostname === "localhost" ||
       hostname === "store.nodbearings.net" ||
       hostname === "localhost" ||
-      window.location.href === "http://localhost:3000/" ||
-      window.location.href === "http://store.nodbearings.net/" ||
-      window.location.href === "http://store.nodbearings.net/home" ||
-      window.location.href === "http://store.nodbearings.net/product-category" ||
-      window.location.href === "http://store.nodbearings.net/product-category" ||
-      window.location.href === "http://store.nodbearings.net/cart" ||
-      window.location.href === "http://store.nodbearings.net/rfq" ||
-      window.location.href === "http://store.nodbearings.net/order-history" ||
-      window.location.href === "http://store.nodbearings.net/order-detail" ||
-      window.location.href === "http://store.nodbearings.net/rfq-history"
+      window.location.href === "https://localhost:3000/" ||
+      window.location.href === "https://store.nodbearings.net/" ||
+      window.location.href === "https://store.nodbearings.net/home" ||
+      window.location.href ===
+        "https://store.nodbearings.net/product-category" ||
+      window.location.href ===
+        "https://store.nodbearings.net/product-category" ||
+      window.location.href === "https://store.nodbearings.net/cart" ||
+      window.location.href === "https://store.nodbearings.net/rfq" ||
+      window.location.href === "https://store.nodbearings.net/order-history" ||
+      window.location.href === "https://store.nodbearings.net/order-detail" ||
+      window.location.href === "https://store.nodbearings.net/rfq-history"
     ) {
       this.setState({
         nod_hover_pannel: true,
@@ -581,7 +585,7 @@ class Header extends Component {
 
       axios
         .post(
-          "http://api.store.nodbearings.net/api/display_product/",
+          "https://api.store.nodbearings.net/api/display_product/",
           {
             /*searching_key: itemName*/
             item_id: itemName,
@@ -634,7 +638,7 @@ class Header extends Component {
     if (hostname === "store.zwz.co.in" || hostname === "localhost") {
       axios
         .post(
-          "http://api.store.zwz.co.in/authentication/user/logout/",
+          zwzapiurl + "authentication/user/logout/",
 
           {
             user: this.state.login_details,
@@ -666,7 +670,7 @@ class Header extends Component {
     } else if (hostname === "store.nodbearings.net") {
       axios
         .post(
-          "http://api.store.nodbearings.net/authentication/user/logout/",
+          "https://api.store.nodbearings.net/authentication/user/logout/",
           {
             user: this.state.login_details,
           },
@@ -704,7 +708,7 @@ class Header extends Component {
     localStorage.setItem("nod_product_name", productName);
 
     axios
-      .post("http://api.store.nodbearings.net/api/item_availability/", {
+      .post("https://api.store.nodbearings.net/api/item_availability/", {
         searching_key: productName,
       })
       .then((response) => {
@@ -734,26 +738,26 @@ class Header extends Component {
     localStorage.setItem("product-val", productValue);
 
     if (
-      window.location.href === "http://store.zwz.co.in/login#" ||
+      window.location.href === zwzurl + "login#" ||
       hostname === "store.zwz.co.in" ||
-      window.location.href === "http://store.zwz.co.in/" ||
-      window.location.href === "http://store.zwz.co.in/home" ||
-      window.location.href === "http://store.zwz.co.in/product-category" ||
-      window.location.href === "http://store.zwz.co.in/product-category" ||
-      window.location.href === "http://store.zwz.co.in/cart" ||
-      window.location.href === "http://localhost:3000/home#" ||
-      window.location.href === "http://localhost:3000/login#" ||
-      window.location.href === "http://localhost:3000" ||
-      window.location.href === "http://localhost:3000/login" ||
-      window.location.href === "http://localhost:3000/product-category" ||
-      window.location.href === "http://localhost:3000/cart" ||
-      window.location.href === "http://store.zwz.co.in/rfq" ||
-      window.location.href === "http://store.zwz.co.in/order-history" ||
-      window.location.href === "http://store.zwz.co.in/order-detail"
+      window.location.href === zwzurl ||
+      window.location.href === zwzurl + "home" ||
+      window.location.href === zwzurl + "product-category" ||
+      window.location.href === zwzurl + "product-category" ||
+      window.location.href === zwzurl + "cart" ||
+      window.location.href === "https://localhost:3000/home#" ||
+      window.location.href === "https://localhost:3000/login#" ||
+      window.location.href === "https://localhost:3000" ||
+      window.location.href === "https://localhost:3000/login" ||
+      window.location.href === "https://localhost:3000/product-category" ||
+      window.location.href === "https://localhost:3000/cart" ||
+      window.location.href === zwzurl + "rfq" ||
+      window.location.href === zwzurl + "order-history" ||
+      window.location.href === zwzurl + "order-detail"
     ) {
       axios
         .post(
-          "http://api.store.zwz.co.in/api/display_product/",
+          zwzapiurl + "api/display_product/",
           {
             item_id: productValue,
             flag: "true",
@@ -792,24 +796,26 @@ class Header extends Component {
         })
         .catch(function (error) {});
     } else if (
-      window.location.href === "http://store.nodbearings.net/login#" ||
+      window.location.href === "https://store.nodbearings.net/login#" ||
       hostname === "localhost" ||
       hostname === "store.nodbearings.net" ||
-      window.location.href === "http://store.nodbearings.net/" ||
-      window.location.href === "http://store.nodbearings.net/home" ||
-      window.location.href === "http://store.nodbearings.net/product-category" ||
-      window.location.href === "http://store.nodbearings.net/product-category" ||
-      window.location.href === "http://store.nodbearings.net/cart" ||
-      window.location.href === "http://store.nodbearings.net/rfq" ||
-      window.location.href === "http://store.nodbearings.net/order-history" ||
-      window.location.href === "http://store.nodbearings.net/order-detail" ||
-      window.location.href === "http://localhost:3000/rfq" ||
-      window.location.href === "http://localhost:3000/order-history" ||
-      window.location.href === "http://localhost:3000/order-detail"
+      window.location.href === "https://store.nodbearings.net/" ||
+      window.location.href === "https://store.nodbearings.net/home" ||
+      window.location.href ===
+        "https://store.nodbearings.net/product-category" ||
+      window.location.href ===
+        "https://store.nodbearings.net/product-category" ||
+      window.location.href === "https://store.nodbearings.net/cart" ||
+      window.location.href === "https://store.nodbearings.net/rfq" ||
+      window.location.href === "https://store.nodbearings.net/order-history" ||
+      window.location.href === "https://store.nodbearings.net/order-detail" ||
+      window.location.href === "https://localhost:3000/rfq" ||
+      window.location.href === "https://localhost:3000/order-history" ||
+      window.location.href === "https://localhost:3000/order-detail"
     ) {
       axios
         .post(
-          "http://api.store.nodbearings.net/api/display_product/",
+          "https://api.store.nodbearings.net/api/display_product/",
           {
             item_id: productValue,
             flag: "true",
@@ -858,23 +864,23 @@ class Header extends Component {
     this.setState({ showTypeahead: true, typeaheadText: e.target.value });
 
     if (
-      window.location.href === "http://store.zwz.co.in/login#" ||
+      window.location.href === zwzurl + "login#" ||
       hostname === "store.zwz.co.in" ||
-      window.location.href === "http://store.zwz.co.in/" ||
-      window.location.href === "http://store.zwz.co.in/home" ||
-      window.location.href === "http://store.zwz.co.in/home#" ||
-      window.location.href === "http://store.zwz.co.in/product-category" ||
-      window.location.href === "http://store.zwz.co.in/product-category" ||
-      window.location.href === "http://store.zwz.co.in/cart" ||
-      window.location.href === "http://localhost:3000/home#" ||
-      window.location.href === "http://localhost:3000/login#" ||
-      window.location.href === "http://localhost:3000/login" ||
-      window.location.href === "http://localhost:3000/product-category" ||
-      window.location.href === "http://localhost:3000/cart" ||
-      window.location.href === "http://store.zwz.co.in/rfq" ||
-      window.location.href === "http://store.zwz.co.in/order-history" ||
-      window.location.href === "http://store.zwz.co.in/order-detail" ||
-      window.location.href === "http://store.zwz.co.in/rfq-history"
+      window.location.href === zwzurl ||
+      window.location.href === zwzurl + "home" ||
+      window.location.href === zwzurl + "home#" ||
+      window.location.href === zwzurl + "product-category" ||
+      window.location.href === zwzurl + "product-category" ||
+      window.location.href === zwzurl + "cart" ||
+      window.location.href === "https://localhost:3000/home#" ||
+      window.location.href === "https://localhost:3000/login#" ||
+      window.location.href === "https://localhost:3000/login" ||
+      window.location.href === "https://localhost:3000/product-category" ||
+      window.location.href === "https://localhost:3000/cart" ||
+      window.location.href === zwzurl + "rfq" ||
+      window.location.href === zwzurl + "order-history" ||
+      window.location.href === zwzurl + "order-detail" ||
+      window.location.href === zwzurl + "rfq-history"
     ) {
       this.setState({
         zwz_search_pannel: true,
@@ -887,7 +893,7 @@ class Header extends Component {
 
       if (e.target.value != 0) {
         axios
-          .post("http://api.store.zwz.co.in/api/search_product/", {
+          .post(zwzapiurl + "api/search_product/", {
             searching_key: e.target.value,
           })
           .then(function (response) {
@@ -920,23 +926,25 @@ class Header extends Component {
         });
       }
     } else if (
-      window.location.href === "http://localhost:3000/" ||
+      window.location.href === "https://localhost:3000/" ||
       hostname === "localhost" ||
       hostname === "store.nodbearings.net" ||
-      window.location.href === "http://localhost:3000/home" ||
-      window.location.href === "http://store.nodbearings.net/login#" ||
-      window.location.href === "http://store.nodbearings.net/" ||
-      window.location.href === "http://store.nodbearings.net/home" ||
-      window.location.href === "http://store.nodbearings.net/product-category" ||
-      window.location.href === "http://store.nodbearings.net/product-category" ||
-      window.location.href === "http://store.nodbearings.net/cart" ||
-      window.location.href === "http://store.nodbearings.net/rfq" ||
-      window.location.href === "http://store.nodbearings.net/order-history" ||
-      window.location.href === "http://store.nodbearings.net/order-detail" ||
-      window.location.href === "http://localhost:3000/rfq" ||
-      window.location.href === "http://localhost:3000/order-history" ||
-      window.location.href === "http://localhost:3000/order-detail" ||
-      window.location.href === "http://store.nodbearings.net/rfq-history"
+      window.location.href === "https://localhost:3000/home" ||
+      window.location.href === "https://store.nodbearings.net/login#" ||
+      window.location.href === "https://store.nodbearings.net/" ||
+      window.location.href === "https://store.nodbearings.net/home" ||
+      window.location.href ===
+        "https://store.nodbearings.net/product-category" ||
+      window.location.href ===
+        "https://store.nodbearings.net/product-category" ||
+      window.location.href === "https://store.nodbearings.net/cart" ||
+      window.location.href === "https://store.nodbearings.net/rfq" ||
+      window.location.href === "https://store.nodbearings.net/order-history" ||
+      window.location.href === "https://store.nodbearings.net/order-detail" ||
+      window.location.href === "https://localhost:3000/rfq" ||
+      window.location.href === "https://localhost:3000/order-history" ||
+      window.location.href === "https://localhost:3000/order-detail" ||
+      window.location.href === "https://store.nodbearings.net/rfq-history"
     ) {
       this.setState({
         nod_search_pannel: true,
@@ -952,7 +960,7 @@ class Header extends Component {
       }
 
       if (e.target.value != 0) {
-        /*axios.post('http://api.store.nodbearings.net/api/search_product/', {
+        /*axios.post('https://api.store.nodbearings.net/api/search_product/', {
 	    	searching_key: e.target.value
 	        
 
@@ -964,7 +972,7 @@ class Header extends Component {
 	    )*/
 
         axios({
-          url: "http://api.store.nodbearings.net/api/search_product/",
+          url: "https://api.store.nodbearings.net/api/search_product/",
           method: "POST",
           data: {
             searching_key: e.target.value,
@@ -1076,21 +1084,21 @@ class Header extends Component {
 		})*/
 
     if (
-      window.location.href === "http://store.zwz.co.in/login#" ||
+      window.location.href === zwzurl + "login#" ||
       hostname === "store.zwz.co.in" ||
-      window.location.href === "http://store.zwz.co.in/" ||
-      window.location.href === "http://store.zwz.co.in/home" ||
-      window.location.href === "http://store.zwz.co.in/product-category" ||
-      window.location.href === "http://store.zwz.co.in/product-category" ||
-      window.location.href === "http://store.zwz.co.in/cart" ||
-      window.location.href === "http://localhost:3000/home#" ||
-      window.location.href === "http://localhost:3000/login#" ||
-      window.location.href === "http://localhost:3000" ||
-      window.location.href === "http://localhost:3000/login" ||
-      window.location.href === "http://localhost:3000/product-category" ||
-      window.location.href === "http://localhost:3000/cart" ||
-      window.location.href === "http://store.zwz.co.in/rfq" ||
-      window.location.href === "http://store.zwz.co.in/order-history"
+      window.location.href === zwzurl ||
+      window.location.href === zwzurl + "home" ||
+      window.location.href === zwzurl + "product-category" ||
+      window.location.href === zwzurl + "product-category" ||
+      window.location.href === zwzurl + "cart" ||
+      window.location.href === "https://localhost:3000/home#" ||
+      window.location.href === "https://localhost:3000/login#" ||
+      window.location.href === "https://localhost:3000" ||
+      window.location.href === "https://localhost:3000/login" ||
+      window.location.href === "https://localhost:3000/product-category" ||
+      window.location.href === "https://localhost:3000/cart" ||
+      window.location.href === zwzurl + "rfq" ||
+      window.location.href === zwzurl + "order-history"
     ) {
       if (this.props.isLoggedIn) {
         console.log("ProductData1", ProductData1);
@@ -1108,7 +1116,7 @@ class Header extends Component {
 
         axios
           .post(
-            "http://api.store.zwz.co.in/api/add_item/",
+            zwzapiurl + "api/add_item/",
 
             {
               item_info: arr,
@@ -1201,18 +1209,20 @@ class Header extends Component {
         this.props.history.push("/cart");
       }
     } else if (
-      window.location.href === "http://store.nodbearings.net/login#" ||
+      window.location.href === "https://store.nodbearings.net/login#" ||
       hostname === "localhost" ||
       hostname === "store.nodbearings.net" ||
-      window.location.href === "http://store.nodbearings.net/" ||
-      window.location.href === "http://store.nodbearings.net/home" ||
-      window.location.href === "http://store.nodbearings.net/product-category" ||
-      window.location.href === "http://store.nodbearings.net/product-category" ||
-      window.location.href === "http://store.nodbearings.net/cart" ||
-      window.location.href === "http://store.nodbearings.net/rfq" ||
-      window.location.href === "http://store.nodbearings.net/order-history" ||
-      window.location.href === "http://localhost:3000/rfq" ||
-      window.location.href === "http://localhost:3000/order-history"
+      window.location.href === "https://store.nodbearings.net/" ||
+      window.location.href === "https://store.nodbearings.net/home" ||
+      window.location.href ===
+        "https://store.nodbearings.net/product-category" ||
+      window.location.href ===
+        "https://store.nodbearings.net/product-category" ||
+      window.location.href === "https://store.nodbearings.net/cart" ||
+      window.location.href === "https://store.nodbearings.net/rfq" ||
+      window.location.href === "https://store.nodbearings.net/order-history" ||
+      window.location.href === "https://localhost:3000/rfq" ||
+      window.location.href === "https://localhost:3000/order-history"
     ) {
       if (this.props.isLoggedIn) {
         var arr = [];
@@ -1228,7 +1238,7 @@ class Header extends Component {
 
         axios
           .post(
-            "http://api.store.nodbearings.net/api/add_item/",
+            "https://api.store.nodbearings.net/api/add_item/",
 
             {
               item_info: arr,
@@ -1245,7 +1255,7 @@ class Header extends Component {
               showTypeahead: false,
             });
 
-            /*if (window.location.href === 'http://store.nodbearings.net/cart' || window.location.href === 'http://store.zwz.co.in/cart' ){
+            /*if (window.location.href === 'https://store.nodbearings.net/cart' || window.location.href === zwzurl + 'cart' ){
 	    			window.location.reload();
 	    	}*/
             /*window.location.reload();*/
@@ -1340,17 +1350,19 @@ class Header extends Component {
     console.log(itemData);
 
     if (
-      window.location.href === "http://store.nodbearings.net/login#" ||
+      window.location.href === "https://store.nodbearings.net/login#" ||
       hostname === "localhost" ||
       hostname === "store.nodbearings.net" ||
-      window.location.href === "http://store.nodbearings.net/" ||
-      window.location.href === "http://store.nodbearings.net/home" ||
-      window.location.href === "http://store.nodbearings.net/product-category" ||
-      window.location.href === "http://store.nodbearings.net/product-category" ||
-      window.location.href === "http://store.nodbearings.net/cart" ||
-      window.location.href === "http://localhost:3000/" ||
-      window.location.href === "http://store.nodbearings.net/rfq" ||
-      window.location.href === "http://store.nodbearings.net/order-history"
+      window.location.href === "https://store.nodbearings.net/" ||
+      window.location.href === "https://store.nodbearings.net/home" ||
+      window.location.href ===
+        "https://store.nodbearings.net/product-category" ||
+      window.location.href ===
+        "https://store.nodbearings.net/product-category" ||
+      window.location.href === "https://store.nodbearings.net/cart" ||
+      window.location.href === "https://localhost:3000/" ||
+      window.location.href === "https://store.nodbearings.net/rfq" ||
+      window.location.href === "https://store.nodbearings.net/order-history"
     ) {
       if (this.props.isLoggedIn) {
         var arr = [];
@@ -1366,7 +1378,7 @@ class Header extends Component {
 
         axios
           .post(
-            "http://api.store.nodbearings.net/api/add_item/",
+            "https://api.store.nodbearings.net/api/add_item/",
 
             {
               item_info: arr,

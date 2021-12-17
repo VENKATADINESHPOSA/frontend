@@ -16,6 +16,7 @@ import { updateCartData } from "~/redux/action/cartDetails";
 import { removeCartData } from "~/redux/action/cartDetails";
 import { updateProductData } from "~/redux/action/productDetail";
 import { updateCartItemData } from "~/redux/action/cartItemVal";
+import { zwzurl, zwzapiurl, nodurl, nodapiurl } from "../../urls.json";
 
 let hostname = window.location.hostname;
 var LOGO = "";
@@ -109,9 +110,9 @@ class Login extends Component {
     var url = "";
 
     if (hostname == "localhost" || hostname == "store.nodbearings.net") {
-      url = "http://api.store.nodbearings.net/api/add_item/";
+      url = "https://api.store.nodbearings.net/api/add_item/";
     } else {
-      url = "http://api.store.zwz.co.in/api/add_item/";
+      url = zwzapiurl + "api/add_item/";
     }
 
     for (var i = 0; i < this.props.cart.length; i++) {
@@ -152,7 +153,7 @@ class Login extends Component {
         console.log(response);
 
         /*this.props.history.push('/cart');
-	    	if (window.location.href === 'http://store.nodbearings.net/cart' || window.location.href === 'http://store.zwz.co.in/cart' ){
+	    	if (window.location.href === 'https://store.nodbearings.net/cart' || window.location.href === zwzurl + 'cart' ){
 	    			window.location.reload();
 	    	}*/
         /*window.location.reload();*/
@@ -173,8 +174,8 @@ class Login extends Component {
 
   componentWillMount() {
     if (
-      window.location.href === "http://store.nodbearings.net/login" ||
-      window.location.href === "http://localhost:3000/login"
+      window.location.href === "https://store.nodbearings.net/login" ||
+      window.location.href === "https://localhost:3000/login"
     ) {
       this.setState({
         locationURL: true,
@@ -243,9 +244,9 @@ class Login extends Component {
     console.log(window.location.href);
 
     if (
-      window.location.href === "http://store.zwz.co.in/login#" ||
-      window.location.href === "http://localhost:3000/login" ||
-      window.location.href === "http://store.zwz.co.in/login"
+      window.location.href === zwzurl + "login#" ||
+      window.location.href === "https://localhost:3000/login" ||
+      window.location.href === zwzurl + "login"
     ) {
       const response = await login({
         username: this.state.username,
@@ -293,9 +294,9 @@ class Login extends Component {
         alert(response.message);
       }
     } else if (
-      window.location.href === "http://store.nodbearings.net/login#" ||
-      window.location.href === "http://localhost:3000/login#" ||
-      window.location.href === "http://store.nodbearings.net/login"
+      window.location.href === "https://store.nodbearings.net/login#" ||
+      window.location.href === "https://localhost:3000/login#" ||
+      window.location.href === "https://store.nodbearings.net/login"
     ) {
       const response = await loginNod({
         username: this.state.username,

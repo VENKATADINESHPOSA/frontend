@@ -6,6 +6,7 @@ import { Button, Row, Col } from "reactstrap";
 import logo from "~/assets/images/zwz-log-logo.png";
 import axios from "axios";
 import NodLogo from "~/assets/images/trans_nod_logo.png";
+import { zwzurl, zwzapiurl, nodurl, nodapiurl } from "../../urls.json";
 
 let hostname = window.location.hostname;
 var baseURL = localStorage.getItem("url");
@@ -43,17 +44,18 @@ class ForgotPassword extends Component {
   verifyUser() {
     var ref = this;
     if (
-      window.location.href === "http://store.zwz.co.in/forget-password#" ||
-      window.location.href === "http://store.zwz.co.in/forget-password"
+      window.location.href === zwzurl + "forget-password#" ||
+      window.location.href === zwzurl + "forget-password"
     ) {
-      var url = "http://api.store.zwz.co.in/authentication/check_user/";
+      var url = zwzapiurl + "authentication/check_user/";
     } else if (
-      window.location.href === "http://store.nodbearings.net/forget-password#" ||
-      window.location.href === "http://store.nodbearings.net/forget-password"
+      window.location.href ===
+        "https://store.nodbearings.net/forget-password#" ||
+      window.location.href === "https://store.nodbearings.net/forget-password"
     ) {
-      var url = "http://api.store.nodbearings.net/authentication/check_user/";
+      var url = "https://api.store.nodbearings.net/authentication/check_user/";
     } else {
-      var url = "http://api.store.zwz.co.in/authentication/check_user/";
+      var url = zwzapiurl + "authentication/check_user/";
     }
 
     axios
@@ -101,20 +103,18 @@ class ForgotPassword extends Component {
   submitOtp() {
     var ref = this;
     if (
-      window.location.href === "http://store.zwz.co.in/forget-password#" ||
-      window.location.href === "http://store.zwz.co.in/forget-password"
+      window.location.href === zwzurl + "forget-password#" ||
+      window.location.href === zwzurl + "forget-password"
     ) {
-      var url =
-        "http://api.store.zwz.co.in/authentication/otp/verification/";
+      var url = zwzapiurl + "authentication/otp/verification/";
     } else if (
-      window.location.href === "http://store.nodbearings.net/forget-password#" ||
-      window.location.href === "http://store.nodbearings.net/forget-password"
+      window.location.href ===
+        "https://store.nodbearings.net/forget-password#" ||
+      window.location.href === "https://store.nodbearings.net/forget-password"
     ) {
-      var url =
-        "http://api.store.zwz.co.in/authentication/otp/verification/";
+      var url = zwzapiurl + "authentication/otp/verification/";
     } else {
-      var url =
-        "http://api.store.zwz.co.in/authentication/otp/verification/";
+      var url = zwzapiurl + "authentication/otp/verification/";
     }
 
     axios
@@ -179,7 +179,7 @@ class ForgotPassword extends Component {
 		   	 })
 		    console.log(ref.state.emailVal);
 
-		    axios.post('http://api.store.zwz.co.in/authentication/check_user/', {
+		    axios.post(zwzapiurl + 'authentication/check_user/', {
 		    	db_type: "zwz",
 		        user_name: event.target.value,
 
@@ -222,7 +222,7 @@ class ForgotPassword extends Component {
 	   	 })
 	    console.log(ref.state.emailVal);
 
-	    axios.post('http://apigwd.prtouch.com/authentication/check_user/', {
+	    axios.post('https://apigwd.prtouch.com/authentication/check_user/', {
 	    	db_type: sessionStorage.getItem('loginType'),
 	        user_name: e.target.value,
 
@@ -275,7 +275,7 @@ class ForgotPassword extends Component {
     if (hostname === "store.zwz.co.in") {
       axios
         .post(
-          "http://api.store.zwz.co.in/authentication/change_password/",
+          zwzapiurl + "authentication/change_password/",
           {
             db_type: "zwz",
             user_name: ref.state.username,
@@ -304,7 +304,7 @@ class ForgotPassword extends Component {
     } else if (hostname === "store.nodbearings.net") {
       axios
         .post(
-          "http://api.store.nodbearings.net/authentication/change_password/",
+          "https://api.store.nodbearings.net/authentication/change_password/",
           {
             db_type: "zwz",
             user_name: ref.state.username,

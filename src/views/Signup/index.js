@@ -7,6 +7,7 @@ import NodLogo from "~/assets/images/trans_nod_logo.png";
 
 import { Button, Row, Col, Modal } from "reactstrap";
 import { register, mobileverfication } from "~/redux/helpers/user";
+import { zwzurl, zwzapiurl, nodurl, nodapiurl } from "../../urls.json";
 
 let hostname = window.location.hostname;
 var baseURL = localStorage.getItem("url");
@@ -238,22 +239,22 @@ class Signup extends Component {
     }
 
     if (
-      window.location.href === "http://store.zwz.co.in/signup#" ||
-      window.location.href === "http://store.zwz.co.in/signup"
+      window.location.href === zwzurl + "signup#" ||
+      window.location.href === zwzurl + "signup"
     ) {
       this.state.api_url =
-        "http://api.store.zwz.co.in/authentication/user/signup/";
+        zwzapiurl + "authentication/user/signup/";
     } else if (
-      window.location.href === "http://store.nodbearings.net/signup#" ||
-      window.location.href === "http://store.nodbearings.net/signup" ||
-      window.location.href === "http://localhost:3000/signup#" ||
-      window.location.href === "http://localhost:3000/signup"
+      window.location.href === "https://store.nodbearings.net/signup#" ||
+      window.location.href === "https://store.nodbearings.net/signup" ||
+      window.location.href === "https://localhost:3000/signup#" ||
+      window.location.href === "https://localhost:3000/signup"
     ) {
       this.state.api_url =
-        "http://api.store.nodbearings.net/authentication/user/signup/";
+        "https://api.store.nodbearings.net/authentication/user/signup/";
     } else {
       this.state.api_url =
-        "http://api.store.zwz.co.in/authentication/user/signup/";
+        zwzapiurl + "authentication/user/signup/";
     }
 
     localStorage.setItem("emailforverification", this.state.email);

@@ -14,7 +14,7 @@ const DpiDescription = () => {
         style={{ textAlign: "center", fontWeight: "bold", fontSize: "x-large" }}
       >
         <a
-          href="http://dpibearings.com/"
+          href="https://dpibearings.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
