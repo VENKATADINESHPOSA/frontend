@@ -922,7 +922,7 @@ class MyProfile extends Component {
                           readOnly={this.state.input_type}
                           type="text"
                           className={
-                            this.state.status !== "Approval Pending"
+                            this.state.status !== "Verification Pending"
                               ? "address_input1"
                               : !this.state.gstNumber
                               ? "address_input1"
@@ -932,7 +932,7 @@ class MyProfile extends Component {
                           onInput={this.changeGST}
                           placeholder="Enter GST Number"
                         />
-                        {this.state.status !== "Approval Pending" &&
+                        {this.state.status !== "Verification Pending" &&
                         this.state.gstNumber ? (
                           <span style={{ color: "green", fontWeight: "bold" }}>
                             {" "}
@@ -1003,14 +1003,14 @@ class MyProfile extends Component {
                           type="text"
                           defaultValue={this.state.mobileNo}
                           className={
-                            this.state.status !== "Approval Pending"
+                            this.state.status !== "Verification Pending"
                               ? "address_input1"
                               : "address_input"
                           }
                           placeholder="Mobile No."
                           readOnly
                         />
-                        {this.state.status !== "Approval Pending" && (
+                        {this.state.status !== "Verification Pending" && (
                           <span style={{ color: "green", fontWeight: "bold" }}>
                             {" "}
                             Verified{" "}
@@ -1029,14 +1029,14 @@ class MyProfile extends Component {
                           type="text"
                           defaultValue={this.state.email}
                           className={
-                            this.state.status !== "Approval Pending"
+                            this.state.status !== "Verification Pending"
                               ? "address_input1"
                               : "address_input"
                           }
                           placeholder="Email Address"
                           readOnly
                         />
-                        {this.state.status !== "Approval Pending" && (
+                        {this.state.status !== "Verification Pending" && (
                           <span style={{ color: "green", fontWeight: "bold" }}>
                             {" "}
                             Verified{" "}

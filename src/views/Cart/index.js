@@ -108,6 +108,7 @@ class Cart extends Component {
       payment_term: "",
       credit_period: "",
       available_balance: "",
+      productQuantity: null,
     };
   }
 
@@ -1824,6 +1825,11 @@ this.props.dispatch(updateCartItemData(response.data.itemdetails.length))
                                       style={{ marginTop: 0 }}
                                       type="text"
                                       defaultValue={item.quantity}
+                                      onChange={(e) =>
+                                        this.setState({
+                                          productQuantity: e.target.value,
+                                        })
+                                      }
                                       onBlur={(e) =>
                                         this.onUpdateQuantity(
                                           e,
@@ -1831,8 +1837,36 @@ this.props.dispatch(updateCartItemData(response.data.itemdetails.length))
                                           e.target.value
                                         )
                                       }
+                                      onKeyPress={(e) => {
+                                        var code = e.key;
+                                        if (code === "Enter") {
+                                          this.onUpdateQuantity(
+                                            e,
+                                            item.item_detail_id,
+                                            e.target.value
+                                          );
+                                        }
+                                      }}
                                       className="qty_input"
                                     />{" "}
+                                    <span>
+                                      <i
+                                        class="fa fa-arrow-circle-right"
+                                        onClick={(e) =>
+                                          this.onUpdateQuantity(
+                                            e,
+                                            item.item_detail_id,
+                                            this.state.productQuantity
+                                          )
+                                        }
+                                        style={{
+                                          fontSize: 18,
+                                          fontWeight: "bold",
+                                          cursor: "pointer",
+                                        }}
+                                        aria-hidden="true"
+                                      ></i>
+                                    </span>
                                   </td>
                                   {item.your_price > 0 ? (
                                     <td>
@@ -2422,6 +2456,16 @@ this.props.dispatch(updateCartItemData(response.data.itemdetails.length))
                                       defaultValue={item.Quantity}
                                       className="qty_input"
                                     />{" "}
+                                    <span>
+                                      <i
+                                        class="fa fa-refresh"
+                                        style={{
+                                          fontSize: 18,
+                                          fontWeight: "bold",
+                                        }}
+                                        aria-hidden="true"
+                                      ></i>
+                                    </span>
                                   </td>
                                   {item.Amount > 0 ? (
                                     <td style={{ fontWeight: "bold" }}>

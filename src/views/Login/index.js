@@ -41,6 +41,8 @@ class Login extends Component {
     this.addLocalCartData = this.addLocalCartData.bind(this);
     this.DisplayAddItem = this.DisplayAddItem.bind(this);
     this.getStatus = this.getStatus.bind(this);
+    this.onClickSignUp = this.onClickSignUp.bind(this);
+
 
     this.state = {
       forgotPassword: false,
@@ -198,6 +200,10 @@ class Login extends Component {
         passowrdType: "password",
       });
     }
+  }
+
+  onClickSignUp() {
+    this.props.history.push("/signup");
   }
 
   handleChange(e) {
@@ -388,7 +394,23 @@ class Login extends Component {
             >
               <h1 className="login_title_text"> Sign In </h1>
             </Col>
-
+            <Col
+              sm={11}
+              xs={11}
+              md={11}
+              lg={11}
+              className="login_subtitle_container"
+              style={{ marginLeft: "50px" }}
+            >
+              <p>
+                {" "}
+                If you don't have an account, please{" "}
+                <a href="#" onClick={this.onClickSignUp}>
+                  {" "}
+                  SignUp{" "}
+                </a>{" "}
+              </p>
+            </Col>
             <Col
               sm={12}
               xs={12}

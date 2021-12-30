@@ -1260,20 +1260,6 @@ class Shipping extends Component {
             <Button
               id="changeColor"
               style={{
-                backgroundColor: "#0072bc !important",
-                fontSize: 14,
-                fontWeight: "bold",
-                color: "#fff",
-                width: 100,
-                height: 35,
-              }}
-              onClick={this.Failedtoggle}
-            >
-              Ok
-            </Button>
-            <Button
-              id="changeColor"
-              style={{
                 backgroundColor: "#0072bc",
                 fontSize: 14,
                 fontWeight: "bold",
@@ -1284,6 +1270,20 @@ class Shipping extends Component {
               onClick={this.goToProfile}
             >
               Go to profile
+            </Button>
+            <Button
+              id="changeColor"
+              style={{
+                backgroundColor: "#0072bc !important",
+                fontSize: 14,
+                fontWeight: "bold",
+                color: "#fff",
+                width: 100,
+                height: 35,
+              }}
+              onClick={this.Failedtoggle}
+            >
+              Cancel
             </Button>
           </ButtonToolbar>
         </Modal>

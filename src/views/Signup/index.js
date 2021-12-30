@@ -242,8 +242,7 @@ class Signup extends Component {
       window.location.href === zwzurl + "signup#" ||
       window.location.href === zwzurl + "signup"
     ) {
-      this.state.api_url =
-        zwzapiurl + "authentication/user/signup/";
+      this.state.api_url = zwzapiurl + "authentication/user/signup/";
     } else if (
       window.location.href === "https://store.nodbearings.net/signup#" ||
       window.location.href === "https://store.nodbearings.net/signup" ||
@@ -253,8 +252,7 @@ class Signup extends Component {
       this.state.api_url =
         "https://api.store.nodbearings.net/authentication/user/signup/";
     } else {
-      this.state.api_url =
-        zwzapiurl + "authentication/user/signup/";
+      this.state.api_url = zwzapiurl + "authentication/user/signup/";
     }
 
     localStorage.setItem("emailforverification", this.state.email);
@@ -293,7 +291,12 @@ class Signup extends Component {
                 lg={12}
                 className="logo_img_container"
               >
-                <img src={LOGO} alt="Logo" className="logo_img" />
+                <img
+                  src={LOGO}
+                  alt="Logo"
+                  className="logo_img"
+                  style={{ marginRight: "75px" }}
+                />
               </Col>
             ) : (
               <Col
@@ -306,7 +309,7 @@ class Signup extends Component {
                 <img
                   src={LOGO}
                   alt="Logo"
-                  style={{ width: 80, height: 80 }}
+                  style={{ width: 80, height: 80, marginRight: "75px" }}
                   className="logo_img"
                 />
               </Col>
@@ -319,7 +322,10 @@ class Signup extends Component {
               lg={11}
               className="login_title_container"
             >
-              <h1 className="login_title_text"> Create your account </h1>
+              <h1 className="login_title_text">
+                {" "}
+                Sign Up : Create your new account{" "}
+              </h1>
             </Col>
 
             <Col
@@ -336,6 +342,19 @@ class Signup extends Component {
                   {" "}
                   Sign In{" "}
                 </a>{" "}
+              </p>
+            </Col>
+
+            <Col
+              sm={11}
+              xs={11}
+              md={11}
+              lg={11}
+              className="login_subtitle_container"
+            >
+              <p style={{ fontSize: "small" }}>
+                Fields with <span style={{ color: "red" }}>*</span> are
+                mandatory
               </p>
             </Col>
 

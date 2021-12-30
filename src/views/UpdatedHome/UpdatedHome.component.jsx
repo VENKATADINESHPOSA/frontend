@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import "./UpdatedHome.styles.scss";
 import Header from "~/components/Header";
@@ -16,6 +16,11 @@ const UpdatedHome = (props) => {
   const [showKnowmore, setshowKnowmore] = useState(false);
   const [heading, setHeading] = useState("");
   const [itemId, setItemId] = useState("");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return showKnowmore ? (
     <div className="bearing-details-div">
       <Header {...props} />
