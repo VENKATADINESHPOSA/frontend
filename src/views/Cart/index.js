@@ -1849,24 +1849,6 @@ this.props.dispatch(updateCartItemData(response.data.itemdetails.length))
                                       }}
                                       className="qty_input"
                                     />{" "}
-                                    <span>
-                                      <i
-                                        class="fa fa-arrow-circle-right"
-                                        onClick={(e) =>
-                                          this.onUpdateQuantity(
-                                            e,
-                                            item.item_detail_id,
-                                            this.state.productQuantity
-                                          )
-                                        }
-                                        style={{
-                                          fontSize: 18,
-                                          fontWeight: "bold",
-                                          cursor: "pointer",
-                                        }}
-                                        aria-hidden="true"
-                                      ></i>
-                                    </span>
                                   </td>
                                   {item.your_price > 0 ? (
                                     <td>
@@ -2011,6 +1993,7 @@ this.props.dispatch(updateCartItemData(response.data.itemdetails.length))
                                   <td>
                                     {" "}
                                     <span
+                                      title="Delete"
                                       style={{
                                         fontWeight: "bold",
                                         color: "#676464",
@@ -2022,6 +2005,31 @@ this.props.dispatch(updateCartItemData(response.data.itemdetails.length))
                                     >
                                       <i
                                         class="fa fa-trash"
+                                        style={{
+                                          fontSize: 18,
+                                          fontWeight: "bold",
+                                        }}
+                                        aria-hidden="true"
+                                      ></i>{" "}
+                                    </span>{" "}
+                                    <span
+                                      title="Update the product quantity"
+                                      style={{
+                                        fontWeight: "bold",
+                                        color: "#676464",
+                                        cursor: "pointer",
+                                        marginLeft: "10px",
+                                      }}
+                                      onClick={(e) =>
+                                        this.onUpdateQuantity(
+                                          e,
+                                          item.item_detail_id,
+                                          this.state.productQuantity
+                                        )
+                                      }
+                                    >
+                                      <i
+                                        class="fa fa-refresh"
                                         style={{
                                           fontSize: 18,
                                           fontWeight: "bold",
@@ -2456,16 +2464,6 @@ this.props.dispatch(updateCartItemData(response.data.itemdetails.length))
                                       defaultValue={item.Quantity}
                                       className="qty_input"
                                     />{" "}
-                                    <span>
-                                      <i
-                                        class="fa fa-refresh"
-                                        style={{
-                                          fontSize: 18,
-                                          fontWeight: "bold",
-                                        }}
-                                        aria-hidden="true"
-                                      ></i>
-                                    </span>
                                   </td>
                                   {item.Amount > 0 ? (
                                     <td style={{ fontWeight: "bold" }}>
