@@ -109,6 +109,7 @@ class Cart extends Component {
       credit_period: "",
       available_balance: "",
       productQuantity: null,
+      user_information: "",
     };
   }
 
@@ -1012,6 +1013,7 @@ class Cart extends Component {
         this.setState({
           available_balance: toDecimalMark(response.data.data.avl_balance),
           credit_period: response.data.data.creditperiod,
+          user_information: response.data.user_info,
         });
       })
       .catch(function (error) {});
@@ -2281,73 +2283,76 @@ this.props.dispatch(updateCartItemData(response.data.itemdetails.length))
                     </CardBody>
                   </Card>
 
-                  <Card style={{ marginTop: 8 }}>
-                    <CardBody
-                      className="customise_card_body"
-                      style={{ padding: 18 }}
-                    >
-                      <table
-                        class="checkout_col"
-                        style={{ margin: "auto", width: "100%" }}
+                  {this.state.user_information != "New_user" && (
+                    <Card style={{ marginTop: 8 }}>
+                      <CardBody
+                        className="customise_card_body"
+                        style={{ padding: 18 }}
                       >
-                        <tbody style={{ fontSize: 13, fontWeight: "bold" }}>
-                          <tr style={{ display: "none" }}>
-                            <td>
-                              <span> Payment Terms: </span>
-                            </td>
-
-                            <td>
-                              <span>
-                                {" "}
-                                <strong>
-                                  {" "}
-                                  {this.state.payment_term}{" "}
-                                </strong>{" "}
-                              </span>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>
-                              <span>Available Balance:</span>
-                            </td>
-
-                            <td>
-                              <span>
-                                {" "}
-                                <strong>
-                                  {" "}
-                                  <i
-                                    class="fa fa-inr"
-                                    style={{ fontSize: 12 }}
-                                    aria-hidden="true"
-                                  ></i>{" "}
-                                  {this.state.available_balance}{" "}
-                                </strong>{" "}
-                              </span>
-                            </td>
-                          </tr>
-
-                          {this.state.credit_period != "" && (
-                            <tr>
+                        <table
+                          class="checkout_col"
+                          style={{ margin: "auto", width: "100%" }}
+                        >
+                          <tbody style={{ fontSize: 13, fontWeight: "bold" }}>
+                            <tr style={{ display: "none" }}>
                               <td>
-                                <span>Credit Period:</span>
+                                <span> Payment Terms: </span>
                               </td>
 
                               <td>
                                 <span>
                                   {" "}
                                   <strong>
-                                    {this.state.credit_period}{" "}
+                                    {" "}
+                                    {this.state.payment_term}{" "}
                                   </strong>{" "}
                                 </span>
                               </td>
                             </tr>
-                          )}
-                        </tbody>
-                      </table>
-                    </CardBody>
-                  </Card>
+                            {this.state.available_balance != "0" && (
+                              <tr>
+                                <td>
+                                  <span>Available Balance:</span>
+                                </td>
+
+                                <td>
+                                  <span>
+                                    {" "}
+                                    <strong>
+                                      {" "}
+                                      <i
+                                        class="fa fa-inr"
+                                        style={{ fontSize: 12 }}
+                                        aria-hidden="true"
+                                      ></i>{" "}
+                                      {this.state.available_balance}{" "}
+                                    </strong>{" "}
+                                  </span>
+                                </td>
+                              </tr>
+                            )}
+
+                            {this.state.credit_period != "" && (
+                              <tr>
+                                <td>
+                                  <span>Credit Period:</span>
+                                </td>
+
+                                <td>
+                                  <span>
+                                    {" "}
+                                    <strong>
+                                      {this.state.credit_period}{" "}
+                                    </strong>{" "}
+                                  </span>
+                                </td>
+                              </tr>
+                            )}
+                          </tbody>
+                        </table>
+                      </CardBody>
+                    </Card>
+                  )}
                 </Col>
               )}
             </Row>
