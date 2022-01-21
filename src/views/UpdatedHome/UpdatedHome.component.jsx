@@ -19,7 +19,7 @@ const UpdatedHome = (props) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  });
 
   return showKnowmore ? (
     <div className="bearing-details-div">
