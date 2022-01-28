@@ -192,7 +192,7 @@ class ProductCategory extends Component {
         categorytype: ProductData1.cattype[0],
         productcode: ProductData1.itemcode[0],
         description: ProductData1.descript[0],
-        price: ProductData1.price[0],
+        price: ProductData1.price,
         brand: ProductData1.brandname[0],
         categorycode: ProductData1.catcode[0],
         itemtype: ProductData1.itemtype[0],

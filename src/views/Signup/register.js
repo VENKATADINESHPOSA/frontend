@@ -42,6 +42,7 @@ class Registeraddress extends Component {
       mobilenumber: "",
       address: "",
       city: "",
+      city_name: "",
       state: "",
       pobox: "",
       geotag: "",
@@ -61,6 +62,8 @@ class Registeraddress extends Component {
       isLoggedInVal: false,
       locationURL: false,
       Thankyoumodal: false,
+      oldUser: false,
+      state_data: "",
     };
   }
 
@@ -177,14 +180,14 @@ class Registeraddress extends Component {
 
     if (
       window.location.href === zwzurl + "register#" ||
-      window.location.href === zwzurl + "register"
+      window.location.href === zwzurl + "register" ||
+      window.location.href === "https://localhost:3000/register#"
     ) {
       var url = zwzapiurl + "authentication/otp/verification/";
       var api_url = zwzapiurl + "authentication/user/profile/update/";
     } else if (
       window.location.href === "https://store.nodbearings.net/register#" ||
       window.location.href === "https://store.nodbearings.net/register" ||
-      window.location.href === "https://localhost:3000/register#" ||
       window.location.href === "https://localhost:3000/register"
     ) {
       var url =
@@ -265,13 +268,13 @@ class Registeraddress extends Component {
   async statelist(e) {
     if (
       window.location.href === zwzurl + "register#" ||
-      window.location.href === zwzurl + "register"
+      window.location.href === zwzurl + "register" ||
+      window.location.href === "https://localhost:3000/register#"
     ) {
       var url = zwzapiurl + "authentication/state_list/";
     } else if (
       window.location.href === "https://store.nodbearings.net/register#" ||
       window.location.href === "https://store.nodbearings.net/register" ||
-      window.location.href === "https://localhost:3000/register#" ||
       window.location.href === "https://localhost:3000/register"
     ) {
       var url = "https://api.store.nodbearings.net/authentication/state_list/";
@@ -309,13 +312,13 @@ class Registeraddress extends Component {
   async citylist(e) {
     if (
       window.location.href === zwzurl + "register#" ||
-      window.location.href === zwzurl + "register"
+      window.location.href === zwzurl + "register" ||
+      window.location.href === "https://localhost:3000/register#"
     ) {
       var url = zwzapiurl + "authentication/city_list/";
     } else if (
       window.location.href === "https://store.nodbearings.net/register#" ||
       window.location.href === "https://store.nodbearings.net/register" ||
-      window.location.href === "https://localhost:3000/register#" ||
       window.location.href === "https://localhost:3000/register"
     ) {
       var url = "https://api.store.nodbearings.net/authentication/city_list/";
@@ -353,8 +356,34 @@ class Registeraddress extends Component {
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     window.scrollTo(0, 0);
+    const emailFromLocalStorage = localStorage.getItem("username");
+    const responseForDetails = await axios(
+      zwzapiurl + "authentication/user/exdetails/ProfileUpdate/",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        data: {
+          emailForDetails: emailFromLocalStorage,
+        },
+      }
+    );
+    console.log(responseForDetails.data);
+    if (responseForDetails.data.message === "old_user") {
+      this.setState({
+        oldUser: true,
+        address: responseForDetails.data.data.address1,
+        pobox: responseForDetails.data.data.pincode,
+        gstin: responseForDetails.data.data.gstin,
+        state: responseForDetails.data.data.state,
+        city: responseForDetails.data.data.cityid.toString(),
+        city_name: responseForDetails.data.data.city,
+      });
+    }
     this.setState({
       login_details: localStorage.getItem("username"),
     });
@@ -444,15 +473,15 @@ class Registeraddress extends Component {
 
     if (
       window.location.href === zwzurl + "register#" ||
-      window.location.href === zwzurl + "register"
+      window.location.href === zwzurl + "register" ||
+      window.location.href === "https://localhost:3000/register#"
     ) {
       api_url = zwzapiurl + "authentication/user/profile/update/";
       var otp_url = zwzapiurl + "authentication/mobile/otp_sent/";
     } else if (
       window.location.href === "https://store.nodbearings.net/register" ||
       window.location.href === "https://store.nodbearings.net/register#" ||
-      window.location.href === "https://localhost:3000/register" ||
-      window.location.href === "https://localhost:3000/register#"
+      window.location.href === "https://localhost:3000/register"
     ) {
       api_url =
         "https://api.store.nodbearings.net/authentication/user/profile/update/";
@@ -576,6 +605,7 @@ class Registeraddress extends Component {
                         type="number"
                         onChange={this.handleChange}
                         name="mobilenumber"
+                        value={this.state.mobilenumber}
                         placeholder="Mobile Number"
                       />
 
@@ -591,195 +621,356 @@ class Registeraddress extends Component {
                   </Col>
                 </Row>
 
-                <Row>
-                  <Col sm={12} xs={12} md={12} lg={12}>
-                    <Col
-                      sm={1}
-                      xs={1}
-                      md={1}
-                      lg={1}
-                      style={{ float: "left", padding: 0, width: 20 }}
-                    >
-                      <span style={{ color: "red", display: "none" }}>*</span>
-                    </Col>
-                    <Col
-                      sm={11}
-                      xs={11}
-                      md={11}
-                      lg={11}
-                      style={{ float: "left", padding: 0, marginLeft: 20 }}
-                    >
-                      <input
-                        className="form-control"
-                        type="text"
-                        name="gstin"
-                        onChange={this.handleChange}
-                        placeholder="GSTIN Number"
-                      />
-                      {this.state.showError16 && (
-                        <div style={{ width: "100%", textAlign: "left" }}>
-                          <span style={{ color: "red", fontSize: 11 }}>
-                            {" "}
-                            Please Enter valid GSTIN Number{" "}
-                          </span>
-                        </div>
-                      )}
-                    </Col>
-                  </Col>
-                </Row>
-
-                <Row>
-                  <Col sm={12} xs={12} md={12} lg={12}>
-                    <Col
-                      sm={1}
-                      xs={1}
-                      md={1}
-                      lg={1}
-                      style={{ float: "left", padding: 0, width: 20 }}
-                    >
-                      <span style={{ color: "red" }}>*</span>
-                    </Col>
-                    <Col
-                      sm={11}
-                      xs={11}
-                      md={11}
-                      lg={11}
-                      style={{ float: "left", padding: 0 }}
-                    >
-                      <textarea
-                        style={{ marginBottom: 15 }}
-                        className="form-control"
-                        rows="3"
-                        onChange={this.handleChange}
-                        name="address"
-                        placeholder="Address"
-                      ></textarea>
-                      {this.state.showError7 && (
-                        <div style={{ width: "100%", textAlign: "left" }}>
-                          <span style={{ color: "red", fontSize: 11 }}>
-                            {" "}
-                            Please Enter valid Delivery Address{" "}
-                          </span>
-                        </div>
-                      )}
-                    </Col>
-                  </Col>
-                </Row>
-
-                <Row>
-                  <Col sm={12} xs={12} md={12} lg={12}>
-                    <Col
-                      sm={1}
-                      xs={1}
-                      md={1}
-                      lg={1}
-                      style={{ float: "left", padding: 0, width: 20 }}
-                    >
-                      <span style={{ color: "red" }}>*</span>
-                    </Col>
-                    <Col
-                      sm={11}
-                      xs={11}
-                      md={11}
-                      lg={11}
-                      style={{ float: "left", padding: 0 }}
-                    >
-                      <select
-                        style={{ marginBottom: 15 }}
-                        className="form-control"
-                        name="state"
-                        onChange={this.handleChange}
+                {this.state.oldUser ? (
+                  <Row>
+                    <Col sm={12} xs={12} md={12} lg={12}>
+                      <Col
+                        sm={1}
+                        xs={1}
+                        md={1}
+                        lg={1}
+                        style={{ float: "left", padding: 0, width: 20 }}
                       >
-                        <option value="1">Select State</option>
-                        {this.state.state_options}
-                      </select>
-                      {this.state.showError11 && (
-                        <div style={{ width: "100%", textAlign: "left" }}>
-                          <span style={{ color: "red", fontSize: 11 }}>
-                            {" "}
-                            Please Select State{" "}
-                          </span>
-                        </div>
-                      )}
-                    </Col>
-                  </Col>
-                </Row>
-
-                <Row>
-                  <Col sm={12} xs={12} md={12} lg={12}>
-                    <Col
-                      sm={1}
-                      xs={1}
-                      md={1}
-                      lg={1}
-                      style={{ float: "left", padding: 0, width: 20 }}
-                    >
-                      <span style={{ color: "red" }}>*</span>
-                    </Col>
-                    <Col
-                      sm={11}
-                      xs={11}
-                      md={11}
-                      lg={11}
-                      style={{ float: "left", padding: 0 }}
-                    >
-                      <select
-                        className="form-control"
-                        style={{ marginBottom: 15 }}
-                        name="city"
-                        onChange={this.handleChange}
+                        <span style={{ color: "red", display: "none" }}>*</span>
+                      </Col>
+                      <Col
+                        sm={11}
+                        xs={11}
+                        md={11}
+                        lg={11}
+                        style={{ float: "left", padding: 0, marginLeft: 20 }}
                       >
-                        <option value="1">Select City</option>
-                        {this.state.city_options}
-                      </select>
-                      {this.state.showError10 && (
-                        <div style={{ width: "100%", textAlign: "left" }}>
-                          <span style={{ color: "red", fontSize: 11 }}>
-                            {" "}
-                            Please Select City{" "}
-                          </span>
-                        </div>
-                      )}
+                        <input
+                          className="form-control"
+                          type="text"
+                          name="gstin"
+                          value={this.state.gstin}
+                          placeholder="GSTIN Number"
+                          readOnly
+                        />
+                      </Col>
                     </Col>
-                  </Col>
-                </Row>
+                  </Row>
+                ) : (
+                  <Row>
+                    <Col sm={12} xs={12} md={12} lg={12}>
+                      <Col
+                        sm={1}
+                        xs={1}
+                        md={1}
+                        lg={1}
+                        style={{ float: "left", padding: 0, width: 20 }}
+                      >
+                        <span style={{ color: "red", display: "none" }}>*</span>
+                      </Col>
+                      <Col
+                        sm={11}
+                        xs={11}
+                        md={11}
+                        lg={11}
+                        style={{ float: "left", padding: 0, marginLeft: 20 }}
+                      >
+                        <input
+                          className="form-control"
+                          type="text"
+                          name="gstin"
+                          onChange={this.handleChange}
+                          placeholder="GSTIN Number"
+                        />
+                        {this.state.showError16 && (
+                          <div style={{ width: "100%", textAlign: "left" }}>
+                            <span style={{ color: "red", fontSize: 11 }}>
+                              {" "}
+                              Please Enter valid GSTIN Number{" "}
+                            </span>
+                          </div>
+                        )}
+                      </Col>
+                    </Col>
+                  </Row>
+                )}
 
-                <Row>
-                  <Col sm={12} xs={12} md={12} lg={12}>
-                    <Col
-                      sm={1}
-                      xs={1}
-                      md={1}
-                      lg={1}
-                      style={{ float: "left", padding: 0, width: 20 }}
-                    >
-                      <span style={{ color: "red" }}>*</span>
+                {this.state.oldUser ? (
+                  <Row>
+                    <Col sm={12} xs={12} md={12} lg={12}>
+                      <Col
+                        sm={1}
+                        xs={1}
+                        md={1}
+                        lg={1}
+                        style={{ float: "left", padding: 0, width: 20 }}
+                      >
+                        <span style={{ color: "red" }}>*</span>
+                      </Col>
+                      <Col
+                        sm={11}
+                        xs={11}
+                        md={11}
+                        lg={11}
+                        style={{ float: "left", padding: 0 }}
+                      >
+                        <textarea
+                          style={{ marginBottom: 15 }}
+                          className="form-control"
+                          rows="3"
+                          name="address"
+                          value={this.state.address}
+                          placeholder="Address"
+                          readOnly
+                        ></textarea>
+                      </Col>
                     </Col>
-                    <Col
-                      sm={11}
-                      xs={11}
-                      md={11}
-                      lg={11}
-                      style={{ float: "left", padding: 0 }}
-                    >
-                      <input
-                        type="number"
-                        name="pobox"
-                        className="form-control"
-                        onChange={this.handleChange}
-                        placeholder="PO Box Number"
-                      />
-                      {this.state.showError8 && (
-                        <div style={{ width: "100%", textAlign: "left" }}>
-                          <span style={{ color: "red", fontSize: 11 }}>
-                            {" "}
-                            Please Enter valid PO Box Number{" "}
-                          </span>
-                        </div>
-                      )}
+                  </Row>
+                ) : (
+                  <Row>
+                    <Col sm={12} xs={12} md={12} lg={12}>
+                      <Col
+                        sm={1}
+                        xs={1}
+                        md={1}
+                        lg={1}
+                        style={{ float: "left", padding: 0, width: 20 }}
+                      >
+                        <span style={{ color: "red" }}>*</span>
+                      </Col>
+                      <Col
+                        sm={11}
+                        xs={11}
+                        md={11}
+                        lg={11}
+                        style={{ float: "left", padding: 0 }}
+                      >
+                        <textarea
+                          style={{ marginBottom: 15 }}
+                          className="form-control"
+                          rows="3"
+                          onChange={this.handleChange}
+                          name="address"
+                          placeholder="Address"
+                        ></textarea>
+                        {this.state.showError7 && (
+                          <div style={{ width: "100%", textAlign: "left" }}>
+                            <span style={{ color: "red", fontSize: 11 }}>
+                              {" "}
+                              Please Enter valid Delivery Address{" "}
+                            </span>
+                          </div>
+                        )}
+                      </Col>
                     </Col>
-                  </Col>
-                </Row>
+                  </Row>
+                )}
+
+                {this.state.oldUser ? (
+                  <Row>
+                    <Col sm={12} xs={12} md={12} lg={12}>
+                      <Col
+                        sm={1}
+                        xs={1}
+                        md={1}
+                        lg={1}
+                        style={{ float: "left", padding: 0, width: 20 }}
+                      >
+                        <span style={{ color: "red" }}>*</span>
+                      </Col>
+                      <Col
+                        sm={11}
+                        xs={11}
+                        md={11}
+                        lg={11}
+                        style={{ float: "left", padding: 0 }}
+                      >
+                        <input
+                          className="form-control"
+                          type="text"
+                          name="state"
+                          placeholder="State"
+                          value={this.state.state}
+                          readOnly
+                        />
+                      </Col>
+                    </Col>
+                  </Row>
+                ) : (
+                  <Row>
+                    <Col sm={12} xs={12} md={12} lg={12}>
+                      <Col
+                        sm={1}
+                        xs={1}
+                        md={1}
+                        lg={1}
+                        style={{ float: "left", padding: 0, width: 20 }}
+                      >
+                        <span style={{ color: "red" }}>*</span>
+                      </Col>
+                      <Col
+                        sm={11}
+                        xs={11}
+                        md={11}
+                        lg={11}
+                        style={{ float: "left", padding: 0 }}
+                      >
+                        <select
+                          style={{ marginBottom: 15 }}
+                          className="form-control"
+                          name="state"
+                          onChange={this.handleChange}
+                        >
+                          <option value="1">Select State</option>
+                          {this.state.state_options}
+                        </select>
+                        {this.state.showError11 && (
+                          <div style={{ width: "100%", textAlign: "left" }}>
+                            <span style={{ color: "red", fontSize: 11 }}>
+                              {" "}
+                              Please Select State{" "}
+                            </span>
+                          </div>
+                        )}
+                      </Col>
+                    </Col>
+                  </Row>
+                )}
+
+                {this.state.oldUser ? (
+                  <Row>
+                    <Col sm={12} xs={12} md={12} lg={12}>
+                      <Col
+                        sm={1}
+                        xs={1}
+                        md={1}
+                        lg={1}
+                        style={{ float: "left", padding: 0, width: 20 }}
+                      >
+                        <span style={{ color: "red" }}>*</span>
+                      </Col>
+                      <Col
+                        sm={11}
+                        xs={11}
+                        md={11}
+                        lg={11}
+                        style={{ float: "left", padding: 0 }}
+                      >
+                        <input
+                          className="form-control"
+                          type="text"
+                          name="city"
+                          placeholder="City"
+                          value={this.state.city_name}
+                          readOnly
+                        />
+                      </Col>
+                    </Col>
+                  </Row>
+                ) : (
+                  <Row>
+                    <Col sm={12} xs={12} md={12} lg={12}>
+                      <Col
+                        sm={1}
+                        xs={1}
+                        md={1}
+                        lg={1}
+                        style={{ float: "left", padding: 0, width: 20 }}
+                      >
+                        <span style={{ color: "red" }}>*</span>
+                      </Col>
+                      <Col
+                        sm={11}
+                        xs={11}
+                        md={11}
+                        lg={11}
+                        style={{ float: "left", padding: 0 }}
+                      >
+                        <select
+                          className="form-control"
+                          style={{ marginBottom: 15 }}
+                          name="city"
+                          onChange={this.handleChange}
+                        >
+                          <option value="1">Select City</option>
+                          {this.state.city_options}
+                        </select>
+                        {this.state.showError10 && (
+                          <div style={{ width: "100%", textAlign: "left" }}>
+                            <span style={{ color: "red", fontSize: 11 }}>
+                              {" "}
+                              Please Select City{" "}
+                            </span>
+                          </div>
+                        )}
+                      </Col>
+                    </Col>
+                  </Row>
+                )}
+
+                {this.state.oldUser ? (
+                  <Row>
+                    <Col sm={12} xs={12} md={12} lg={12}>
+                      <Col
+                        sm={1}
+                        xs={1}
+                        md={1}
+                        lg={1}
+                        style={{ float: "left", padding: 0, width: 20 }}
+                      >
+                        <span style={{ color: "red" }}>*</span>
+                      </Col>
+                      <Col
+                        sm={11}
+                        xs={11}
+                        md={11}
+                        lg={11}
+                        style={{ float: "left", padding: 0 }}
+                      >
+                        <input
+                          type="text"
+                          name="pobox"
+                          value={this.state.pobox}
+                          className="form-control"
+                          placeholder="PO Box Number"
+                          readOnly
+                        />
+                      </Col>
+                    </Col>
+                  </Row>
+                ) : (
+                  <Row>
+                    <Col sm={12} xs={12} md={12} lg={12}>
+                      <Col
+                        sm={1}
+                        xs={1}
+                        md={1}
+                        lg={1}
+                        style={{ float: "left", padding: 0, width: 20 }}
+                      >
+                        <span style={{ color: "red" }}>*</span>
+                      </Col>
+                      <Col
+                        sm={11}
+                        xs={11}
+                        md={11}
+                        lg={11}
+                        style={{ float: "left", padding: 0 }}
+                      >
+                        <input
+                          type="number"
+                          name="pobox"
+                          className="form-control"
+                          onChange={this.handleChange}
+                          placeholder="PO Box Number"
+                        />
+                        {this.state.showError8 && (
+                          <div style={{ width: "100%", textAlign: "left" }}>
+                            <span style={{ color: "red", fontSize: 11 }}>
+                              {" "}
+                              Please Enter valid PO Box Number{" "}
+                            </span>
+                          </div>
+                        )}
+                      </Col>
+                    </Col>
+                  </Row>
+                )}
 
                 <Row>
                   <Col

@@ -53,7 +53,10 @@ import NodContactUsPageComponent from "./views/NodContactUsPage/NodContactUsPage
 import WzwnPageComponent from "./views/WzwnPage/WzwnPage.component";
 import IkoPageComponent from "./views/IkoPage/IkoPage.component";
 import UpdatedHomeComponent from "./views/UpdatedHome/UpdatedHome.component";
-import { zwzurl, zwzapiurl, nodurl, nodapiurl } from "./urls.json"
+import ExistingCustomerRegister from "./views/Existing-customer-register/Existing-customer-register.component";
+import ExistingCustomerSignUpForm from "./components/Existing-customer-signup-form/Existing-customer-signup-form.component";
+
+import { zwzurl, zwzapiurl, nodurl, nodapiurl } from "./urls.json";
 
 var hostname = window.location.hostname;
 let HomePage;
@@ -256,6 +259,16 @@ class App extends Component {
           <Route exact path="/zwz" component={ZwzPageComponent} />
           <Route exact path="/wzwn" component={WzwnPageComponent} />
           <Route exact path="/iko" component={IkoPageComponent} />
+          <Route
+            exact
+            path="/existingCustomerRegister"
+            component={ExistingCustomerRegister}
+          />
+          <Route
+            exact
+            path="/existingCustomerSignUp"
+            component={ExistingCustomerSignUpForm}
+          />
         </Switch>
       </React.Fragment>
     );
