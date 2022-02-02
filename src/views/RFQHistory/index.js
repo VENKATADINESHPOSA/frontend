@@ -97,6 +97,7 @@ class RFQHistory extends Component {
         orderData["rfq_id"] = postData[i].rfq_no;
         orderData["item_name"] = postData[i].ItemName;
         orderData["amount_per_unit"] = postData[i].Price;
+        orderData["Purchase_Price"] = postData[i].Purchase_Price;
         orderData["flag"] = "rfq_history";
         orderData["quantity"] = postData[i].Qty;
 
@@ -949,7 +950,7 @@ class RFQHistory extends Component {
     const data = {
       columns: [
         {
-          label: "RFQ",
+          label: "RFI",
           field: "rfq_no",
           sort: "asc",
           width: 50,

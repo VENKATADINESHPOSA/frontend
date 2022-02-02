@@ -1987,7 +1987,7 @@ class Header extends Component {
                         }`}
                       >
                         {" "}
-                        RFI
+                        RFI History
                       </a>
                       <Tooltip
                         placement="bottom"
@@ -2019,7 +2019,7 @@ class Header extends Component {
                         }`}
                       >
                         {" "}
-                        Orders{" "}
+                        Order History{" "}
                       </a>
                     </li>
                   )}

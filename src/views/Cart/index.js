@@ -1523,6 +1523,8 @@ this.props.dispatch(updateCartItemData(response.data.itemdetails.length))
       if (this.state.added_item[i].isChecked == true) {
         var orderData = {};
         orderData["item_id"] = this.state.added_item[i].item_detail_id;
+        orderData["brand_name"] = this.state.added_item[i].brandname;
+        orderData["item_name"] = this.state.added_item[i].itemname;
 
         arr.push(orderData);
       }
@@ -1822,35 +1824,44 @@ this.props.dispatch(updateCartItemData(response.data.itemdetails.length))
                                     </span>
                                   </td>
                                   <td>
-                                    {" "}
-                                    <input
-                                      style={{ marginTop: 0 }}
-                                      type="text"
-                                      defaultValue={item.quantity}
-                                      onChange={(e) =>
-                                        this.setState({
-                                          productQuantity: e.target.value,
-                                        })
-                                      }
-                                      onBlur={(e) =>
-                                        this.onUpdateQuantity(
-                                          e,
-                                          item.item_detail_id,
-                                          e.target.value
-                                        )
-                                      }
-                                      onKeyPress={(e) => {
-                                        var code = e.key;
-                                        if (code === "Enter") {
+                                    {item.status === "4" ? (
+                                      <input
+                                        style={{ marginTop: 0 }}
+                                        type="text"
+                                        defaultValue={item.quantity}
+                                        readOnly
+                                        title="Quantity can't be modified for items through RFI"
+                                      />
+                                    ) : (
+                                      <input
+                                        style={{ marginTop: 0 }}
+                                        type="text"
+                                        defaultValue={item.quantity}
+                                        onChange={(e) =>
+                                          this.setState({
+                                            productQuantity: e.target.value,
+                                          })
+                                        }
+                                        onBlur={(e) =>
                                           this.onUpdateQuantity(
                                             e,
                                             item.item_detail_id,
                                             e.target.value
-                                          );
+                                          )
                                         }
-                                      }}
-                                      className="qty_input"
-                                    />{" "}
+                                        onKeyPress={(e) => {
+                                          var code = e.key;
+                                          if (code === "Enter") {
+                                            this.onUpdateQuantity(
+                                              e,
+                                              item.item_detail_id,
+                                              e.target.value
+                                            );
+                                          }
+                                        }}
+                                        className="qty_input"
+                                      />
+                                    )}{" "}
                                   </td>
                                   {item.your_price > 0 ? (
                                     <td>

@@ -10,6 +10,7 @@ import axios from "axios";
 import { updateUserData } from "~/redux/action/user";
 import NodLogo from "~/assets/images/trans_nod_logo.png";
 import { zwzurl, zwzapiurl, nodurl, nodapiurl } from "../../urls.json";
+import TermsAndConditions from "../../assets/documents/TermsAndConditons.pdf";
 
 let hostname = window.location.hostname;
 var baseURL = localStorage.getItem("url");
@@ -1014,7 +1015,16 @@ class Registeraddress extends Component {
                         onChange={this.handleChange}
                         style={{ marginRight: "10px" }}
                       />
-                      <span>I accept all Terms and conditions</span>
+                      <span>
+                        I accept all{" "}
+                        <a
+                          href={TermsAndConditions}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Terms and conditions{" "}
+                        </a>
+                      </span>
                     </div>
                   </Col>
                   {this.state.showError14 && (
