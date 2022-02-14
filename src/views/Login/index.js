@@ -251,7 +251,7 @@ class Login extends Component {
 
     if (
       window.location.href === zwzurl + "login#" ||
-      window.location.href === "https://localhost:3000/login" ||
+      window.location.href === "https://localhost:3000/login#" ||
       window.location.href === zwzurl + "login"
     ) {
       const response = await login({
@@ -301,7 +301,7 @@ class Login extends Component {
       }
     } else if (
       window.location.href === "https://store.nodbearings.net/login#" ||
-      window.location.href === "https://localhost:3000/login#" ||
+      window.location.href === "https://localhost:3000/login" ||
       window.location.href === "https://store.nodbearings.net/login"
     ) {
       const response = await loginNod({

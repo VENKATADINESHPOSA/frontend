@@ -28,6 +28,7 @@ import axios, { CancelToken } from "axios";
 import Currency from "~/assets/images/currency.svg";
 import image11 from "~/assets/images/bearings1.jpg";
 import { zwzurl, zwzapiurl, nodurl, nodapiurl } from "../../urls.json";
+import NewModal from "../modal/NewModal";
 
 var value1 = "";
 var itemname = "";
@@ -43,10 +44,13 @@ class ListingPage extends Component {
       searchKeyword: "",
       keyVal: "",
       value: 1,
+      showModal: false,
     };
 
     this.goToProductDetail = this.goToProductDetail.bind(this);
   }
+
+  arr = [];
 
   goToProductDetail(data) {
     localStorage.setItem("product_data", JSON.stringify(data));
@@ -75,6 +79,35 @@ class ListingPage extends Component {
 		})*/
   }
 
+  addItemToCart = () => {
+    axios
+      .post(
+        zwzapiurl + "api/add_item/",
+
+        {
+          item_info: this.arr,
+        },
+        {
+          headers: {
+            Authorization: "Token " + localStorage.getItem("auth_key"),
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response);
+        this.setState({
+          showTypeahead: false,
+        });
+
+        if (this.props.match.path == "/cart") {
+          window.location.reload();
+        } else {
+          this.props.history.push("/cart");
+        }
+      })
+      .catch(function (error) {});
+  };
+
   addItem(data) {
     console.log(data);
     console.log(value1, "value1");
@@ -88,7 +121,7 @@ class ListingPage extends Component {
     console.log("value", value1);
 
     if (this.props.isLoggedIn) {
-      var arr = [];
+      this.arr.length = 0;
       var orderData = {};
 
       orderData["item_id"] = data.itemid[0].toString();
@@ -98,34 +131,13 @@ class ListingPage extends Component {
       orderData["quantity"] = data.qty.toString();
       orderData["flag"] = "add_cart";
 
-      arr.push(orderData);
-
-      axios
-        .post(
-          zwzapiurl + "api/add_item/",
-
-          {
-            item_info: arr,
-          },
-          {
-            headers: {
-              Authorization: "Token " + localStorage.getItem("auth_key"),
-            },
-          }
-        )
-        .then((response) => {
-          console.log(response);
-          this.setState({
-            showTypeahead: false,
-          });
-
-          if (this.props.match.path == "/cart") {
-            window.location.reload();
-          } else {
-            this.props.history.push("/cart");
-          }
-        })
-        .catch(function (error) {});
+      this.arr.push(orderData);
+      const cartItemNames = JSON.parse(localStorage.getItem("cartItemNames"));
+      if (cartItemNames.some((item) => item === data.itemname[0])) {
+        this.setState({ showModal: true });
+      } else {
+        this.addItemToCart();
+      }
     } else {
       console.log("data", data);
 
@@ -460,6 +472,17 @@ class ListingPage extends Component {
           </div>
         </div>
         <Footer> </Footer>
+        <NewModal
+          showModal={this.state.showModal}
+          onContinue={() => {
+            this.setState({ showModal: false });
+            this.addItemToCart();
+          }}
+          onCancel={() => {
+            this.setState({ showModal: false });
+          }}
+          message="The item you are adding is already present in the cart. You will lose any changes that are saved in the cart for the same item if you proceed ahead."
+        />
       </div>
     );
   }

@@ -19,6 +19,7 @@ import Loader from "react-loader-spinner";
 import { geolocated } from "react-geolocated";
 import cookie from "react-cookies";
 import { zwzurl, zwzapiurl, nodurl, nodapiurl } from "../../urls.json";
+import NewModal from "../../views/modal/NewModal";
 
 let ongoingGetOptionsAPI = null;
 let hostname = window.location.hostname;
@@ -106,8 +107,11 @@ class Header extends Component {
       userId: "",
       no_cart_data: "",
       showLoader: false,
+      showModal: false,
     };
   }
+
+  arr = [];
 
   async goToAbout() {
     this.props.history.push("/about");
@@ -276,8 +280,14 @@ class Header extends Component {
               /*this.context.history.push('/listing')*/
               /*window.location.href = '/listing'	*/
               /*this.props.history.push('/listing')*/
-
-              history.push("/listing");
+              if (
+                window.location.href === "http://localhost:3000/listing" ||
+                window.location.href === "http://zwz.prtouch.com:8081/listing"
+              ) {
+                window.location.reload();
+              } else {
+                history.push("/listing");
+              }
             })
             .catch(function (error) {});
         }
@@ -329,6 +339,7 @@ class Header extends Component {
     if (
       window.location.href === zwzurl + "cart" ||
       hostname === "store.zwz.co.in" ||
+      hostname === "localhost" ||
       window.location.href === zwzurl + "home" ||
       window.location.href === zwzurl + "product-category" ||
       window.location.href === zwzurl + "rfq" ||
@@ -358,11 +369,16 @@ class Header extends Component {
             "num_cart_data",
             response.data.itemdetails.length
           );
+          localStorage.setItem(
+            "cartItemNames",
+            JSON.stringify(
+              response.data.itemdetails.map((item) => item.itemname)
+            )
+          );
         })
         .catch(function (error) {});
     } else if (
       window.location.href === "https://store.nodbearings.net/cart" ||
-      hostname === "localhost" ||
       hostname === "store.nodbearings.net" ||
       window.location.href === "https://store.nodbearings.net/home" ||
       window.location.href ===
@@ -398,6 +414,12 @@ class Header extends Component {
           localStorage.setItem(
             "num_cart_data",
             response.data.itemdetails.length
+          );
+          localStorage.setItem(
+            "cartItemNames",
+            JSON.stringify(
+              response.data.itemdetails.map((item) => item.itemname)
+            )
           );
         })
         .catch(function (error) {});
@@ -502,6 +524,7 @@ class Header extends Component {
     if (
       window.location.href === zwzurl + "login#" ||
       hostname === "store.zwz.co.in" ||
+      hostname === "localhost" ||
       window.location.href === zwzurl ||
       window.location.href === zwzurl + "home" ||
       window.location.href === zwzurl + "product-category" ||
@@ -563,9 +586,7 @@ class Header extends Component {
         .catch(function (error) {});
     } else if (
       window.location.href === "https://store.nodbearings.net/login#" ||
-      hostname === "localhost" ||
       hostname === "store.nodbearings.net" ||
-      hostname === "localhost" ||
       window.location.href === "https://localhost:3000/" ||
       window.location.href === "https://store.nodbearings.net/" ||
       window.location.href === "https://store.nodbearings.net/home" ||
@@ -866,6 +887,7 @@ class Header extends Component {
     if (
       window.location.href === zwzurl + "login#" ||
       hostname === "store.zwz.co.in" ||
+      hostname === "localhost" ||
       window.location.href === zwzurl ||
       window.location.href === zwzurl + "home" ||
       window.location.href === zwzurl + "home#" ||
@@ -927,7 +949,6 @@ class Header extends Component {
       }
     } else if (
       window.location.href === "https://localhost:3000/" ||
-      hostname === "localhost" ||
       hostname === "store.nodbearings.net" ||
       window.location.href === "https://localhost:3000/home" ||
       window.location.href === "https://store.nodbearings.net/login#" ||
@@ -1050,6 +1071,42 @@ class Header extends Component {
     });
   }
 
+  addItemToCart = () => {
+    axios
+      .post(
+        zwzapiurl + "api/add_item/",
+
+        {
+          item_info: this.arr,
+        },
+        {
+          headers: {
+            Authorization: "Token " + localStorage.getItem("auth_key"),
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response);
+        this.setState({
+          showTypeahead: false,
+        });
+        /*this.props.history.push('/cart');
+	    	if ( ){
+	    		window.location.reload();
+	    	}else{
+	    		this.props.history.push('/cart');
+	    	}*/
+        /*window.location.reload();*/
+
+        if (this.props.match.path == "/cart") {
+          window.location.reload();
+        } else {
+          this.props.history.push("/cart");
+        }
+      })
+      .catch(function (error) {});
+  };
+
   async getItemData() {
     console.log("Error Message");
     var ProductData = localStorage.getItem("product_data");
@@ -1086,6 +1143,7 @@ class Header extends Component {
     if (
       window.location.href === zwzurl + "login#" ||
       hostname === "store.zwz.co.in" ||
+      hostname === "localhost" ||
       window.location.href === zwzurl ||
       window.location.href === zwzurl + "home" ||
       window.location.href === zwzurl + "product-category" ||
@@ -1102,7 +1160,7 @@ class Header extends Component {
     ) {
       if (this.props.isLoggedIn) {
         console.log("ProductData1", ProductData1);
-        var arr = [];
+        this.arr.length = 0;
         var orderData = {};
 
         orderData["item_id"] = ProductData1.itemid[0].toString();
@@ -1111,42 +1169,14 @@ class Header extends Component {
         orderData["quantity"] = this.state.quantity.toString();
         orderData["flag"] = "add_cart";
 
-        arr.push(orderData);
-        console.log("arr", arr);
+        this.arr.push(orderData);
+        const cartItemNames = JSON.parse(localStorage.getItem("cartItemNames"));
 
-        axios
-          .post(
-            zwzapiurl + "api/add_item/",
-
-            {
-              item_info: arr,
-            },
-            {
-              headers: {
-                Authorization: "Token " + localStorage.getItem("auth_key"),
-              },
-            }
-          )
-          .then((response) => {
-            console.log(response);
-            this.setState({
-              showTypeahead: false,
-            });
-            /*this.props.history.push('/cart');
-	    	if ( ){
-	    		window.location.reload();
-	    	}else{
-	    		this.props.history.push('/cart');
-	    	}*/
-            /*window.location.reload();*/
-
-            if (this.props.match.path == "/cart") {
-              window.location.reload();
-            } else {
-              this.props.history.push("/cart");
-            }
-          })
-          .catch(function (error) {});
+        if (cartItemNames.some((item) => item === ProductData1.itemname[0])) {
+          this.setState({ showModal: true });
+        } else {
+          this.addItemToCart();
+        }
       } else {
         /*		var new_quantity = parseInt(this.state.quantity);
 		let itemExist = _.find(this.props.cart, item => item.itemcode[0] === ProductData1.itemcode[0])
@@ -1210,7 +1240,6 @@ class Header extends Component {
       }
     } else if (
       window.location.href === "https://store.nodbearings.net/login#" ||
-      hostname === "localhost" ||
       hostname === "store.nodbearings.net" ||
       window.location.href === "https://store.nodbearings.net/" ||
       window.location.href === "https://store.nodbearings.net/home" ||
@@ -1225,7 +1254,7 @@ class Header extends Component {
       window.location.href === "https://localhost:3000/order-history"
     ) {
       if (this.props.isLoggedIn) {
-        var arr = [];
+        this.arr.length = 0;
         var orderData = {};
 
         orderData["item_id"] = ProductData1.itemid[0].toString();
@@ -1234,14 +1263,14 @@ class Header extends Component {
         orderData["quantity"] = this.state.quantity.toString();
         orderData["flag"] = "add_cart";
 
-        arr.push(orderData);
+        this.arr.push(orderData);
 
         axios
           .post(
             "https://api.store.nodbearings.net/api/add_item/",
 
             {
-              item_info: arr,
+              item_info: this.arr,
             },
             {
               headers: {
@@ -1365,7 +1394,7 @@ class Header extends Component {
       window.location.href === "https://store.nodbearings.net/order-history"
     ) {
       if (this.props.isLoggedIn) {
-        var arr = [];
+        this.arr.length = 0;
         var orderData = {};
 
         orderData["item_id"] = itemId.toString();
@@ -1374,14 +1403,14 @@ class Header extends Component {
         orderData["quantity"] = this.state.quantity1;
         orderData["flag"] = "add_cart";
 
-        arr.push(orderData);
+        this.arr.push(orderData);
 
         axios
           .post(
             "https://api.store.nodbearings.net/api/add_item/",
 
             {
-              item_info: arr,
+              item_info: this.arr,
             },
             {
               headers: {
@@ -2095,6 +2124,17 @@ class Header extends Component {
             </Col>
           </Row>
         </div>
+        <NewModal
+          showModal={this.state.showModal}
+          onContinue={() => {
+            this.setState({ showModal: false });
+            this.addItemToCart();
+          }}
+          onCancel={() => {
+            this.setState({ showModal: false });
+          }}
+          message="The item you are adding is already present in the cart. You will lose any changes that are saved in the cart for the same item if you proceed ahead."
+        />
       </div>
     );
   }

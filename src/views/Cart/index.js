@@ -97,6 +97,7 @@ class Cart extends Component {
       showupdate: false,
       invalidPlaceOrderMessage: false,
       showAlert2: false,
+      showAlert3: false,
       GstVal: 0,
       totalWeight: 0,
       isChecked: false,
@@ -274,6 +275,17 @@ class Cart extends Component {
       });
     }
 
+    const RfqCartItem = this.state.added_item.filter(
+      (item) => item.status == "4"
+    );
+
+    if (RfqCartItem.length > 0) {
+      this.setState({
+        isDisabledRFQ: true,
+        showAlert3: true,
+      });
+    }
+
     /*if (this.state.isChecked == false) {*/
 
     for (var i = 0; i < this.state.added_item.length; i++) {
@@ -352,6 +364,10 @@ class Cart extends Component {
     const stockItem = checkedItem.filter(
       (item) => item.Availability == "Stock"
     );
+
+    const RFQcheckedItem = this.state.added_item.filter(
+      (item) => item.isChecked && item.status === "4"
+    );
     console.log("checkedItem", checkedItem, "stockItem", stockItem);
     if (checkedItem.length == stockItem.length) {
       this.setState({
@@ -359,6 +375,7 @@ class Cart extends Component {
         isDisabledRFQ: false,
         showAlert: false,
         showAlert2: false,
+        showAlert3: false,
       });
     } else {
       this.setState({
@@ -366,6 +383,7 @@ class Cart extends Component {
         showAlert2: true,
         isDisabledRFQ: false,
         showAlert: false,
+        showAlert3: false,
       });
     }
 
@@ -373,10 +391,10 @@ class Cart extends Component {
       this.setState(
         {
           isDisabled: true,
-          showAlert2: true,
+          showAlert2: false,
           isDisabledRFQ: true,
           showAlert: true,
-          showAlert2: false,
+          showAlert3: false,
         },
         () => {
           console.log(this.state.isDisabled);
@@ -385,6 +403,13 @@ class Cart extends Component {
     } else {
       this.setState({
         showAlert: false,
+      });
+    }
+
+    if (RFQcheckedItem.length > 0) {
+      this.setState({
+        isDisabledRFQ: true,
+        showAlert3: true,
       });
     }
 
@@ -2277,6 +2302,19 @@ this.props.dispatch(updateCartItemData(response.data.itemdetails.length))
                           {" "}
                           * To Check out ONLY Select items showing availability
                           as "stock"{" "}
+                        </span>
+                      )}
+                      {this.state.showAlert3 && (
+                        <span
+                          style={{
+                            color: "red",
+                            fontWeight: "bold",
+                            fontSize: 13,
+                          }}
+                        >
+                          {" "}
+                          * RFI is disabled for items which are already RFI
+                          approved.
                         </span>
                       )}
                       {this.state.showAlert && (

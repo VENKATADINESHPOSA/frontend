@@ -14,6 +14,7 @@ import {
   Modal,
   ButtonToolbar,
 } from "reactstrap";
+import NewModal from "../modal/NewModal";
 import { connect } from "react-redux";
 import Header from "~/components/Header";
 import Currency from "~/assets/images/currency.svg";
@@ -74,8 +75,10 @@ class ProductCategory extends Component {
       isCompleted1: false,
       shareModal: false,
       your_price: "",
+      showModal: false,
     };
   }
+  arr = [];
 
   copyText() {
     var copyText = document.getElementById("myInput");
@@ -202,7 +205,7 @@ class ProductCategory extends Component {
         competitorNo: 2098,
         your_price: ProductData1.your_price ? ProductData1.your_price : "",
         discount_percent: ProductData1.discount_percentage
-          ? ProductData1.discount_percentage[0]
+          ? ProductData1.discount_percentage
           : "",
       });
 
@@ -290,6 +293,25 @@ class ProductCategory extends Component {
 		console.log(hover_nod_data);*/
   }
 
+  addItemToCart = () => {
+    axios
+      .post(
+        zwzapiurl + "api/add_item/",
+        {
+          item_info: this.arr,
+        },
+        {
+          headers: {
+            Authorization: "Token " + localStorage.getItem("auth_key"),
+          },
+        }
+      )
+      .then((response) => {
+        this.props.history.push("/cart");
+      })
+      .catch(function (error) {});
+  };
+
   async getItemData() {
     var ProductData = localStorage.getItem("product_data");
     var ProductData1 = JSON.parse(ProductData);
@@ -302,30 +324,22 @@ class ProductCategory extends Component {
       window.location.href === "https://localhost:3000/product-category"
     ) {
       if (this.props.isLoggedIn) {
-        var arr = [];
+        this.arr.length = 0;
         var orderData = {};
         orderData["item_id"] = ProductData1.itemid[0].toString();
         orderData["item_name"] = ProductData1.itemname[0];
         orderData["amount_per_unit"] = ProductData1.price[0];
         orderData["quantity"] = this.state.quantity.toString();
         orderData["flag"] = "add_cart";
-        arr.push(orderData);
-        axios
-          .post(
-            zwzapiurl + "api/add_item/",
-            {
-              item_info: arr,
-            },
-            {
-              headers: {
-                Authorization: "Token " + localStorage.getItem("auth_key"),
-              },
-            }
-          )
-          .then((response) => {
-            this.props.history.push("/cart");
-          })
-          .catch(function (error) {});
+        this.arr.push(orderData);
+
+        const cartItemNames = JSON.parse(localStorage.getItem("cartItemNames"));
+
+        if (cartItemNames.some((item) => item === ProductData1.itemname[0])) {
+          this.setState({ showModal: true });
+        } else {
+          this.addItemToCart();
+        }
       } else {
         var new_quantity = parseInt(this.state.quantity);
         let itemExist = _.find(
@@ -358,7 +372,7 @@ class ProductCategory extends Component {
       window.location.href === "https://store.nodbearings.net/product-category"
     ) {
       if (this.props.isLoggedIn) {
-        var arr = [];
+        this.arr.length = 0;
         var orderData = {};
 
         orderData["item_id"] = ProductData1.itemid[0].toString();
@@ -366,14 +380,14 @@ class ProductCategory extends Component {
         orderData["amount_per_unit"] = ProductData1.price[0];
         orderData["quantity"] = this.state.quantity.toString();
         orderData["flag"] = "add_cart";
-        arr.push(orderData);
+        this.arr.push(orderData);
 
         axios
           .post(
             "https://api.store.nodbearings.net/api/add_item/",
 
             {
-              item_info: arr,
+              item_info: this.arr,
             },
             {
               headers: {
@@ -442,7 +456,7 @@ class ProductCategory extends Component {
       window.location.href === "https://localhost:3000/product-category"
     ) {
       if (this.props.isLoggedIn) {
-        var arr = [];
+        this.arr.length = 0;
         var orderData = {};
 
         orderData["item_id"] = itemId;
@@ -451,14 +465,14 @@ class ProductCategory extends Component {
         orderData["quantity"] = this.state.quantity1;
         orderData["flag"] = "add_cart";
 
-        arr.push(orderData);
+        this.arr.push(orderData);
 
         axios
           .post(
             "https://api.store.nodbearings.net/api/add_item/",
 
             {
-              item_info: arr,
+              item_info: this.arr,
             },
             {
               headers: {
@@ -1420,6 +1434,18 @@ class ProductCategory extends Component {
             ))}
         </div>
         <Footer> </Footer>
+
+        <NewModal
+          showModal={this.state.showModal}
+          onContinue={() => {
+            this.setState({ showModal: false });
+            this.addItemToCart();
+          }}
+          onCancel={() => {
+            this.setState({ showModal: false });
+          }}
+          message="The item you are adding is already present in the cart. You will lose any changes that are saved in the cart for the same item if you proceed ahead."
+        />
 
         <Modal
           isOpen={shareModal}

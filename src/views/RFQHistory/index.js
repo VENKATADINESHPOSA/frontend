@@ -29,6 +29,7 @@ import { updateProductData } from "~/redux/action/productDetail";
 import { MDBDataTable } from "mdbreact";
 import LoadingOverlay from "react-loading-overlay";
 import { zwzurl, zwzapiurl, nodurl, nodapiurl } from "../../urls.json";
+import NewModal from "../modal/NewModal";
 
 class RFQHistory extends Component {
   constructor(props) {
@@ -79,8 +80,36 @@ class RFQHistory extends Component {
       rfqChecked: {},
       isActive: false,
       showPannel: false,
+      showModal: false,
     };
   }
+
+  itemsArr = [];
+
+  addItemToCart = () => {
+    axios
+      .post(
+        zwzapiurl + "api/add_item/",
+        {
+          item_info: this.itemsArr,
+        },
+        {
+          headers: {
+            Authorization: "Token " + localStorage.getItem("auth_key"),
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response);
+        this.props.history.push("/cart");
+        /*window.location.reload();*/
+      })
+      .catch(function (error) {
+        if (error.response.status == 401) {
+          window.location.href = "/login";
+        }
+      });
+  };
 
   addToCartData() {
     const postData = this.state.posts.filter((data) => data.isChecked == true);
@@ -89,7 +118,7 @@ class RFQHistory extends Component {
       window.location.href == zwzurl + "rfq-history" ||
       window.location.href == "https://localhost:3000/rfq-history"
     ) {
-      var arr = [];
+      this.itemsArr.length = 0;
       for (var i = 0; i < postData.length; i++) {
         var orderData = {};
 
@@ -101,35 +130,25 @@ class RFQHistory extends Component {
         orderData["flag"] = "rfq_history";
         orderData["quantity"] = postData[i].Qty;
 
-        arr.push(orderData);
+        this.itemsArr.push(orderData);
       }
+      const cartItemNames = JSON.parse(localStorage.getItem("cartItemNames"));
+      const checkedItemsInCart = cartItemNames.map((itemname) =>
+        postData.find((item) => item.ItemName === itemname)
+      );
 
-      axios
-        .post(
-          zwzapiurl + "api/add_item/",
-          {
-            item_info: arr,
-          },
-          {
-            headers: {
-              Authorization: "Token " + localStorage.getItem("auth_key"),
-            },
-          }
-        )
-        .then((response) => {
-          console.log(response);
-          this.props.history.push("/cart");
-          /*window.location.reload();*/
-        })
-        .catch(function (error) {
-          if (error.response.status == 401) {
-            window.location.href = "/login";
-          }
-        });
+      const filteredCheckedItemsInCart = checkedItemsInCart.filter(
+        (item) => item !== undefined
+      );
+      if (filteredCheckedItemsInCart.length > 0) {
+        this.setState({ showModal: true });
+      } else {
+        this.addItemToCart();
+      }
     } else if (
       window.location.href == "https://store.nodbearings.net/rfq-history"
     ) {
-      var arr = [];
+      this.itemsArr.length = 0;
       for (var i = 0; i < postData.length; i++) {
         var orderData = {};
 
@@ -140,13 +159,13 @@ class RFQHistory extends Component {
         orderData["flag"] = "rfq_history";
         orderData["quantity"] = postData[i].Qty;
 
-        arr.push(orderData);
+        this.itemsArr.push(orderData);
       }
       axios
         .post(
           "https://api.store.nodbearings.net/api/add_item/",
           {
-            item_info: arr,
+            item_info: this.itemsArr,
           },
           {
             headers: {
@@ -317,6 +336,7 @@ class RFQHistory extends Component {
             <input
               type="checkbox"
               checked={postVal.isChecked}
+              disabled={postVal.isDisabled}
               onChange={() => this.checkedSingle(index)}
             />
           ) : (
@@ -353,10 +373,56 @@ class RFQHistory extends Component {
 
     console.log("===>", selectedItem);
 
-    this.setState({
-      tableRows: this.assemblePosts(),
-      selectedItem: selectedItem,
-    });
+    if (selectedItem.length > 0) {
+      const selectedItemRfq = selectedItem[0].rfq_no;
+      console.log(selectedItemRfq);
+
+      const updatedPosts = this.state.posts;
+
+      for (var i = 0; i < updatedPosts.length; i++) {
+        if (updatedPosts[i].rfq_no !== selectedItemRfq) {
+          updatedPosts[i].isDisabled = true;
+        } else {
+          updatedPosts[i].isDisabled = false;
+        }
+      }
+
+      this.setState(
+        {
+          posts: updatedPosts,
+        },
+        () => {
+          this.setState({
+            tableRows: this.assemblePosts(),
+            selectedItem: selectedItem,
+          });
+        }
+      );
+    } else {
+      const updatedPosts1 = this.state.posts.map((item) => ({
+        ...item,
+        isDisabled: false,
+      }));
+
+      this.setState(
+        {
+          posts: updatedPosts1,
+        },
+        () => {
+          this.setState({
+            tableRows: this.assemblePosts(),
+            selectedItem: selectedItem,
+          });
+        }
+      );
+    }
+
+    console.log("rfq disable testing", this.state.posts);
+
+    // this.setState({
+    //   tableRows: this.assemblePosts(),
+    //   selectedItem: selectedItem,
+    // });
 
     for (var i = 0; i < this.state.posts.length; i++) {
       if (this.state.posts[i].isChecked == true) {
@@ -489,6 +555,7 @@ class RFQHistory extends Component {
           let posts = this.state.posts.map((item) => ({
             ...item,
             isChecked: false,
+            isDisabled: false,
           }));
 
           this.setState({
@@ -1196,6 +1263,17 @@ class RFQHistory extends Component {
             </div>
           </div>
         </div>
+        <NewModal
+          showModal={this.state.showModal}
+          onContinue={() => {
+            this.setState({ showModal: false });
+            this.addItemToCart();
+          }}
+          onCancel={() => {
+            this.setState({ showModal: false });
+          }}
+          message="The item you are adding is already present in the cart. You will lose any changes that are saved in the cart for the same item if you proceed ahead."
+        />
       </div>
     );
   }
