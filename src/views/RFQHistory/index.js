@@ -1192,6 +1192,11 @@ class RFQHistory extends Component {
                     </button>{" "}
                   </span>
                 </Col>
+                <Col>
+                  <div style={{ color: "red" }}>
+                    * Selecting items from the different RFIs is disabled.
+                  </div>
+                </Col>
 
                 {this.state.showPannel && (
                   <Col sm={12} style={{ marginTop: 15, marginBottom: 5 }}>
