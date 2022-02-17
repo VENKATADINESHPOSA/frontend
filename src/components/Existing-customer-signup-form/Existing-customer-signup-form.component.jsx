@@ -274,7 +274,8 @@ class ExistingCustomerSignUpForm extends Component {
       this.props.history.push("/emailverification");
     } else {
       console.log(response);
-      alert(response.message);
+      // alert(response.message);
+      alert("Something went wrong, Please try again later.");
     }
   }
 
