@@ -3,6 +3,7 @@ import Header from "~/components/Header";
 import Footer from "~/components/Footer";
 import logo from "~/assets/images/zwz-log-logo.png";
 import NodLogo from "~/assets/images/trans_nod_logo.png";
+import NewModal from "../../views/modal/NewModal";
 
 import { Button, Row, Col, Modal } from "reactstrap";
 import { register, mobileverfication } from "~/redux/helpers/user";
@@ -66,6 +67,7 @@ class ExistingCustomerSignUpForm extends Component {
       Thankyoumodal: false,
       Emailverficationmodal: false,
       showpassValidation: false,
+      showModal: false,
     };
   }
 
@@ -273,9 +275,12 @@ class ExistingCustomerSignUpForm extends Component {
     if (response.success == true) {
       this.props.history.push("/emailverification");
     } else {
-      console.log(response);
+      // console.log(response);
       // alert(response.message);
-      alert("Something went wrong, Please try again later.");
+      // alert(
+      //   "User already exists with the provided email. Please signIn using registered credentials."
+      // );
+      this.setState({ showModal: true });
     }
   }
 
@@ -799,6 +804,14 @@ class ExistingCustomerSignUpForm extends Component {
         </div>
 
         <Footer> </Footer>
+        <NewModal
+          showModal={this.state.showModal}
+          onContinue={() => {
+            this.setState({ showModal: false });
+            this.props.history.push("/login");
+          }}
+          message="User already exists with the provided email. Please signIn using registered credentials."
+        />
       </div>
     );
   }

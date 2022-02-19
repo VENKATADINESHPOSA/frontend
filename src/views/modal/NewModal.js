@@ -10,9 +10,11 @@ const NewModal = ({ showModal, onContinue, onCancel, message }) => {
         <span>
           <Button onClick={onContinue}>Continue</Button>
         </span>
-        <span>
-          <Button onClick={onCancel}>Cancel</Button>
-        </span>
+        {onCancel ? (
+          <span>
+            <Button onClick={onCancel}>Cancel</Button>
+          </span>
+        ) : null}
       </div>
     </Modal>
   );
