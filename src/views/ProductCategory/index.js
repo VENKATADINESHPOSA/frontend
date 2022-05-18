@@ -31,6 +31,8 @@ import { updateUserData } from "~/redux/action/user";
 import { updateProductData } from "~/redux/action/productDetail";
 import { zwzurl, zwzapiurl, nodurl, nodapiurl } from "../../urls.json";
 
+var hostname = window.location.hostname;
+
 class ProductCategory extends Component {
   constructor(props) {
     super(props);
@@ -312,6 +314,28 @@ class ProductCategory extends Component {
       .catch(function (error) {});
   };
 
+  addItemToCart1 = () => {
+    axios
+      .post(
+        "https://api.store.nodbearings.net/api/add_item/",
+
+        {
+          item_info: this.arr,
+        },
+        {
+          headers: {
+            Authorization: "Token " + localStorage.getItem("auth_key"),
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response);
+        this.props.history.push("/cart");
+        /*window.location.reload();*/
+      })
+      .catch(function (error) {});
+  };
+
   async getItemData() {
     var ProductData = localStorage.getItem("product_data");
     var ProductData1 = JSON.parse(ProductData);
@@ -467,25 +491,19 @@ class ProductCategory extends Component {
 
         this.arr.push(orderData);
 
-        axios
-          .post(
-            "https://api.store.nodbearings.net/api/add_item/",
+        const cartItemNames = JSON.parse(localStorage.getItem("cartItemNames"));
 
-            {
-              item_info: this.arr,
-            },
-            {
-              headers: {
-                Authorization: "Token " + localStorage.getItem("auth_key"),
-              },
-            }
+        if (
+          cartItemNames.some(
+            (item) =>
+              item.itemName === itemName &&
+              item.brandName === itemData.brandname
           )
-          .then((response) => {
-            console.log(response);
-            this.props.history.push("/cart");
-            /*window.location.reload();*/
-          })
-          .catch(function (error) {});
+        ) {
+          this.setState({ showModal: true });
+        } else {
+          this.addItemToCart1();
+        }
       } else {
         var new_quantity = 2;
         let itemExist = _.find(
@@ -1439,7 +1457,11 @@ class ProductCategory extends Component {
           showModal={this.state.showModal}
           onContinue={() => {
             this.setState({ showModal: false });
-            this.addItemToCart();
+            if (hostname === "store.zwz.co.in" || hostname === "localhost") {
+              this.addItemToCart();
+            } else {
+              this.addItemToCart1();
+            }
           }}
           onCancel={() => {
             this.setState({ showModal: false });

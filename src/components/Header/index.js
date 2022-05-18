@@ -418,7 +418,9 @@ class Header extends Component {
           localStorage.setItem(
             "cartItemNames",
             JSON.stringify(
-              response.data.itemdetails.map((item) => item.itemname)
+              response.data.itemdetails.map((item) => {
+                return { itemName: item.itemname, brandName: item.brandname };
+              })
             )
           );
         })
@@ -686,6 +688,7 @@ class Header extends Component {
           console.log(err.response);
           if (err.response.status == 401) {
             window.location.href = "/login";
+            localStorage.removeItem("username");
           }
         });
     } else if (hostname === "store.nodbearings.net") {
@@ -1107,6 +1110,37 @@ class Header extends Component {
       .catch(function (error) {});
   };
 
+  addItemToCart1 = () => {
+    axios
+      .post(
+        "https://api.store.nodbearings.net/api/add_item/",
+
+        {
+          item_info: this.arr,
+        },
+        {
+          headers: {
+            Authorization: "Token " + localStorage.getItem("auth_key"),
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response);
+        this.setState({
+          showTypeahead: false,
+        });
+
+        if (this.props.match.path == "/cart") {
+          window.location.reload();
+        } else {
+          this.props.history.push("/cart");
+        }
+
+        /*window.location.reload();*/
+      })
+      .catch(function (error) {});
+  };
+
   async getItemData() {
     console.log("Error Message");
     var ProductData = localStorage.getItem("product_data");
@@ -1405,34 +1439,19 @@ class Header extends Component {
 
         this.arr.push(orderData);
 
-        axios
-          .post(
-            "https://api.store.nodbearings.net/api/add_item/",
+        const cartItemNames = JSON.parse(localStorage.getItem("cartItemNames"));
 
-            {
-              item_info: this.arr,
-            },
-            {
-              headers: {
-                Authorization: "Token " + localStorage.getItem("auth_key"),
-              },
-            }
+        if (
+          cartItemNames.some(
+            (item) =>
+              item.itemName === itemName &&
+              item.brandName === itemData.brandname
           )
-          .then((response) => {
-            console.log(response);
-            this.setState({
-              showTypeahead: false,
-            });
-
-            if (this.props.match.path == "/cart") {
-              window.location.reload();
-            } else {
-              this.props.history.push("/cart");
-            }
-
-            /*window.location.reload();*/
-          })
-          .catch(function (error) {});
+        ) {
+          this.setState({ showModal: true });
+        } else {
+          this.addItemToCart1();
+        }
       } else {
         var new_quantity = 2;
         let itemExist = _.find(
@@ -2128,7 +2147,11 @@ class Header extends Component {
           showModal={this.state.showModal}
           onContinue={() => {
             this.setState({ showModal: false });
-            this.addItemToCart();
+            if (hostname === "store.zwz.co.in" || hostname === "localhost") {
+              this.addItemToCart();
+            } else {
+              this.addItemToCart1();
+            }
           }}
           onCancel={() => {
             this.setState({ showModal: false });

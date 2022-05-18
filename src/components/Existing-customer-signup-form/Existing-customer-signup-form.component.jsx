@@ -241,23 +241,29 @@ class ExistingCustomerSignUpForm extends Component {
       return false;
     }
 
-    if (
-      window.location.href === zwzurl + "existingCustomerSignup#" ||
-      window.location.href === zwzurl + "existingCustomerSignup" ||
-      window.location.href === "https://localhost:3000/existingCustomerSignup#"
-    ) {
+    // if (
+    //   window.location.href === zwzurl + "existingCustomerSignup#" ||
+    //   window.location.href === zwzurl + "existingCustomerSignup" ||
+    //   window.location.href === "https://localhost:3000/existingCustomerSignup#"
+    // ) {
+    //   this.state.api_url = zwzapiurl + "authentication/user/exdetails/";
+    // } else if (
+    //   window.location.href ===
+    //     "https://store.nodbearings.net/existingCustomerSignup#" ||
+    //   window.location.href ===
+    //     "https://store.nodbearings.net/existingCustomerSignup" ||
+    //   window.location.href === "https://localhost:3000/existingCustomerSignup"
+    // ) {
+    //   this.state.api_url =
+    //     "https://api.store.nodbearings.net/authentication/user/exdetails/";
+    // } else {
+    //   this.state.api_url = zwzapiurl + "authentication/user/exdetails/";
+    // }
+
+    if (hostname === "store.zwz.co.in") {
       this.state.api_url = zwzapiurl + "authentication/user/exdetails/";
-    } else if (
-      window.location.href ===
-        "https://store.nodbearings.net/existingCustomerSignup#" ||
-      window.location.href ===
-        "https://store.nodbearings.net/existingCustomerSignup" ||
-      window.location.href === "https://localhost:3000/existingCustomerSignup"
-    ) {
-      this.state.api_url =
-        "https://api.store.nodbearings.net/authentication/user/exdetails/";
     } else {
-      this.state.api_url = zwzapiurl + "authentication/user/exdetails/";
+      this.state.api_url = nodapiurl + "authentication/user/exdetails/";
     }
 
     localStorage.setItem("emailforverification", this.state.email);

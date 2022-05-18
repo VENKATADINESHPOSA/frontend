@@ -18,6 +18,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
+import FooterNod from "../../components/FooterNodComponent/FooterNod.component";
 import image1 from "~/assets/images/1.jpg";
 import image2 from "~/assets/images/2.jpg";
 import emptyCart from "~/assets/images/empty_cart.png";
@@ -32,6 +33,7 @@ import { SessionModalData } from "../modal/session_modal";
 import { zwzurl, zwzapiurl, nodurl, nodapiurl } from "../../urls.json";
 
 var selectedItemVal = "";
+var hostname = window.location.hostname;
 
 class Cart extends Component {
   constructor(props) {
@@ -2686,7 +2688,11 @@ this.props.dispatch(updateCartItemData(response.data.itemdetails.length))
             </Row>
           )}
         </div>
-        <Footer> </Footer>
+        {hostname === "store.zwz.co.in" || hostname === "localhost" ? (
+          <Footer />
+        ) : (
+          <FooterNod />
+        )}
 
         <Modal isOpen={Successmodal} toggle={this.Successtoggle}>
           <div className="modal__header" style={{ width: "100%", height: 35 }}>

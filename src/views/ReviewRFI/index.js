@@ -16,6 +16,7 @@ import {
 import { connect } from "react-redux";
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
+import FooterNod from "../../components/FooterNodComponent/FooterNod.component";
 import image1 from "~/assets/images/1.jpg";
 import image2 from "~/assets/images/2.jpg";
 import image3 from "~/assets/images/3.jpg";
@@ -25,6 +26,8 @@ import { updateCartData } from "~/redux/action/cartDetails";
 import axios from "axios";
 import cogoToast from "cogo-toast";
 import { zwzurl, zwzapiurl, nodurl, nodapiurl } from "../../urls.json";
+
+var hostname = window.location.hostname;
 
 class ReviewRFI extends Component {
   constructor(props) {
@@ -173,22 +176,19 @@ class ReviewRFI extends Component {
       window.location.href === "https://localhost:3000/shipping#"
     ) {
       console.log("sdfghdfgthyj");
-      axios(
-        zwzapiurl + "authentication/user/createDeliveryAddress/",
-        {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            Authorization: "Token " + localStorage.getItem("auth_key"),
-          },
-          data: {
-            delivery_address: this.state.add_data,
-            delivery_pincode: localStorage.getItem("del_pin"),
-            delivery_ciy_id: localStorage.getItem("del_city"),
-          },
-        }
-      ).then((response) => {
+      axios(zwzapiurl + "authentication/user/createDeliveryAddress/", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: "Token " + localStorage.getItem("auth_key"),
+        },
+        data: {
+          delivery_address: this.state.add_data,
+          delivery_pincode: localStorage.getItem("del_pin"),
+          delivery_ciy_id: localStorage.getItem("del_city"),
+        },
+      }).then((response) => {
         console.log(response);
         if (response.data.success == true) {
           this.Successtoggle();
@@ -926,7 +926,11 @@ class ReviewRFI extends Component {
             </Col>
           </Row>
         </div>
-        <Footer> </Footer>
+        {hostname === "zwz.prtouch.com" || hostname === "localhost" ? (
+          <Footer />
+        ) : (
+          <FooterNod />
+        )}
       </div>
     );
   }

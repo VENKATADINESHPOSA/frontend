@@ -43,14 +43,16 @@ class Emailverification extends Component {
     var baseurl = sessionStorage.getItem("url");
     if (
       window.location.href === zwzurl + "signup#" ||
-      window.location.href === zwzurl + "signup"
+      window.location.href === zwzurl + "signup" ||
+      hostname === "store.zwz.co.in"
     ) {
       this.state.api_url = zwzapiurl + "authentication/resend_email/";
     } else if (
       window.location.href === "https://store.nodbearings.net/signup#" ||
       window.location.href === "https://store.nodbearings.net/signup" ||
       window.location.href === "https://localhost:3000/login#" ||
-      window.location.href === "https://localhost:3000/login"
+      window.location.href === "https://localhost:3000/login" ||
+      hostname === "store.nodbearings.net"
     ) {
       this.state.api_url =
         " https://api.store.nodbearings.net/authentication/resend_email/";

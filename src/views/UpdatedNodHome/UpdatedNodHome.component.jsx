@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import "./updatedNodHome.styles.scss";
 import Header from "~/components/Header";
@@ -9,6 +9,9 @@ import FooterNod from "../../components/FooterNodComponent/FooterNod.component";
 import NodBrandsSection from "../../components/NodBrandsComponent/NodBrands.component";
 
 const UpdatedNodHome = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <div className="nod-home-div">
       <Header {...props} />

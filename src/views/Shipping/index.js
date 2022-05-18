@@ -16,6 +16,7 @@ import {
 import { connect } from "react-redux";
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
+import FooterNod from "../../components/FooterNodComponent/FooterNod.component";
 import image1 from "~/assets/images/1.jpg";
 import image2 from "~/assets/images/2.jpg";
 import image3 from "~/assets/images/3.jpg";
@@ -25,6 +26,8 @@ import { updateCartData } from "~/redux/action/cartDetails";
 import axios from "axios";
 import cogoToast from "cogo-toast";
 import { zwzurl, zwzapiurl, nodurl, nodapiurl } from "../../urls.json";
+
+var hostname = window.location.hostname;
 
 class Shipping extends Component {
   constructor(props) {
@@ -1027,7 +1030,11 @@ class Shipping extends Component {
             </Col>
           </Row>
         </div>
-        <Footer> </Footer>
+        {hostname === "zwz.prtouch.com" || hostname === "localhost" ? (
+          <Footer />
+        ) : (
+          <FooterNod />
+        )}
 
         <Modal isOpen={Successmodal} toggle={this.Successtoggle}>
           <div className="modal__header" style={{ backgroundColor: "#0072bc" }}>

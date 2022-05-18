@@ -360,19 +360,38 @@ class Registeraddress extends Component {
   async componentDidMount() {
     window.scrollTo(0, 0);
     const emailFromLocalStorage = localStorage.getItem("username");
-    const responseForDetails = await axios(
-      zwzapiurl + "authentication/user/exdetails/ProfileUpdate/",
-      {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        data: {
-          emailForDetails: emailFromLocalStorage,
-        },
-      }
-    );
+    let responseForDetails;
+
+    if (hostname === "localhost" || hostname === "store.zwz.co.in") {
+      responseForDetails = await axios(
+        zwzapiurl + "authentication/user/exdetails/ProfileUpdate/",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          data: {
+            emailForDetails: emailFromLocalStorage,
+          },
+        }
+      );
+    } else {
+      responseForDetails = await axios(
+        nodapiurl + "authentication/user/exdetails/ProfileUpdate/",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          data: {
+            emailForDetails: emailFromLocalStorage,
+          },
+        }
+      );
+    }
+
     console.log(responseForDetails.data);
     if (responseForDetails.data.message === "old_user") {
       this.setState({

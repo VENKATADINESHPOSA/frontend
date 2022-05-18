@@ -17,6 +17,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
+import FooterNod from "../../components/FooterNodComponent/FooterNod.component";
 import image1 from "~/assets/images/1.jpg";
 import image2 from "~/assets/images/2.jpg";
 import image3 from "~/assets/images/3.jpg";
@@ -25,6 +26,8 @@ import { Carousel } from "react-responsive-carousel";
 import { updateCartData } from "~/redux/action/cartDetails";
 import cogoToast from "cogo-toast";
 import { zwzurl, zwzapiurl, nodurl, nodapiurl } from "../../urls.json";
+
+var hostname = window.location.hostname;
 
 class MyProfile extends Component {
   constructor(props) {
@@ -1331,7 +1334,11 @@ class MyProfile extends Component {
             </Row>
           ))}
         </div>
-        <Footer> </Footer>
+        {hostname === "store.zwz.co.in" || hostname === "localhost" ? (
+          <Footer />
+        ) : (
+          <FooterNod />
+        )}
         <Modal isOpen={Successmodal} toggle={this.Successtoggle}>
           <div className="modal__header" style={{ backgroundColor: "#0072bc" }}>
             <h4

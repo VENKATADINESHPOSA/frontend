@@ -30,6 +30,7 @@ import { MDBDataTable } from "mdbreact";
 import LoadingOverlay from "react-loading-overlay";
 import { zwzurl, zwzapiurl, nodurl, nodapiurl } from "../../urls.json";
 import NewModal from "../modal/NewModal";
+import { hostname } from "os";
 
 class RFQHistory extends Component {
   constructor(props) {
@@ -111,6 +112,31 @@ class RFQHistory extends Component {
       });
   };
 
+  addItemToCart1 = () => {
+    axios
+      .post(
+        "https://api.store.nodbearings.net/api/add_item/",
+        {
+          item_info: this.itemsArr,
+        },
+        {
+          headers: {
+            Authorization: "Token " + localStorage.getItem("auth_key"),
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response);
+        this.props.history.push("/cart");
+        /*window.location.reload();*/
+      })
+      .catch(function (error) {
+        if (error.response.status == 401) {
+          window.location.href = "/login";
+        }
+      });
+  };
+
   addToCartData() {
     const postData = this.state.posts.filter((data) => data.isChecked == true);
 
@@ -156,33 +182,31 @@ class RFQHistory extends Component {
         orderData["rfq_id"] = postData[i].rfq_no;
         orderData["item_name"] = postData[i].ItemName;
         orderData["amount_per_unit"] = postData[i].Price;
+        orderData["Purchase_Price"] = postData[i].Purchase_Price;
         orderData["flag"] = "rfq_history";
         orderData["quantity"] = postData[i].Qty;
 
         this.itemsArr.push(orderData);
       }
-      axios
-        .post(
-          "https://api.store.nodbearings.net/api/add_item/",
-          {
-            item_info: this.itemsArr,
-          },
-          {
-            headers: {
-              Authorization: "Token " + localStorage.getItem("auth_key"),
-            },
-          }
+
+      const cartItemNames = JSON.parse(localStorage.getItem("cartItemNames"));
+
+      const checkedItemsInCart = cartItemNames.map((itemObj) =>
+        postData.find(
+          (item) =>
+            item.ItemName === itemObj.itemName &&
+            item.BrandName === itemObj.brandName
         )
-        .then((response) => {
-          console.log(response);
-          this.props.history.push("/cart");
-          /*window.location.reload();*/
-        })
-        .catch(function (error) {
-          if (error.response.status == 401) {
-            window.location.href = "/login";
-          }
-        });
+      );
+      const filteredCheckedItemsInCart = checkedItemsInCart.filter(
+        (item) => item !== undefined
+      );
+
+      if (filteredCheckedItemsInCart.length > 0) {
+        this.setState({ showModal: true });
+      } else {
+        this.addItemToCart1();
+      }
     }
   }
 
@@ -1272,7 +1296,11 @@ class RFQHistory extends Component {
           showModal={this.state.showModal}
           onContinue={() => {
             this.setState({ showModal: false });
-            this.addItemToCart();
+            if (hostname === "store.zwz.co.in" || hostname === "localhost") {
+              this.addItemToCart();
+            } else {
+              this.addItemToCart1();
+            }
           }}
           onCancel={() => {
             this.setState({ showModal: false });

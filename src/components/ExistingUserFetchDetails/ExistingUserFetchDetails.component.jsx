@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import { Button, Row, Col } from "reactstrap";
 import logo from "~/assets/images/zwz-log-logo.png";
+import NodLogo from "~/assets/images/trans_nod_logo.png";
 import axios from "axios";
-import { zwzapiurl } from "../../urls.json";
+import { zwzapiurl, nodapiurl } from "../../urls.json";
 
 const defaultValues = {
   GSTNumber: "",
   CustomerId: "",
 };
+
+const hostname = window.location.hostname;
+
+const nodLogo =
+  hostname === "store.nodbearings.net" || hostname === "localhost"
+    ? true
+    : false;
 
 const gstVal = new RegExp(
   "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$"
@@ -35,30 +43,58 @@ const ExistingUserFetchDetails = (props) => {
         : setgsterror(false);
 
       if (gsterror === false) {
-        const response = await axios(
-          zwzapiurl + "authentication/user/exsignup/",
-          {
-            method: "POST",
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
-            data: {
-              GSTNumber: formValues.GSTNumber,
-              CustomerId: formValues.CustomerId,
-            },
+        if (hostname === "store.zwz.co.in") {
+          const response = await axios(
+            zwzapiurl + "authentication/user/exsignup/",
+            {
+              method: "POST",
+              headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+              },
+              data: {
+                GSTNumber: formValues.GSTNumber,
+                CustomerId: formValues.CustomerId,
+              },
+            }
+          );
+          console.log(response.data);
+          if (response.data.success == true) {
+            setCompanyName(response.data.company_name);
+            setOldEmail(response.data.email);
+            localStorage.setItem("GSTIN", formValues.GSTNumber);
+            localStorage.setItem("CustomerId", formValues.CustomerId);
+            localStorage.setItem("DBCompanyName", response.data.company_name);
+            props.history.push("/existingCustomerSignUp");
+          } else {
+            alert(response.data.message);
           }
-        );
-        console.log(response.data);
-        if (response.data.success == true) {
-          setCompanyName(response.data.company_name);
-          setOldEmail(response.data.email);
-          localStorage.setItem("GSTIN", formValues.GSTNumber);
-          localStorage.setItem("CustomerId", formValues.CustomerId);
-          localStorage.setItem("DBCompanyName", response.data.company_name);
-          props.history.push("/existingCustomerSignUp");
         } else {
-          alert(response.data.message);
+          const response = await axios(
+            nodapiurl + "authentication/user/exsignup/",
+            {
+              method: "POST",
+              headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+              },
+              data: {
+                GSTNumber: formValues.GSTNumber,
+                CustomerId: formValues.CustomerId,
+              },
+            }
+          );
+          console.log(response.data);
+          if (response.data.success == true) {
+            setCompanyName(response.data.company_name);
+            setOldEmail(response.data.email);
+            localStorage.setItem("GSTIN", formValues.GSTNumber);
+            localStorage.setItem("CustomerId", formValues.CustomerId);
+            localStorage.setItem("DBCompanyName", response.data.company_name);
+            props.history.push("/existingCustomerSignUp");
+          } else {
+            alert(response.data.message);
+          }
         }
       }
       setFormValues(defaultValues);
@@ -70,12 +106,35 @@ const ExistingUserFetchDetails = (props) => {
   return (
     <div className="content_container" style={{ marginTop: 175 }}>
       <Row>
-        <Col sm={12} xs={12} md={12} lg={12} className="logo_img_container">
-          <img src={logo} alt="Logo" className="logo_img" />
-        </Col>
+        {nodLogo ? (
+          <Col sm={12} xs={12} md={12} lg={12} className="logo_img_container">
+            <img
+              src={NodLogo}
+              alt="Logo"
+              className="logo_img"
+              style={{ width: "100px" }}
+            />
+          </Col>
+        ) : (
+          <Col sm={12} xs={12} md={12} lg={12} className="logo_img_container">
+            <img src={logo} alt="Logo" className="logo_img" />
+          </Col>
+        )}
 
         <Col sm={12} xs={12} md={12} lg={12} className="login_title_container">
           <h1 className="login_title_text"> Existing Customer Registration </h1>
+        </Col>
+
+        <Col sm={12} xs={12} md={12} lg={12} className="login_title_container">
+          <p className="login_subtitle_container">
+            Please obtain your customer ID from your account manager. If you
+            need assistance, Please email us at <span> </span>
+            {hostname === "store.zwz.co.in" ? (
+              <b>sales.csc@zwz.co.in</b>
+            ) : (
+              <b>sales.csc@nodbearings.net</b>
+            )}
+          </p>
         </Col>
 
         <Col
